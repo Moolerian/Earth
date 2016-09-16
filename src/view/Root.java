@@ -4,11 +4,12 @@ import gov.nasa.worldwind.Model;
 import gov.nasa.worldwind.WorldWind;
 import gov.nasa.worldwind.avlist.AVKey;
 import gov.nasa.worldwind.awt.WorldWindowGLJPanel;
+import util.Utils;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
- *
  * @author Mohammad
  */
 public class Root extends JFrame {
@@ -118,9 +119,7 @@ public class Root extends JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        wwj = new WorldWindowGLJPanel();
-        Model m = (Model) WorldWind.createConfigurationComponent(AVKey.MODEL_CLASS_NAME);
-        wwj.setModel(m);
+        wwj = Utils.createWWJ();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
