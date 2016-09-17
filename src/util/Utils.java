@@ -10,10 +10,19 @@ import gov.nasa.worldwind.awt.WorldWindowGLJPanel;
  */
 public class Utils {
 
-    public static WorldWindowGLJPanel createWWJ() {
-        WorldWindowGLJPanel wwj = new WorldWindowGLJPanel();
+    private static WorldWindowGLJPanel wwj;
+
+    public static void createWWJ() {
+        wwj = new WorldWindowGLJPanel();
         Model m = (Model) WorldWind.createConfigurationComponent(AVKey.MODEL_CLASS_NAME);
         wwj.setModel(m);
+    }
+
+    public static WorldWindowGLJPanel getWwj() {
         return wwj;
+    }
+
+    public static void setWwj(WorldWindowGLJPanel wwj) {
+        Utils.wwj = wwj;
     }
 }

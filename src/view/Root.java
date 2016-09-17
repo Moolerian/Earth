@@ -87,12 +87,12 @@ public class Root extends JFrame {
         centerLayout.setHorizontalGroup(
                 centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(bottom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(wwj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Utils.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         centerLayout.setVerticalGroup(
                 centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, centerLayout.createSequentialGroup()
-                                .addComponent(wwj, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                                .addComponent(Utils.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -135,7 +135,7 @@ public class Root extends JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        wwj = Utils.createWWJ();
+        Utils.createWWJ();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -179,6 +179,6 @@ public class Root extends JFrame {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JPanel top;
     // End of variables declaration
-    private static WorldWindowGLJPanel wwj;
+
     // End of variables declaration
 }
