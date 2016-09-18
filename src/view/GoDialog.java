@@ -98,8 +98,10 @@ public class GoDialog extends javax.swing.JDialog {
     private void goButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO go to user preferred position
         View view = Utils.getWwj().getView();
-        Position iranPosition = new Position(LatLon.fromDegrees(35.746179170384686d, 51.20007936255699d), 0d);
-        view.goTo(iranPosition,50000d);
+        Double userPrefLongitude = Double.valueOf(longitude.getText());
+        Double userPrefLatitude = Double.valueOf(latitude.getText());
+        Position iranPosition = new Position(LatLon.fromDegrees(userPrefLatitude, userPrefLongitude), 0d);
+        view.goTo(iranPosition,1500000d);
     }
 
     // Variables declaration - do not modify

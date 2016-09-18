@@ -127,7 +127,7 @@ public class Root extends JFrame {
 
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {
 
-        GoDialog goDialog = new GoDialog(this,true);
+        GoDialog goDialog = new GoDialog(this,false);
         goDialog.setVisible(true);
     }
 
