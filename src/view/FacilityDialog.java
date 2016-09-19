@@ -62,12 +62,12 @@ public class FacilityDialog extends javax.swing.JDialog {
         DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode)((JTree)evt.getSource()).
                 getLastSelectedPathComponent();
         if(selectedNode.getChildCount()==0){
-            // this is the last node
+            System.out.println("sdsdws");
         }
     }
 
     // Variables declaration - do not modify
-    private javax.swing.JTree facilityTree;
+    public static javax.swing.JTree facilityTree;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration
 }
