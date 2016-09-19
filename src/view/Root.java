@@ -1,7 +1,8 @@
 package view;
 
-import gov.nasa.worldwind.awt.WorldWindowGLJPanel;
-import util.Utils;
+import gov.nasa.worldwind.layers.WorldMapLayer;
+import gov.nasa.worldwindx.examples.ClickAndGoSelectListener;
+import util.WWJUtil;
 
 import javax.swing.*;
 
@@ -35,6 +36,10 @@ public class Root extends JFrame {
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         editMenu = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        compassMenuItem = new javax.swing.JCheckBoxMenuItem();
+        worldMenuItem = new javax.swing.JCheckBoxMenuItem();
+        scaleMenuItem = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,12 +92,12 @@ public class Root extends JFrame {
         centerLayout.setHorizontalGroup(
                 centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(bottom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Utils.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(WWJUtil.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         centerLayout.setVerticalGroup(
                 centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, centerLayout.createSequentialGroup()
-                                .addComponent(Utils.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                                .addComponent(WWJUtil.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -120,6 +125,34 @@ public class Root extends JFrame {
         editMenu.setText("Edit");
         menuBar.add(editMenu);
 
+        jMenu1.setText("view");
+
+        compassMenuItem.setText("compass");
+        compassMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compassMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(compassMenuItem);
+
+        worldMenuItem.setText("worldView");
+        worldMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                worldMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(worldMenuItem);
+
+        scaleMenuItem.setText("Scale");
+        scaleMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scaleMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(scaleMenuItem);
+
+        menuBar.add(jMenu1);
+
         setJMenuBar(menuBar);
 
         pack();
@@ -131,11 +164,39 @@ public class Root extends JFrame {
         goDialog.setVisible(true);
     }
 
+    private void scaleMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
+        JCheckBoxMenuItem scale = (JCheckBoxMenuItem) evt.getSource();
+        if(scale.isSelected()){
+            WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getScaleLayer());
+        }else {
+            WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getScaleLayer());
+        }
+    }
+
+    private void worldMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
+        JCheckBoxMenuItem scale = (JCheckBoxMenuItem) evt.getSource();
+        if(scale.isSelected()){
+            WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getWorldMapLayer());
+            WWJUtil.getWwj().addSelectListener(new ClickAndGoSelectListener(WWJUtil.getWwj(), WorldMapLayer.class));
+        }else {
+            WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getWorldMapLayer());
+        }
+    }
+
+    private void compassMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
+        JCheckBoxMenuItem scale = (JCheckBoxMenuItem) evt.getSource();
+        if(scale.isSelected()){
+            WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getCompassLayer());
+        }else {
+            WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getCompassLayer());
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        Utils.createWWJ();
+        WWJUtil.createWWJ();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -172,13 +233,15 @@ public class Root extends JFrame {
     private javax.swing.JButton Go;
     private javax.swing.JPanel bottom;
     private javax.swing.JPanel center;
+    private javax.swing.JCheckBoxMenuItem compassMenuItem;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JButton jButton1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel left;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JCheckBoxMenuItem scaleMenuItem;
     private javax.swing.JPanel top;
-    // End of variables declaration
-
+    private javax.swing.JCheckBoxMenuItem worldMenuItem;
     // End of variables declaration
 }
