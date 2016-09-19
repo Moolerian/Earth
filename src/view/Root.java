@@ -177,7 +177,6 @@ public class Root extends JFrame {
         JCheckBoxMenuItem scale = (JCheckBoxMenuItem) evt.getSource();
         if(scale.isSelected()){
             WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getWorldMapLayer());
-            WWJUtil.getWwj().addSelectListener(new ClickAndGoSelectListener(WWJUtil.getWwj(), WorldMapLayer.class));
         }else {
             WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getWorldMapLayer());
         }
