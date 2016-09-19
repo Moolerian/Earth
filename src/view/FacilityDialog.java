@@ -1,5 +1,8 @@
 package view;
 
+import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+
 /**
  *
  * @author mohammad
@@ -56,8 +59,11 @@ public class FacilityDialog extends javax.swing.JDialog {
     }// </editor-fold>
 
     private void facilityTreeValueChanged(javax.swing.event.TreeSelectionEvent evt) {
-
-        System.out.println("dddddd");        // TODO add your handling code here:
+        DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode)((JTree)evt.getSource()).
+                getLastSelectedPathComponent();
+        if(selectedNode.getChildCount()==0){
+            // this is the last node
+        }
     }
 
     // Variables declaration - do not modify
