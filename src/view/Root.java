@@ -110,7 +110,22 @@ public class Root extends JFrame {
 
         left.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        facilityList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "1" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
         facilityList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        facilityList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                facilityListMouseClicked(evt);
+            }
+        });
+        facilityList.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                facilityListFocusGained(evt);
+            }
+        });
         jScrollPane1.setViewportView(facilityList);
 
         javax.swing.GroupLayout leftLayout = new javax.swing.GroupLayout(left);
@@ -128,7 +143,7 @@ public class Root extends JFrame {
 
         fileMenu.setText("File");
 
-        newMenuItem.setText("newMenuItem");
+        newMenuItem.setText("new");
         newMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newMenuItemActionPerformed(evt);
@@ -174,6 +189,11 @@ public class Root extends JFrame {
         pack();
     }// </editor-fold>
 
+
+/****************************************************************************************/
+/*************************************** METHODS ****************************************/
+/****************************************************************************************/
+
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {
         GoDialog goDialog = new GoDialog(this,false);
         goDialog.setVisible(true);
@@ -212,6 +232,16 @@ public class Root extends JFrame {
         facilityDialog.setVisible(true);
     }
 
+    private void facilityListFocusGained(java.awt.event.FocusEvent evt) {
+        WWJUtil.addFacilityToEarth();
+    }
+
+    private void facilityListMouseClicked(java.awt.event.MouseEvent evt) {
+        if(evt.getClickCount()==2){
+           // TODO show facility properties dialog
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -248,6 +278,11 @@ public class Root extends JFrame {
             }
         });
     }
+
+
+/*****************************************************************************/
+/***************************** VARIABLES *************************************/
+/*****************************************************************************/
 
     // Variables declaration - do not modify
     private javax.swing.JButton Go;
