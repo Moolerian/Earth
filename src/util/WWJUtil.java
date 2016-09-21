@@ -18,8 +18,6 @@ public class WWJUtil {
 
     private static WorldWindowGLJPanel wwj;
 
-    private static HotSpotController hotSpotController;
-    private static BalloonController balloonController;
     private static Layer worldMapLayer;
     private static Layer compassLayer;
     private static Layer scaleLayer;
@@ -38,8 +36,8 @@ public class WWJUtil {
     }
 
     public static void addFacilityToEarth() {
-        hotSpotController = new HotSpotController(wwj);
-        balloonController = new BalloonController(wwj);
+        new HotSpotController(wwj);
+        new BalloonController(wwj);
 
         Position position =  Position.fromDegrees(35.746179170384686d, 51.20007936255699d);
         AbstractBrowserBalloon balloon = new GlobeBrowserBalloon("salaaaaaaaaaaaaaam", position);
