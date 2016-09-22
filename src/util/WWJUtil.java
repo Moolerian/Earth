@@ -4,6 +4,7 @@ import gov.nasa.worldwind.Model;
 import gov.nasa.worldwind.WorldWind;
 import gov.nasa.worldwind.avlist.AVKey;
 import gov.nasa.worldwind.awt.WorldWindowGLJPanel;
+import gov.nasa.worldwind.geom.LatLon;
 import gov.nasa.worldwind.geom.Position;
 import gov.nasa.worldwind.layers.Layer;
 import gov.nasa.worldwind.layers.RenderableLayer;
@@ -11,6 +12,10 @@ import gov.nasa.worldwind.render.*;
 import gov.nasa.worldwind.util.BasicTextDecoder;
 import gov.nasa.worldwindx.examples.util.BalloonController;
 import gov.nasa.worldwindx.examples.util.HotSpotController;
+import model.Facility;
+
+import static util.Constants.iranLat;
+import static util.Constants.iranLon;
 
 /**
  * Created by Mohammad on 9/16/2016.
@@ -18,6 +23,7 @@ import gov.nasa.worldwindx.examples.util.HotSpotController;
 public class WWJUtil {
 
     private static WorldWindowGLJPanel wwj;
+    private static Facility facility;
 
     private static Layer worldMapLayer;
     private static Layer compassLayer;
@@ -40,19 +46,28 @@ public class WWJUtil {
     public static void addFacilityToEarth() {
         new HotSpotController(wwj);
         new BalloonController(wwj);
+        Position position;
+        String balloonText;
+        if (facility.getLatitude() == null || facility.getLongitude() == null) {
+            position = new Position(LatLon.fromDegrees(iranLat, iranLon), 0d);
+            balloonText = "lat: " + iranLat + " lon : " + iranLon +
+                    " width: " + " not-defined" + " height: " + "not-defined";
+        } else {
+            position = new Position(LatLon.fromDegrees(facility.getLatitude(), facility.getLongitude()), 0d);
+            balloonText = "lat: " + facility.getLatitude() + " lon : " + facility.getLongitude() +
+                    " width: " + facility.getWidth() + " height: " + facility.getHeight();
+        }
 
-        Position position = Position.fromDegrees(35.746179170384686d, 51.20007936255699d);
         AbstractBrowserBalloon balloon = new GlobeBrowserBalloon("", position);
         balloon.setDrawTitleBar(false);
         balloon.setVisible(false);
         balloon.setDrawBrowserControls(false);
-
-        balloon.setText("lat: " + 35.746179170384686d + " lon : " + 51.20007936255699d);
+        balloon.setText(balloonText);
 
         BalloonAttributes attrs = new BasicBalloonAttributes();
         Size size = new Size();
-        size.setHeight("",200,"");
-        size.setWidth("",200,"");
+        size.setHeight("", 120, "");
+        size.setWidth("", 650, "");
         attrs.setSize(size);
         balloon.setAttributes(attrs);
 
@@ -109,5 +124,13 @@ public class WWJUtil {
 
     public static void setFacilityLayer(Layer facilityLayer) {
         WWJUtil.facilityLayer = facilityLayer;
+    }
+
+    public static Facility getFacility() {
+        return facility;
+    }
+
+    public static void setFacility(Facility facility) {
+        WWJUtil.facility = facility;
     }
 }

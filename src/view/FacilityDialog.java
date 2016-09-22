@@ -1,12 +1,13 @@
 package view;
 
+import model.Facility;
 import util.EarthUtil;
+import util.WWJUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
- *
  * @author mohammad
  */
 public class FacilityDialog extends javax.swing.JDialog {
@@ -32,6 +33,9 @@ public class FacilityDialog extends javax.swing.JDialog {
         facilityTree = new javax.swing.JTree();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setLocationByPlatform(true);
+        setType(java.awt.Window.Type.POPUP);
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("JTree");
@@ -94,11 +98,13 @@ public class FacilityDialog extends javax.swing.JDialog {
     }// </editor-fold>
 
     private void facilityTreeValueChanged(javax.swing.event.TreeSelectionEvent evt) {
-        DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode)((JTree)evt.getSource()).
+        DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) ((JTree) evt.getSource()).
                 getLastSelectedPathComponent();
-        if(selectedNode.getChildCount()==0){
-            String[] node = {selectedNode.toString()};
-            Root.facilityList.setListData(node);
+        if (selectedNode.getChildCount() == 0) {
+            Facility selectedFacility = new Facility();
+            selectedFacility.setDisplayName(selectedNode.toString());
+            WWJUtil.setFacility(selectedFacility);
+            Root.facilityList.setListData(new Facility[]{selectedFacility});
         }
     }
 

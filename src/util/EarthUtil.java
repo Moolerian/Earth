@@ -1,5 +1,6 @@
 package util;
 
+import model.Facility;
 import view.FacilityDialog;
 
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -12,7 +13,8 @@ import javax.swing.tree.TreeModel;
 
 public class EarthUtil {
 
-    public static void createFacilitytree(){
+
+    public static void createFacilityTree(){
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("تجهیزات");
 
         DefaultMutableTreeNode installationParentNode = new DefaultMutableTreeNode("عوارض،امکانات،تاسیسات و سایت ها");
@@ -74,5 +76,7 @@ public class EarthUtil {
         FacilityDialog.facilityTree.setModel(treeModel);
 
     }
+
+
 
 }
