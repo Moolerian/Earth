@@ -2,6 +2,7 @@ package view;
 
 import gov.nasa.worldwind.layers.WorldMapLayer;
 import gov.nasa.worldwindx.examples.ClickAndGoSelectListener;
+import util.EarthUtil;
 import util.WWJUtil;
 
 import javax.swing.*;
@@ -111,9 +112,15 @@ public class Root extends JFrame {
         left.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         facilityList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "1" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            String[] strings = {"1"};
+
+            public int getSize() {
+                return strings.length;
+            }
+
+            public String getElementAt(int i) {
+                return strings[i];
+            }
         });
         facilityList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         facilityList.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -192,53 +199,56 @@ public class Root extends JFrame {
 
 /****************************************************************************************/
 /*************************************** METHODS ****************************************/
-/****************************************************************************************/
+    /****************************************************************************************/
 
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {
-        GoDialog goDialog = new GoDialog(this,false);
+        GoDialog goDialog = new GoDialog(this, false);
         goDialog.setVisible(true);
     }
 
     private void scaleMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
         JCheckBoxMenuItem scale = (JCheckBoxMenuItem) evt.getSource();
-        if(scale.isSelected()){
+        if (scale.isSelected()) {
             WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getScaleLayer());
-            WWJUtil.getWwj().addSelectListener(new ClickAndGoSelectListener( WWJUtil.getWwj(), WorldMapLayer.class));
-        }else {
+            WWJUtil.getWwj().addSelectListener(new ClickAndGoSelectListener(WWJUtil.getWwj(), WorldMapLayer.class));
+        } else {
             WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getScaleLayer());
         }
     }
 
     private void worldMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
         JCheckBoxMenuItem scale = (JCheckBoxMenuItem) evt.getSource();
-        if(scale.isSelected()){
+        if (scale.isSelected()) {
             WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getWorldMapLayer());
-        }else {
+        } else {
             WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getWorldMapLayer());
         }
     }
 
     private void compassMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
         JCheckBoxMenuItem scale = (JCheckBoxMenuItem) evt.getSource();
-        if(scale.isSelected()){
+        if (scale.isSelected()) {
             WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getCompassLayer());
-        }else {
+        } else {
             WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getCompassLayer());
         }
     }
 
     private void newMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
-        FacilityDialog facilityDialog = new FacilityDialog(this,true);
+        FacilityDialog facilityDialog = new FacilityDialog(this, true);
+        EarthUtil.createFacilitytree();
         facilityDialog.setVisible(true);
     }
 
     private void facilityListFocusGained(java.awt.event.FocusEvent evt) {
-        WWJUtil.addFacilityToEarth();
+
     }
 
     private void facilityListMouseClicked(java.awt.event.MouseEvent evt) {
-        if(evt.getClickCount()==2){
-           // TODO show facility properties dialog
+        if (evt.getClickCount() == 2) {
+            // TODO show facility properties dialog
+        } else if (evt.getClickCount() == 1) {
+            WWJUtil.addFacilityToEarth();
         }
     }
 
@@ -282,7 +292,7 @@ public class Root extends JFrame {
 
 /*****************************************************************************/
 /***************************** VARIABLES *************************************/
-/*****************************************************************************/
+    /*****************************************************************************/
 
     // Variables declaration - do not modify
     private javax.swing.JButton Go;

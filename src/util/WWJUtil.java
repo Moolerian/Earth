@@ -8,6 +8,7 @@ import gov.nasa.worldwind.geom.Position;
 import gov.nasa.worldwind.layers.Layer;
 import gov.nasa.worldwind.layers.RenderableLayer;
 import gov.nasa.worldwind.render.*;
+import gov.nasa.worldwind.util.BasicTextDecoder;
 import gov.nasa.worldwindx.examples.util.BalloonController;
 import gov.nasa.worldwindx.examples.util.HotSpotController;
 
@@ -21,6 +22,7 @@ public class WWJUtil {
     private static Layer worldMapLayer;
     private static Layer compassLayer;
     private static Layer scaleLayer;
+    private static Layer facilityLayer;
 
     public static void createWWJ() {
         wwj = new WorldWindowGLJPanel();
@@ -39,23 +41,33 @@ public class WWJUtil {
         new HotSpotController(wwj);
         new BalloonController(wwj);
 
-        Position position =  Position.fromDegrees(35.746179170384686d, 51.20007936255699d);
-        AbstractBrowserBalloon balloon = new GlobeBrowserBalloon("salaaaaaaaaaaaaaam", position);
+        Position position = Position.fromDegrees(35.746179170384686d, 51.20007936255699d);
+        AbstractBrowserBalloon balloon = new GlobeBrowserBalloon("", position);
+        balloon.setDrawTitleBar(false);
+        balloon.setVisible(false);
+        balloon.setDrawBrowserControls(false);
+
+        balloon.setText("lat: " + 35.746179170384686d + " lon : " + 51.20007936255699d);
 
         BalloonAttributes attrs = new BasicBalloonAttributes();
-        attrs.setSize(new Size(Size.NATIVE_DIMENSION, 0d, null, Size.NATIVE_DIMENSION, 0d, null));
+        Size size = new Size();
+        size.setHeight("",200,"");
+        size.setWidth("",200,"");
+        attrs.setSize(size);
         balloon.setAttributes(attrs);
 
         PointPlacemark placemark = new PointPlacemark(position);
-        placemark.setLabelText("Click to open balloon");
-
         placemark.setValue(AVKey.BALLOON, balloon);
 
         RenderableLayer layer = new RenderableLayer();
-        layer.setName("Web Browser Balloons");
+        layer.setName("Facility");
         layer.addRenderable(balloon);
         layer.addRenderable(placemark);
 
+        facilityLayer = wwj.getModel().getLayers().getLayerByName("Facility");
+        if (facilityLayer != null) {
+            wwj.getModel().getLayers().remove(facilityLayer);
+        }
         wwj.getModel().getLayers().add(layer);
     }
 
@@ -89,5 +101,13 @@ public class WWJUtil {
 
     public static void setScaleLayer(Layer scaleLayer) {
         WWJUtil.scaleLayer = scaleLayer;
+    }
+
+    public static Layer getFacilityLayer() {
+        return facilityLayer;
+    }
+
+    public static void setFacilityLayer(Layer facilityLayer) {
+        WWJUtil.facilityLayer = facilityLayer;
     }
 }
