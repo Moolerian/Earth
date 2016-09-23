@@ -237,7 +237,8 @@ public class Root extends JFrame {
 
     private void facilityListMouseClicked(java.awt.event.MouseEvent evt) {
         if (evt.getClickCount() == 2) {
-            // TODO show facility properties dialog
+            FacilityPropertyDialog propertyDialog = new FacilityPropertyDialog(this,true);
+            propertyDialog.setVisible(true);
         } else if (evt.getClickCount() == 1) {
             WWJUtil.addFacilityToEarth();
         }

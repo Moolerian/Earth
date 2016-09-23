@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by Mohammad on 9/22/2016.
@@ -19,6 +20,10 @@ public class Facility implements Serializable {
     private Integer width;
 
     private Integer height;
+
+    private Date startDate;
+
+    private Date endtDate;
 
 
     public Long getId() {
@@ -69,6 +74,21 @@ public class Facility implements Serializable {
         this.height = height;
     }
 
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndtDate() {
+        return endtDate;
+    }
+
+    public void setEndtDate(Date endtDate) {
+        this.endtDate = endtDate;
+    }
 
     @Override
     public String toString() {
