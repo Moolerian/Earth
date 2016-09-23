@@ -7,6 +7,7 @@ import util.EarthUtil;
 import util.WWJUtil;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * @author Mohammad
@@ -18,7 +19,9 @@ public class Root extends JFrame {
      */
     public Root() {
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
+
 
 
 
@@ -117,11 +120,6 @@ public class Root extends JFrame {
         facilityList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 facilityListMouseClicked(evt);
-            }
-        });
-        facilityList.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                facilityListFocusGained(evt);
             }
         });
         jScrollPane1.setViewportView(facilityList);
