@@ -7,7 +7,6 @@ import util.EarthUtil;
 import util.WWJUtil;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * @author Mohammad
@@ -21,8 +20,6 @@ public class Root extends JFrame {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
     }
-
-
 
 
     /**
@@ -229,13 +226,9 @@ public class Root extends JFrame {
         facilityDialog.setVisible(true);
     }
 
-    private void facilityListFocusGained(java.awt.event.FocusEvent evt) {
-
-    }
-
     private void facilityListMouseClicked(java.awt.event.MouseEvent evt) {
         if (evt.getClickCount() == 2) {
-            FacilityPropertyDialog propertyDialog = new FacilityPropertyDialog(this,true);
+            FacilityPropertyDialog propertyDialog = new FacilityPropertyDialog(this, true);
             propertyDialog.setVisible(true);
         } else if (evt.getClickCount() == 1) {
             WWJUtil.addFacilityToEarth();
