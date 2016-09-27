@@ -5,7 +5,6 @@ package util;
 import java.awt.Color;
 import java.io.Serializable;
 import model.TLE;
-import name.gano.worldwind.modelloader.WWModel3D_new;
 
 /**
  *
@@ -150,19 +149,11 @@ public abstract class AbstractSatellite implements Serializable
 
     public abstract boolean isUse3dModel();
 
-    public abstract void setUse3dModel(boolean use3dModel);
-
     public abstract String getThreeDModelPath();
-
-    public abstract void setThreeDModelPath(String path);
-
-    public abstract WWModel3D_new getThreeDModel();
 
     public abstract double[] getTEMEVelocity();
 
     public abstract double getThreeDModelSizeFactor();
-
-    public abstract void setThreeDModelSizeFactor(double modelSizeFactor);
 
 
 }

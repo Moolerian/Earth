@@ -21,7 +21,7 @@
 
 package name.gano.astro.propogators.solvers;
 
-import jsattrak.utilities.StateVector;
+import util.StateVector;
 
 public interface OrbitProblem
 {

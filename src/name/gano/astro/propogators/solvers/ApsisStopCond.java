@@ -22,7 +22,7 @@
 package name.gano.astro.propogators.solvers;
 
 import java.util.Vector;
-import jsattrak.utilities.StateVector;
+import util.StateVector;
 import name.gano.astro.MathUtils;
 import name.gano.math.interpolation.PolynomialInterp;
 

@@ -21,7 +21,7 @@
  */
 package name.gano.astro;
 
-import jsattrak.utilities.StateVector;
+import util.StateVector;
 
 public class Kepler
 {

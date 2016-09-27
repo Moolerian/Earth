@@ -30,7 +30,7 @@ import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 import java.util.Vector;
-import jsattrak.utilities.StateVector;
+import util.StateVector;
 import name.gano.astro.AstroConst;
 import name.gano.astro.time.Time;
 

@@ -74,7 +74,7 @@ public class JTrackingPanel extends javax.swing.JPanel
 
         // do this after components INI
         this.timeAsString = timeAsStringIn;
-        updateTime(timeAsString);
+        //updateTime(timeAsString);
 
 
         // update pass table
@@ -306,7 +306,7 @@ public class JTrackingPanel extends javax.swing.JPanel
         aerTextArea.setRows(5);
         jScrollPane1.setViewportView(aerTextArea);
 
-        refreshComboBoxesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gnome_2_18/view-refresh.png"))); // NOI18N
+//        refreshComboBoxesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gnome_2_18/view-refresh.png"))); // NOI18N
         refreshComboBoxesButton.setToolTipText("refresh sat and ground stations"); // NOI18N
         refreshComboBoxesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -367,7 +367,7 @@ public class JTrackingPanel extends javax.swing.JPanel
 
         jToolBar1.setRollover(true);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gnome_2_18/document-print.png"))); // NOI18N
+//        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gnome_2_18/document-print.png"))); // NOI18N
         jButton1.setToolTipText("Print Polar Plot - automatically prints with inverted colors, names, and time");
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -501,7 +501,7 @@ public class JTrackingPanel extends javax.swing.JPanel
             }
         });
 
-        printTableButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gnome_2_18/document-print.png"))); // NOI18N
+//        printTableButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gnome_2_18/document-print.png"))); // NOI18N
         printTableButton.setToolTipText("Print Table");
         printTableButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -509,7 +509,7 @@ public class JTrackingPanel extends javax.swing.JPanel
             }
         });
 
-        saveTableButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gnome_2_18/document-save-as.png"))); // NOI18N
+      //  saveTableButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gnome_2_18/document-save-as.png"))); // NOI18N
         saveTableButton.setToolTipText("Save Table to File");
         saveTableButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
