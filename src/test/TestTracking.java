@@ -23,16 +23,16 @@ public class TestTracking {
     public void testPass() throws Exception {
 
         AbstractSatellite satellite = new SatelliteTleSGP4("ISS (ZARYA)",
-                "1 25544U 98067A   16109.49424856  .00007984  00000-0  12705-3 0  9995",
-                "2 25544  51.6424 355.7774 0001421  44.1954  14.5115 15.54274169995696");
+                "1 25544U 98067A   16272.20079568  .00004434  00000-0  74637-4 0  9991",
+                "2 25544  51.6450 264.1641 0006495  13.6278  73.6191 15.53958134 21013");
 
 
-        double[] lla = {53.2126,-105.934,488.8};
-        GroundStation groundStation = new GroundStation("PASS",lla,2457659.2184953704);
+        double[] lla = {35.69439,51.42151,100};
+        GroundStation groundStation = new GroundStation("Tehran",lla,currentJulianDate.getJulianDate());
         groundStation.setElevationConst(10);
 
         satHash.put("ISS (ZARYA)",satellite);
-        gsHash.put("PASS",groundStation);
+        gsHash.put("Tehran",groundStation);
 
         currentJulianDate.setDateFormat(dateformat);
         JTrackingPanel trackingBrowser = new JTrackingPanel(satHash,
