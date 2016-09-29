@@ -27,7 +27,7 @@ public class TestTracking {
                 "2 25544  51.6450 264.1641 0006495  13.6278  73.6191 15.53958134 21013");
 
 
-        double[] lla = {35.69439,51.42151,100};
+        double[] lla = {35.69439,51.42151,0};
         GroundStation groundStation = new GroundStation("Tehran",lla,currentJulianDate.getJulianDate());
         groundStation.setElevationConst(10);
 

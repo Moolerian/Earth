@@ -217,9 +217,9 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         facility.setLatitude((Long.parseLong(facilityLat.getText())));
         facility.setLongitude(Long.parseLong(facilityLon.getText()));
         facility.setWidth(Integer.parseInt(facilityWidth.getText()));
-        facility.setHeight(Integer.parseInt(facilityLength.getText()));
+        facility.setLength(Integer.parseInt(facilityLength.getText()));
         facility.setStartDate((Date)facilityStartDate.getValue());
-        facility.setEndtDate((Date)facilityEndDate.getValue());
+        facility.setEndDate((Date)facilityEndDate.getValue());
 
         WWJUtil.addFacilityToEarth();
         this.dispose();
@@ -234,7 +234,7 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         facilityLat.setText((WWJUtil.getFacility().getLatitude()) == null ? "" : WWJUtil.getFacility().getLatitude().toString());
         facilityLon.setText((WWJUtil.getFacility().getLongitude()) == null ? "" : WWJUtil.getFacility().getLongitude().toString());
         facilityWidth.setText((WWJUtil.getFacility().getWidth()) == null ? "" : WWJUtil.getFacility().getWidth().toString());
-        facilityLength.setText((WWJUtil.getFacility().getHeight() == null) ? "" : WWJUtil.getFacility().getHeight().toString());
+        facilityLength.setText((WWJUtil.getFacility().getLength() == null) ? "" : WWJUtil.getFacility().getLength().toString());
         facilityStartDate.getModel().setValue(new Date());
         facilityEndDate.getModel().setValue(new Date());
     }

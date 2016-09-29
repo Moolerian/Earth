@@ -19,12 +19,25 @@ public class Facility implements Serializable {
 
     private Integer width;
 
-    private Integer height;
+    private Integer length;
 
     private Date startDate;
 
-    private Date endtDate;
+    private Date endDate;
 
+    private boolean isParent;
+
+    private Long parentId;
+
+    public Facility(Long id ,String displayName, boolean isParent, Long parentId) {
+        this.displayName = displayName;
+        this.isParent = isParent;
+        this.parentId = parentId;
+        this.id = id;
+    }
+
+    public Facility() {
+    }
 
     public Long getId() {
         return id;
@@ -66,12 +79,12 @@ public class Facility implements Serializable {
         this.width = width;
     }
 
-    public Integer getHeight() {
-        return height;
+    public Integer getLength() {
+        return length;
     }
 
-    public void setHeight(Integer height) {
-        this.height = height;
+    public void setLength(Integer length) {
+        this.length = length;
     }
 
     public Date getStartDate() {
@@ -82,12 +95,28 @@ public class Facility implements Serializable {
         this.startDate = startDate;
     }
 
-    public Date getEndtDate() {
-        return endtDate;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setEndtDate(Date endtDate) {
-        this.endtDate = endtDate;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public boolean isParent() {
+        return isParent;
+    }
+
+    public void setParent(boolean parent) {
+        isParent = parent;
+    }
+
+    public Long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
     }
 
     @Override

@@ -55,7 +55,7 @@ public class WWJUtil {
         } else {
             position = new Position(LatLon.fromDegrees(facility.getLatitude(), facility.getLongitude()), 0d);
             balloonText = "lat: " + facility.getLatitude() + " lon : " + facility.getLongitude() +
-                    " width: " + facility.getWidth() + " height: " + facility.getHeight();
+                    " width: " + facility.getWidth() + " height: " + facility.getLength();
         }
 
         AbstractBrowserBalloon balloon = new GlobeBrowserBalloon("", position);

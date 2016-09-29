@@ -6,6 +6,12 @@ import view.FacilityDialog;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Mohammad on 9/16/2016.
@@ -14,7 +20,7 @@ import javax.swing.tree.TreeModel;
 public class EarthUtil {
 
 
-    public static void createFacilityTree(){
+    public static void createFacilityTree() {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("تجهیزات");
 
         DefaultMutableTreeNode installationParentNode = new DefaultMutableTreeNode("عوارض،امکانات،تاسیسات و سایت ها");
@@ -77,6 +83,52 @@ public class EarthUtil {
 
     }
 
+    private static Connection connectDB() {
+        Connection c = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:database.db");
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
 
+        return c;
+    }
+
+    @SuppressWarnings("SqlNoDataSourceInspection")
+    public static List<Facility> selectDB() {
+        Connection connection = connectDB();
+        Statement statement;
+        List<Facility> facilities = new ArrayList<>();
+        try {
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from facility;");
+            while (resultSet.next()) {
+                Long id = resultSet.getLong("id");
+                String displayName = resultSet.getString("displayName");
+                boolean isParent = resultSet.getBoolean("isParent");
+                Long parentId = resultSet.getLong("parentId");
+                Facility facility = new Facility(id, displayName, isParent, parentId);
+                facilities.add(facility);
+            }
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+
+        return facilities;
+    }
+
+    public static void main(String[] args) {
+        List<Facility> facilities = EarthUtil.selectDB();
+        for (Facility facility : facilities) {
+
+            System.out.println(facility.getDisplayName());
+        }
+    }
 
 }
