@@ -23,7 +23,7 @@ public class EarthUtil {
         List<Facility> parents = getParents();
         for (Facility facility : parents) {
             DefaultMutableTreeNode parentNode = new DefaultMutableTreeNode(facility);
-            addNode(parentNode,facility);
+            addNode(parentNode, facility);
             root.add(parentNode);
         }
         TreeModel treeModel = new DefaultTreeModel(root);
@@ -32,13 +32,13 @@ public class EarthUtil {
 
     private static void addNode(DefaultMutableTreeNode treeNode, Facility parent) {
         List<Facility> children = getByParentId(parent.getId());
-        DefaultMutableTreeNode node;
-        for(Facility facility : children){
+        DefaultMutableTreeNode node = new DefaultMutableTreeNode(parent);
+        for (Facility facility : children) {
             node = new DefaultMutableTreeNode(facility);
-            if(facility.isParent()){
-                addNode(node,facility);
+            if (facility.isParent()) {
+                addNode(node, facility);
                 treeNode.add(node);
-            }else {
+            } else {
                 treeNode.add(node);
             }
         }
@@ -82,6 +82,72 @@ public class EarthUtil {
         }
 
         return facilities;
+    }
+
+    @SuppressWarnings({"SqlNoDataSourceInspection", "Duplicates", "SqlDialectInspection"})
+    public static List<Facility> getAllIsParents() {
+        Connection connection = connectDB();
+        Statement statement;
+        List<Facility> facilities = new ArrayList<>();
+        try {
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM facility where isParent = 1");
+            while (resultSet.next()) {
+                Long id = resultSet.getLong("id");
+                String displayName = resultSet.getString("displayName");
+                boolean isParent = resultSet.getBoolean("isParent");
+                Long parentId = resultSet.getLong("parentId");
+                Facility facility = new Facility(id, displayName, isParent, parentId);
+                facilities.add(facility);
+            }
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+
+        return facilities;
+    }
+
+    @SuppressWarnings({"SqlNoDataSourceInspection", "Duplicates", "SqlDialectInspection"})
+    public static boolean addFacility(Facility toBeInserted) {
+        Connection connection = connectDB();
+        PreparedStatement statement;
+        Long maxId = 0L;
+        boolean succeed = false;
+        try {
+            statement = connection.prepareStatement("SELECT max(id) AS id FROM facility");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                maxId = resultSet.getLong("id");
+            }
+
+            String sql = "INSERT INTO facility (id, displayName, isParent, parentId) VALUES (?, ?, ?, ?)";
+
+            statement = connection.prepareStatement(sql);
+            statement.setLong(1, maxId + 1);
+            statement.setString(2, toBeInserted.getDisplayName());
+            statement.setBoolean(3, toBeInserted.isParent());
+            statement.setLong(4, toBeInserted.getParentId());
+
+            int rowsInserted = statement.executeUpdate();
+
+            if (rowsInserted > 0) {
+                System.out.println("A new user was inserted successfully!");
+                succeed = true;
+            }
+
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+
+        return succeed;
     }
 
     @SuppressWarnings({"SqlNoDataSourceInspection", "Duplicates", "SqlDialectInspection"})

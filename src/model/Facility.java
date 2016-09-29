@@ -39,6 +39,8 @@ public class Facility implements Serializable {
     public Facility() {
     }
 
+
+
     public Long getId() {
         return id;
     }

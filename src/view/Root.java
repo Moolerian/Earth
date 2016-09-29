@@ -31,6 +31,7 @@ public class Root extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         top = new javax.swing.JPanel();
         Go = new javax.swing.JButton();
         center = new javax.swing.JPanel();
@@ -42,11 +43,14 @@ public class Root extends JFrame {
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
+        customeFacilityMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         compassMenuItem = new javax.swing.JCheckBoxMenuItem();
         worldMenuItem = new javax.swing.JCheckBoxMenuItem();
         scaleMenuItem = new javax.swing.JCheckBoxMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,13 +140,21 @@ public class Root extends JFrame {
 
         fileMenu.setText("File");
 
-        newMenuItem.setText("new");
+        newMenuItem.setText("NewFacility");
         newMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newMenuItemActionPerformed(evt);
             }
         });
         fileMenu.add(newMenuItem);
+
+        customeFacilityMenuItem.setText("CustomFacility");
+        customeFacilityMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                customeFacilityMenuItemActionPerformed(evt);
+            }
+        });
+        fileMenu.add(customeFacilityMenuItem);
 
         menuBar.add(fileMenu);
 
@@ -272,6 +284,11 @@ public class Root extends JFrame {
         });
     }
 
+    private void customeFacilityMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
+        CreateFacilityDialog facilityDialog = new CreateFacilityDialog(this, true);
+        facilityDialog.setVisible(true);
+    }
+
 
 /*****************************************************************************/
 /***************************** VARIABLES *************************************/
@@ -282,11 +299,13 @@ public class Root extends JFrame {
     private javax.swing.JPanel bottom;
     private javax.swing.JPanel center;
     private javax.swing.JCheckBoxMenuItem compassMenuItem;
+    private javax.swing.JMenuItem customeFacilityMenuItem;
     private javax.swing.JMenu editMenu;
     public static javax.swing.JList<Facility> facilityList;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel left;
     private javax.swing.JMenuBar menuBar;
@@ -294,5 +313,5 @@ public class Root extends JFrame {
     private javax.swing.JCheckBoxMenuItem scaleMenuItem;
     private javax.swing.JPanel top;
     private javax.swing.JCheckBoxMenuItem worldMenuItem;
-    // End of variables declaration
+    // End of variables declaration on
 }
