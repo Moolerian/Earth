@@ -34,6 +34,7 @@ public class Root extends JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         top = new javax.swing.JPanel();
         Go = new javax.swing.JButton();
+        removeFacilityFromList = new javax.swing.JButton();
         center = new javax.swing.JPanel();
         bottom = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -64,6 +65,15 @@ public class Root extends JFrame {
             }
         });
 
+        removeFacilityFromList.setText("remove");
+        removeFacilityFromList.setToolTipText("");
+        removeFacilityFromList.setEnabled(false);
+        removeFacilityFromList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeFacilityFromListActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout topLayout = new javax.swing.GroupLayout(top);
         top.setLayout(topLayout);
         topLayout.setHorizontalGroup(
@@ -71,13 +81,17 @@ public class Root extends JFrame {
                         .addGroup(topLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(Go)
-                                .addContainerGap(1012, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(removeFacilityFromList)
+                                .addContainerGap(925, Short.MAX_VALUE))
         );
         topLayout.setVerticalGroup(
                 topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(topLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(Go)
+                                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(Go)
+                                        .addComponent(removeFacilityFromList))
                                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -197,7 +211,9 @@ public class Root extends JFrame {
 
 /****************************************************************************************/
 /*************************************** METHODS ****************************************/
-    /****************************************************************************************/
+/****************************************************************************************/
+Facility facility = null ;
+
 
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {
         GoDialog goDialog = new GoDialog(this, false);
@@ -239,13 +255,25 @@ public class Root extends JFrame {
     }
 
     private void facilityListMouseClicked(java.awt.event.MouseEvent evt) {
-        Facility facility = ((JList<Facility>)evt.getSource()).getSelectedValue();
+        facility = ((JList<Facility>)evt.getSource()).getSelectedValue();
         if (evt.getClickCount() == 2) {
             FacilityPropertyDialog propertyDialog = new FacilityPropertyDialog(this, true);
             propertyDialog.setCurrentFacility(facility);
             propertyDialog.setVisible(true);
         } else if (evt.getClickCount() == 1) {
             WWJUtil.addFacilityToEarth(facility);
+            removeFacilityFromList.setEnabled(true);
+        }
+    }
+
+    private void customeFacilityMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
+        CreateFacilityDialog facilityDialog = new CreateFacilityDialog(this, true);
+        facilityDialog.setVisible(true);
+    }
+
+    private void removeFacilityFromListActionPerformed(java.awt.event.ActionEvent evt) {
+        if(facility !=null){
+            //TODO remove facility
         }
     }
 
@@ -286,12 +314,6 @@ public class Root extends JFrame {
         });
     }
 
-    private void customeFacilityMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
-        CreateFacilityDialog facilityDialog = new CreateFacilityDialog(this, true);
-        facilityDialog.setVisible(true);
-    }
-
-
 /*****************************************************************************/
 /***************************** VARIABLES *************************************/
     /*****************************************************************************/
@@ -312,8 +334,9 @@ public class Root extends JFrame {
     private javax.swing.JPanel left;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem newMenuItem;
+    private javax.swing.JButton removeFacilityFromList;
     private javax.swing.JCheckBoxMenuItem scaleMenuItem;
     private javax.swing.JPanel top;
     private javax.swing.JCheckBoxMenuItem worldMenuItem;
-    // End of variables declaration on
+    // End of variables declaration
 }
