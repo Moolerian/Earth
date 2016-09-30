@@ -14,6 +14,8 @@ import gov.nasa.worldwindx.examples.util.BalloonController;
 import gov.nasa.worldwindx.examples.util.HotSpotController;
 import model.Facility;
 
+import java.util.ArrayList;
+
 import static util.Constants.iranLat;
 import static util.Constants.iranLon;
 
@@ -23,12 +25,11 @@ import static util.Constants.iranLon;
 public class WWJUtil {
 
     private static WorldWindowGLJPanel wwj;
-    private static Facility facility;
+    private static ArrayList<Facility> userFacilities = new ArrayList<>();
 
     private static Layer worldMapLayer;
     private static Layer compassLayer;
     private static Layer scaleLayer;
-    private static Layer facilityLayer;
 
     public static void createWWJ() {
         wwj = new WorldWindowGLJPanel();
@@ -43,7 +44,7 @@ public class WWJUtil {
         wwj.getModel().getLayers().remove(scaleLayer);
     }
 
-    public static void addFacilityToEarth() {
+    public static void addFacilityToEarth(Facility facility) {
         new HotSpotController(wwj);
         new BalloonController(wwj);
         Position position;
@@ -51,11 +52,11 @@ public class WWJUtil {
         if (facility.getLatitude() == null || facility.getLongitude() == null) {
             position = new Position(LatLon.fromDegrees(iranLat, iranLon), 0d);
             balloonText = "lat: " + iranLat + " lon : " + iranLon +
-                    " width: " + " not-defined" + " height: " + "not-defined";
+                    " width: " + " not-defined" + " Length: " + "not-defined";
         } else {
             position = new Position(LatLon.fromDegrees(facility.getLatitude(), facility.getLongitude()), 0d);
             balloonText = "lat: " + facility.getLatitude() + " lon : " + facility.getLongitude() +
-                    " width: " + facility.getWidth() + " height: " + facility.getLength();
+                    " width: " + facility.getWidth() + " Length: " + facility.getLength();
         }
 
         AbstractBrowserBalloon balloon = new GlobeBrowserBalloon("", position);
@@ -72,14 +73,15 @@ public class WWJUtil {
         balloon.setAttributes(attrs);
 
         PointPlacemark placemark = new PointPlacemark(position);
+        placemark.setLabelText(facility.getId().toString());
         placemark.setValue(AVKey.BALLOON, balloon);
 
         RenderableLayer layer = new RenderableLayer();
-        layer.setName("Facility");
+        layer.setName(facility.getId().toString());
         layer.addRenderable(balloon);
         layer.addRenderable(placemark);
 
-        facilityLayer = wwj.getModel().getLayers().getLayerByName("Facility");
+        Layer facilityLayer = wwj.getModel().getLayers().getLayerByName(facility.getId().toString());
         if (facilityLayer != null) {
             wwj.getModel().getLayers().remove(facilityLayer);
         }
@@ -118,19 +120,11 @@ public class WWJUtil {
         WWJUtil.scaleLayer = scaleLayer;
     }
 
-    public static Layer getFacilityLayer() {
-        return facilityLayer;
+    public static ArrayList<Facility> getUserFacilities() {
+        return userFacilities;
     }
 
-    public static void setFacilityLayer(Layer facilityLayer) {
-        WWJUtil.facilityLayer = facilityLayer;
-    }
-
-    public static Facility getFacility() {
-        return facility;
-    }
-
-    public static void setFacility(Facility facility) {
-        WWJUtil.facility = facility;
+    public static void setUserFacilities(ArrayList<Facility> userFacilities) {
+        WWJUtil.userFacilities = userFacilities;
     }
 }

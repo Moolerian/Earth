@@ -1,11 +1,14 @@
 package view;
 
+import com.sun.deploy.util.ArrayUtil;
 import model.Facility;
 import util.EarthUtil;
 import util.WWJUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @author mohammad
@@ -97,16 +100,25 @@ public class FacilityDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>
 
+/*****************************************************************************************/
+/*************************************  METHODS  *****************************************/
+    /*****************************************************************************************/
+
+
     private void facilityTreeValueChanged(javax.swing.event.TreeSelectionEvent evt) {
         DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) ((JTree) evt.getSource()).
                 getLastSelectedPathComponent();
         if (selectedNode.getChildCount() == 0) {
-            Facility selectedFacility = new Facility();
-            selectedFacility.setDisplayName(selectedNode.toString());
-            WWJUtil.setFacility(selectedFacility);
-            Root.facilityList.setListData(new Facility[]{selectedFacility});
+            Facility facility = (Facility) selectedNode.getUserObject();
+            WWJUtil.getUserFacilities().add(facility);
+            Facility[] facilities = WWJUtil.getUserFacilities().toArray(new Facility[WWJUtil.getUserFacilities().size()]);
+            Root.facilityList.setListData(facilities);
         }
     }
+
+/************************************************************************************************/
+/************************************************************************************************/
+    /************************************************************************************************/
 
     // Variables declaration - do not modify
     public static javax.swing.JTree facilityTree;

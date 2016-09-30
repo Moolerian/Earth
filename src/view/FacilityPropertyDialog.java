@@ -4,6 +4,7 @@ package view;
 import model.Facility;
 import util.WWJUtil;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -19,7 +20,6 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
     public FacilityPropertyDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        initialFacility();
     }
 
     /**
@@ -213,7 +213,7 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
     /************************************************************************************/
 
     private void facilityPropertyButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        Facility facility = WWJUtil.getFacility();
+        Facility facility = currentFacility;
         facility.setLatitude((Long.parseLong(facilityLat.getText())));
         facility.setLongitude(Long.parseLong(facilityLon.getText()));
         facility.setWidth(Integer.parseInt(facilityWidth.getText()));
@@ -221,7 +221,7 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         facility.setStartDate((Date)facilityStartDate.getValue());
         facility.setEndDate((Date)facilityEndDate.getValue());
 
-        WWJUtil.addFacilityToEarth();
+        WWJUtil.addFacilityToEarth(facility);
         this.dispose();
     }
 
@@ -230,17 +230,26 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
     }
 
     private void initialFacility() {
-        facilityName.setText(WWJUtil.getFacility().getDisplayName());
-        facilityLat.setText((WWJUtil.getFacility().getLatitude()) == null ? "" : WWJUtil.getFacility().getLatitude().toString());
-        facilityLon.setText((WWJUtil.getFacility().getLongitude()) == null ? "" : WWJUtil.getFacility().getLongitude().toString());
-        facilityWidth.setText((WWJUtil.getFacility().getWidth()) == null ? "" : WWJUtil.getFacility().getWidth().toString());
-        facilityLength.setText((WWJUtil.getFacility().getLength() == null) ? "" : WWJUtil.getFacility().getLength().toString());
+        facilityName.setText(currentFacility.getDisplayName());
+        facilityLat.setText((currentFacility.getLatitude()) == null ? "" : currentFacility.getLatitude().toString());
+        facilityLon.setText((currentFacility.getLongitude()) == null ? "" : currentFacility.getLongitude().toString());
+        facilityWidth.setText((currentFacility.getWidth()) == null ? "" : currentFacility.getWidth().toString());
+        facilityLength.setText((currentFacility.getLength() == null) ? "" : currentFacility.getLength().toString());
         facilityStartDate.getModel().setValue(new Date());
         facilityEndDate.getModel().setValue(new Date());
     }
 
+    private Facility currentFacility;
 
-/***********************************************************************************/
+    public Facility getCurrentFacility() {
+        return currentFacility;
+    }
+
+    public void setCurrentFacility(Facility currentFacility) {
+        this.currentFacility = currentFacility;
+        initialFacility();
+    }
+    /***********************************************************************************/
 /********************************** VARIABLES **************************************/
     /***********************************************************************************/
 

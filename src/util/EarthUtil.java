@@ -3,7 +3,6 @@ package util;
 import model.Facility;
 import view.FacilityDialog;
 
-import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
 import java.sql.*;
@@ -18,27 +17,31 @@ public class EarthUtil {
 
 
     public static void createFacilityTree() {
-        DefaultMutableTreeNode root = new DefaultMutableTreeNode("تجهیزات");
+        HierarchyTreeModel root = new HierarchyTreeModel("تجهیزات");
 
         List<Facility> parents = getParents();
         for (Facility facility : parents) {
-            DefaultMutableTreeNode parentNode = new DefaultMutableTreeNode(facility);
+            HierarchyTreeModel parentNode = new HierarchyTreeModel(facility);
+            parentNode.setLeaf(false);
             addNode(parentNode, facility);
             root.add(parentNode);
         }
+
         TreeModel treeModel = new DefaultTreeModel(root);
         FacilityDialog.facilityTree.setModel(treeModel);
     }
 
-    private static void addNode(DefaultMutableTreeNode treeNode, Facility parent) {
+    private static void addNode(HierarchyTreeModel treeNode, Facility parent) {
         List<Facility> children = getByParentId(parent.getId());
-        DefaultMutableTreeNode node = new DefaultMutableTreeNode(parent);
+        HierarchyTreeModel node;
         for (Facility facility : children) {
-            node = new DefaultMutableTreeNode(facility);
+            node = new HierarchyTreeModel(facility);
             if (facility.isParent()) {
                 addNode(node, facility);
+                node.setLeaf(false);
                 treeNode.add(node);
             } else {
+                node.setLeaf(true);
                 treeNode.add(node);
             }
         }

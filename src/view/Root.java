@@ -239,11 +239,13 @@ public class Root extends JFrame {
     }
 
     private void facilityListMouseClicked(java.awt.event.MouseEvent evt) {
+        Facility facility = ((JList<Facility>)evt.getSource()).getSelectedValue();
         if (evt.getClickCount() == 2) {
             FacilityPropertyDialog propertyDialog = new FacilityPropertyDialog(this, true);
+            propertyDialog.setCurrentFacility(facility);
             propertyDialog.setVisible(true);
         } else if (evt.getClickCount() == 1) {
-            WWJUtil.addFacilityToEarth();
+            WWJUtil.addFacilityToEarth(facility);
         }
     }
 
