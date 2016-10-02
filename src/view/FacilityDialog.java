@@ -103,7 +103,7 @@ public class FacilityDialog extends javax.swing.JDialog {
 /*****************************************************************************************/
 /*************************************  METHODS  *****************************************/
     /*****************************************************************************************/
-
+    private static DefaultListModel<Facility> model = new DefaultListModel<>();
 
     private void facilityTreeValueChanged(javax.swing.event.TreeSelectionEvent evt) {
         DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) ((JTree) evt.getSource()).
@@ -111,12 +111,16 @@ public class FacilityDialog extends javax.swing.JDialog {
         if (selectedNode.getChildCount() == 0) {
             Facility facility = (Facility) selectedNode.getUserObject();
             WWJUtil.getUserFacilities().add(facility);
-            Facility[] facilities = WWJUtil.getUserFacilities().toArray(new Facility[WWJUtil.getUserFacilities().size()]);
-            Root.facilityList.setListData(facilities);
+            model.addElement(facility);
+            Root.facilityList.setModel(model);
         }
     }
 
-/************************************************************************************************/
+    public static DefaultListModel<Facility> getModel() {
+        return model;
+    }
+
+    /************************************************************************************************/
 /************************************************************************************************/
     /************************************************************************************************/
 

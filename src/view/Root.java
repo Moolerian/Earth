@@ -214,7 +214,6 @@ public class Root extends JFrame {
 /****************************************************************************************/
 Facility facility = null ;
 
-
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {
         GoDialog goDialog = new GoDialog(this, false);
         goDialog.setVisible(true);
@@ -273,7 +272,11 @@ Facility facility = null ;
 
     private void removeFacilityFromListActionPerformed(java.awt.event.ActionEvent evt) {
         if(facility !=null){
-            //TODO remove facility
+            //TODO remove facility from User list
+            FacilityDialog.getModel().remove(facilityList.getSelectedIndex());
+            validate();
+            repaint();
+            doLayout();
         }
     }
 
