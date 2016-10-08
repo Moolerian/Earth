@@ -173,8 +173,8 @@ public class EarthUtil {
             statement.setLong(1, maxId + 1);
             statement.setString(2, toBeInserted.getDisplayName());
             statement.setString(3, toBeInserted.getTleFile());
-            statement.setInt(4, toBeInserted.getWidth());
-            statement.setInt(5, toBeInserted.getLength());
+            statement.setLong(4, toBeInserted.getWidth());
+            statement.setLong(5, toBeInserted.getLength());
 
             int rowsInserted = statement.executeUpdate();
 

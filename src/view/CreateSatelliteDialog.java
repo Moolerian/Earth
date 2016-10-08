@@ -170,8 +170,8 @@ public class CreateSatelliteDialog extends javax.swing.JDialog {
 
         Satellite satellite = new Satellite();
         satellite.setDisplayName(satelliteName.getText());
-        satellite.setWidth((Integer) width.getValue());
-        satellite.setLength((Integer) length.getValue());
+        satellite.setWidth((Long) width.getValue());
+        satellite.setLength((Long) length.getValue());
         satellite.setTleFile(selectedFile.getName());
 
         boolean isAddedSatellite = EarthUtil.addSatellite(satellite);
@@ -191,6 +191,7 @@ public class CreateSatelliteDialog extends javax.swing.JDialog {
                         JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "اشکال در ذخیره اطلاعات", "نا موفق", JOptionPane.ERROR_MESSAGE);
+                this.setVisible(false);
             } finally {
                 try {
                     inputStream.close();

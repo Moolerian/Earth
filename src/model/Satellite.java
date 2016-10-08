@@ -14,9 +14,9 @@ public class Satellite implements Serializable {
 
     private String tleFile;
 
-    private Integer width;
+    private Long width;
 
-    private Integer length;
+    private Long length;
 
     public Long getId() {
         return id;
@@ -42,19 +42,19 @@ public class Satellite implements Serializable {
         this.tleFile = tleFile;
     }
 
-    public Integer getWidth() {
+    public Long getWidth() {
         return width;
     }
 
-    public void setWidth(Integer width) {
+    public void setWidth(Long width) {
         this.width = width;
     }
 
-    public Integer getLength() {
+    public Long getLength() {
         return length;
     }
 
-    public void setLength(Integer length) {
+    public void setLength(Long length) {
         this.length = length;
     }
 }
