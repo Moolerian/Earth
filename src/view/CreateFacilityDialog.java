@@ -140,9 +140,9 @@ public class CreateFacilityDialog extends javax.swing.JDialog {
 
         boolean facilityAdded = EarthUtil.addFacility(facility);
         if(facilityAdded){
-
+            //TODO show succeed message to the user
         }else {
-
+            //TODO show error message to the user
         }
 
     }

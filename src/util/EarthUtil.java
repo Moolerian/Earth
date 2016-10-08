@@ -1,6 +1,7 @@
 package util;
 
 import model.Facility;
+import model.Satellite;
 import view.FacilityDialog;
 
 import javax.swing.tree.DefaultTreeModel;
@@ -134,6 +135,46 @@ public class EarthUtil {
             statement.setString(2, toBeInserted.getDisplayName());
             statement.setBoolean(3, toBeInserted.isParent());
             statement.setLong(4, toBeInserted.getParentId());
+
+            int rowsInserted = statement.executeUpdate();
+
+            if (rowsInserted > 0) {
+                System.out.println("A new user was inserted successfully!");
+                succeed = true;
+            }
+
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+
+        return succeed;
+    }
+
+    @SuppressWarnings({"SqlNoDataSourceInspection", "Duplicates", "SqlDialectInspection"})
+    public static boolean addSatellite(Satellite toBeInserted) {
+        Connection connection = connectDB();
+        PreparedStatement statement;
+        Long maxId = 0L;
+        boolean succeed = false;
+        try {
+            statement = connection.prepareStatement("SELECT max(id) AS id FROM satellite");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                maxId = resultSet.getLong("id");
+            }
+
+            String sql = "INSERT INTO satellite (id, displayName, tleFile, width,length) VALUES (?, ?, ?, ? , ?)";
+
+            statement = connection.prepareStatement(sql);
+            statement.setLong(1, maxId + 1);
+            statement.setString(2, toBeInserted.getDisplayName());
+            statement.setString(3, toBeInserted.getTleFile());
+            statement.setInt(4, toBeInserted.getWidth());
+            statement.setInt(5, toBeInserted.getLength());
 
             int rowsInserted = statement.executeUpdate();
 
