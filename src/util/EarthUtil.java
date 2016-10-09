@@ -222,4 +222,32 @@ public class EarthUtil {
         return facilities;
     }
 
+    private static List<Satellite> getSatellites() {
+        Connection connection = connectDB();
+        Statement statement;
+        List<Satellite> satellites = new ArrayList<>();
+        try {
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM satellite");
+            while (resultSet.next()) {
+                Long id = resultSet.getLong("id");
+                String displayName = resultSet.getString("displayName");
+                String tleFile = resultSet.getString("tleFile");
+                Long width = resultSet.getLong("width");
+                Long length = resultSet.getLong("length");
+
+                Satellite satellite = new Satellite(id,displayName,tleFile,width,length);
+                satellites.add(satellite);
+            }
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+
+        return satellites;
+    }
+
 }

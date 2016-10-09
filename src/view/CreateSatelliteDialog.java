@@ -179,24 +179,33 @@ public class CreateSatelliteDialog extends javax.swing.JDialog {
         FileOutputStream outputStream = null;
         if (isAddedSatellite) {
             try {
-                File file = new File("/resource/" + selectedFile.getName());
-                inputStream = new FileInputStream(selectedFile);
-                outputStream = new FileOutputStream(file);
-                byte[] buffer = new byte[1024];
-                int length;
-                while ((length = inputStream.read(buffer)) > 0) {
-                    outputStream.write(buffer, 0, length);
+                File file = new File("src/resource/tle/" + selectedFile.getName());
+                boolean newFileCreated = file.createNewFile();
+                if (newFileCreated) {
+                    inputStream = new FileInputStream(selectedFile);
+                    outputStream = new FileOutputStream(file);
+                    byte[] buffer = new byte[1024];
+                    int length;
+                    while ((length = inputStream.read(buffer)) > 0) {
+                        outputStream.write(buffer, 0, length);
+                    }
+
+                    this.dispose();
+                    JOptionPane.showMessageDialog(null, "اطلاعات با موفقست ذخیره شد", "موفق",
+                            JOptionPane.INFORMATION_MESSAGE);
                 }
-                JOptionPane.showMessageDialog(null, "اطلاعات با موفقست ذخیره شد", "موفق",
-                        JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception e) {
+                this.dispose();
+                e.printStackTrace();
                 JOptionPane.showMessageDialog(null, "اشکال در ذخیره اطلاعات", "نا موفق", JOptionPane.ERROR_MESSAGE);
-                this.setVisible(false);
             } finally {
                 try {
-                    inputStream.close();
-                    outputStream.close();
+                    if (inputStream != null && outputStream != null) {
+                        inputStream.close();
+                        outputStream.close();
+                    }
                 } catch (IOException e) {
+                    this.dispose();
                     JOptionPane.showMessageDialog(null, "اشکال در ذخیره اطلاعات", "نا موفق", JOptionPane.ERROR_MESSAGE);
                 }
 
@@ -225,3 +234,4 @@ public class CreateSatelliteDialog extends javax.swing.JDialog {
     private javax.swing.JLabel widthLabel;
     // End of variables declaration
 }
+

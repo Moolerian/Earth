@@ -18,6 +18,18 @@ public class Satellite implements Serializable {
 
     private Long length;
 
+
+    public Satellite(Long id , String displayName, String tleFile, Long width, Long length) {
+        this.id = id;
+        this.displayName = displayName;
+        this.tleFile = tleFile;
+        this.width = width;
+        this.length = length;
+    }
+
+    public Satellite() {
+    }
+
     public Long getId() {
         return id;
     }
