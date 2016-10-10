@@ -52,6 +52,10 @@ public class Root extends JFrame {
         runPassPrediction = new javax.swing.JButton();
         center = new javax.swing.JPanel();
         bottom = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        localTime = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        universalTime = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         left = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -59,12 +63,16 @@ public class Root extends JFrame {
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
         customeFacilityMenuItem = new javax.swing.JMenuItem();
+        jSeparator4 = new javax.swing.JPopupMenu.Separator();
         CustomSatelliteMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         compassMenuItem = new javax.swing.JCheckBoxMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
         worldMenuItem = new javax.swing.JCheckBoxMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
         scaleMenuItem = new javax.swing.JCheckBoxMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
@@ -90,7 +98,6 @@ public class Root extends JFrame {
             }
         });
 
-        runPassPrediction.setBackground(new java.awt.Color(255, 255, 255));
         runPassPrediction.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         runPassPrediction.setForeground(new java.awt.Color(0, 51, 153));
         runPassPrediction.setText("Run");
@@ -110,14 +117,14 @@ public class Root extends JFrame {
                                 .addComponent(Go)
                                 .addGap(18, 18, 18)
                                 .addComponent(removeFacilityFromList)
-                                .addGap(347, 347, 347)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
                                 .addComponent(runPassPrediction, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(447, Short.MAX_VALUE))
+                                .addContainerGap(448, Short.MAX_VALUE))
         );
         topLayout.setVerticalGroup(
                 topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(topLayout.createSequentialGroup()
-                                .addContainerGap()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(topLayout.createSequentialGroup()
                                                 .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -125,22 +132,52 @@ public class Root extends JFrame {
                                                         .addComponent(removeFacilityFromList))
                                                 .addGap(0, 0, Short.MAX_VALUE))
                                         .addComponent(runPassPrediction, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
-                                .addContainerGap())
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(top, java.awt.BorderLayout.PAGE_START);
 
         bottom.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("زمان محلی");
+
+        localTime.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        localTime.setForeground(new java.awt.Color(0, 0, 102));
+        localTime.setText("00:00:00");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("زمان جهانی");
+
+        universalTime.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        universalTime.setForeground(new java.awt.Color(0, 0, 102));
+        universalTime.setText("00:00:00");
+
         javax.swing.GroupLayout bottomLayout = new javax.swing.GroupLayout(bottom);
         bottom.setLayout(bottomLayout);
         bottomLayout.setHorizontalGroup(
                 bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 950, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bottomLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(universalTime)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(localTime, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
         );
         bottomLayout.setVerticalGroup(
                 bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 36, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bottomLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel1)
+                                        .addComponent(localTime)
+                                        .addComponent(jLabel2)
+                                        .addComponent(universalTime))
+                                .addContainerGap())
         );
 
         jButton1.setText("jButton1");
@@ -150,7 +187,7 @@ public class Root extends JFrame {
         centerLayout.setHorizontalGroup(
                 centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(bottom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(WWJUtil.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(WWJUtil.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, 954, Short.MAX_VALUE)
         );
         centerLayout.setVerticalGroup(
                 centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,7 +217,7 @@ public class Root extends JFrame {
         );
         leftLayout.setVerticalGroup(
                 leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
         );
 
         getContentPane().add(left, java.awt.BorderLayout.LINE_START);
@@ -194,6 +231,7 @@ public class Root extends JFrame {
             }
         });
         fileMenu.add(newMenuItem);
+        fileMenu.add(jSeparator3);
 
         customeFacilityMenuItem.setText("CustomFacility");
         customeFacilityMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -202,6 +240,7 @@ public class Root extends JFrame {
             }
         });
         fileMenu.add(customeFacilityMenuItem);
+        fileMenu.add(jSeparator4);
 
         CustomSatelliteMenuItem.setText("CustomSatellite");
         CustomSatelliteMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -225,6 +264,7 @@ public class Root extends JFrame {
             }
         });
         jMenu1.add(compassMenuItem);
+        jMenu1.add(jSeparator1);
 
         worldMenuItem.setText("worldView");
         worldMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -233,6 +273,7 @@ public class Root extends JFrame {
             }
         });
         jMenu1.add(worldMenuItem);
+        jMenu1.add(jSeparator2);
 
         scaleMenuItem.setText("Scale");
         scaleMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -503,16 +544,24 @@ public class Root extends JFrame {
     public static javax.swing.JList<Facility> facilityList;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPanel left;
+    private javax.swing.JLabel localTime;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem newMenuItem;
     private javax.swing.JButton removeFacilityFromList;
     private javax.swing.JButton runPassPrediction;
     private javax.swing.JCheckBoxMenuItem scaleMenuItem;
     private javax.swing.JPanel top;
+    private javax.swing.JLabel universalTime;
     private javax.swing.JCheckBoxMenuItem worldMenuItem;
     // End of variables declaration
 }
