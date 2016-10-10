@@ -6,15 +6,16 @@ import util.EarthUtil;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.tree.ExpandVetoException;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 /**
  * @author Mohammad
  */
-public class CreateSatelliteDialog extends javax.swing.JDialog {
+class CreateSatelliteDialog extends javax.swing.JDialog {
 
-    public CreateSatelliteDialog(java.awt.Frame parent, boolean modal) {
+    CreateSatelliteDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -150,15 +151,14 @@ public class CreateSatelliteDialog extends javax.swing.JDialog {
 
 /***************************************************************************************/
 /************************************ METHODS ******************************************/
-    /***************************************************************************************/
-
-    private JFileChooser fileDialog;
     private File selectedFile;
 
     private void showFileChooserActionPerformed(java.awt.event.ActionEvent evt) {
-        fileDialog = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
-        fileDialog.setFileFilter(filter);
+        JFileChooser fileDialog = new JFileChooser();
+//        FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
+//        fileDialog.setFileFilter(filter);
+        fileDialog.addChoosableFileFilter(new FileNameExtensionFilter(".txt", "txt"));
+        fileDialog.setAcceptAllFileFilterUsed(false);
         int returnVal = fileDialog.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             selectedFile = fileDialog.getSelectedFile();
@@ -169,56 +169,53 @@ public class CreateSatelliteDialog extends javax.swing.JDialog {
     private void saveSatelliteActionPerformed(java.awt.event.ActionEvent evt) {
 
         Satellite satellite = new Satellite();
-        satellite.setDisplayName(satelliteName.getText());
-        satellite.setWidth((Long) width.getValue());
-        satellite.setLength((Long) length.getValue());
-        satellite.setTleFile(selectedFile.getName());
+        FileInputStream inputStream;
+        FileOutputStream outputStream;
+        try {
+            File file = new File("src/resource/tle/" + selectedFile.getName());
+            boolean newFileCreated = file.createNewFile();
+            if (newFileCreated) {
 
-        boolean isAddedSatellite = EarthUtil.addSatellite(satellite);
-        FileInputStream inputStream = null;
-        FileOutputStream outputStream = null;
-        if (isAddedSatellite) {
-            try {
-                File file = new File("src/resource/tle/" + selectedFile.getName());
-                boolean newFileCreated = file.createNewFile();
-                if (newFileCreated) {
-                    inputStream = new FileInputStream(selectedFile);
-                    outputStream = new FileOutputStream(file);
-                    byte[] buffer = new byte[1024];
-                    int length;
-                    while ((length = inputStream.read(buffer)) > 0) {
-                        outputStream.write(buffer, 0, length);
-                    }
+                inputStream = new FileInputStream(selectedFile);
+                outputStream = new FileOutputStream(file);
+                byte[] buffer = new byte[1024];
+                int i;
+                while ((i = inputStream.read(buffer)) > 0) {
+                    outputStream.write(buffer, 0, i);
+                }
 
+                satellite.setDisplayName(satelliteName.getText());
+                satellite.setWidth((Long) width.getValue());
+                satellite.setLength((Long) length.getValue());
+                satellite.setTleFile(selectedFile.getName());
+                boolean isAddedSatellite = EarthUtil.addSatellite(satellite);
+                if (isAddedSatellite) {
                     this.dispose();
                     JOptionPane.showMessageDialog(null, "اطلاعات با موفقست ذخیره شد", "موفق",
                             JOptionPane.INFORMATION_MESSAGE);
-                }
-            } catch (Exception e) {
-                this.dispose();
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, "اشکال در ذخیره اطلاعات", "نا موفق", JOptionPane.ERROR_MESSAGE);
-            } finally {
-                try {
-                    if (inputStream != null && outputStream != null) {
-                        inputStream.close();
-                        outputStream.close();
-                    }
-                } catch (IOException e) {
+                } else {
                     this.dispose();
-                    JOptionPane.showMessageDialog(null, "اشکال در ذخیره اطلاعات", "نا موفق", JOptionPane.ERROR_MESSAGE);
-                }
+                    JOptionPane.showMessageDialog(null, "فایل ذخیره شد ولی ماهواره ذخیره نشد", "نا موفق", JOptionPane.ERROR_MESSAGE);
 
+                }
+            } else {
+                this.dispose();
+                JOptionPane.showMessageDialog(null, "خطا در ذخیره اطلاعات", "نا موفق", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "اشکال در ذخیره اطلاعات", "نا موفق", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            this.dispose();
+            JOptionPane.showMessageDialog(null, "خطا در ذخیره اطلاعات", "نا موفق", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+
         }
+
+
     }
 
 
 /******************************************************************************************/
 /************************************ VARIABLES *******************************************/
-    /******************************************************************************************/
+/******************************************************************************************/
 
     // Variables declaration - do not modify
     private javax.swing.JLabel jLabel1;

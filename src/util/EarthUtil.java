@@ -7,8 +7,8 @@ import view.FacilityDialog;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Date;
+import java.util.*;
 
 /**
  * Created by Mohammad on 9/16/2016.
@@ -222,7 +222,7 @@ public class EarthUtil {
         return facilities;
     }
 
-    private static List<Satellite> getSatellites() {
+    public static List<Satellite> getSatellites() {
         Connection connection = connectDB();
         Statement statement;
         List<Satellite> satellites = new ArrayList<>();
@@ -248,6 +248,10 @@ public class EarthUtil {
         }
 
         return satellites;
+    }
+
+    public static int daysBetween(java.util.Date d1, java.util.Date d2) {
+        return (int) ((d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
     }
 
 }

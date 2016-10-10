@@ -3,10 +3,24 @@ package view;
 import gov.nasa.worldwind.layers.WorldMapLayer;
 import gov.nasa.worldwindx.examples.ClickAndGoSelectListener;
 import model.Facility;
-import util.EarthUtil;
-import util.WWJUtil;
+import model.Satellite;
+import name.gano.astro.AER;
+import name.gano.astro.AstroConst;
+import name.gano.astro.MathUtils;
+import name.gano.astro.bodies.Sun;
+import name.gano.astro.coordinates.CoordinateConversion;
+import name.gano.astro.time.Time;
+import util.*;
 
 import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 /**
  * @author Mohammad
@@ -220,8 +234,8 @@ public class Root extends JFrame {
 
 /****************************************************************************************/
 /*************************************** METHODS ****************************************/
-/****************************************************************************************/
-Facility facility = null ;
+    /****************************************************************************************/
+    Facility facility = null;
 
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {
         GoDialog goDialog = new GoDialog(this, false);
@@ -263,7 +277,7 @@ Facility facility = null ;
     }
 
     private void facilityListMouseClicked(java.awt.event.MouseEvent evt) {
-        facility = ((JList<Facility>)evt.getSource()).getSelectedValue();
+        facility = ((JList<Facility>) evt.getSource()).getSelectedValue();
         if (evt.getClickCount() == 2) {
             FacilityPropertyDialog propertyDialog = new FacilityPropertyDialog(this, true);
             propertyDialog.setCurrentFacility(facility);
@@ -280,7 +294,7 @@ Facility facility = null ;
     }
 
     private void removeFacilityFromListActionPerformed(java.awt.event.ActionEvent evt) {
-        if(facility !=null){
+        if (facility != null) {
             FacilityDialog.getModel().remove(facilityList.getSelectedIndex());
             validate();
             repaint();
@@ -291,6 +305,126 @@ Facility facility = null ;
     private void CustomSatelliteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
         CreateSatelliteDialog createSatelliteDialog = new CreateSatelliteDialog(this, rootPaneCheckingEnabled);
         createSatelliteDialog.setVisible(true);
+    }
+
+    private void passPrediction() throws Exception {
+        int countFacilities = facilityList.getModel().getSize();
+        ListModel<Facility> listModel = facilityList.getModel();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSS z");
+        Time currentJulianDate = new Time();
+        currentJulianDate.setDateFormat(dateFormat);
+        List<Satellite> satellites = EarthUtil.getSatellites();
+
+
+        for (int index = 0; index < countFacilities; index++) {
+            Facility facility = listModel.getElementAt(index);
+            for (Satellite satellite : satellites) {
+                if (satellite.getLength() >= facility.getLength() && satellite.getWidth() >= facility.getWidth()) {
+
+                    // Define GroundStation
+                    double[] lla = {facility.getLatitude(), facility.getLongitude(), 0};
+                    GroundStation groundStation = new GroundStation("", lla, currentJulianDate.getJulianDate());
+                    groundStation.setElevationConst(0);
+
+                    // Define AbstractSatellite by reading tle file
+                    File file = new File("src/resource/tle/" + satellite.getTleFile());
+                    FileReader fileReader = new FileReader(file);
+                    BufferedReader bufferedReader = new BufferedReader(fileReader);
+                    String satelliteName = bufferedReader.readLine();
+                    String lineOne = bufferedReader.readLine();
+                    String lineTwo = bufferedReader.readLine();
+                    AbstractSatellite abstractSatellite = new SatelliteTleSGP4(satelliteName, lineOne, lineTwo);
+
+                    Calendar startCalendar = dateToCalendar(facility.getStartDate());
+                    Time start = new Time(startCalendar.get(Calendar.YEAR),
+                            startCalendar.get(Calendar.MONTH) + 1,
+                            startCalendar.get(Calendar.DAY_OF_MONTH),
+                            startCalendar.get(Calendar.HOUR_OF_DAY),
+                            startCalendar.get(Calendar.MINUTE),
+                            startCalendar.get(Calendar.SECOND));
+
+                    double timeSpanDays = EarthUtil.daysBetween(facility.getStartDate(), facility.getEndDate());
+
+                    runPassPrediction(timeSpanDays, groundStation, abstractSatellite, start);
+
+                }
+            }
+        }
+    }
+
+    //Convert Date to Calendar
+    private static Calendar dateToCalendar(Date date) {
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return calendar;
+
+    }
+
+    @SuppressWarnings("Duplicates")
+    public void runPassPrediction(double timeSpanDays, GroundStation gs, AbstractSatellite sat, Time startJulianDate) {
+        // get info:
+        double timeStepSec = 60d;
+
+        // start time Jul Date
+        double jdStart = startJulianDate.getJulianDate();
+
+        double time0, h0;
+        double time1 = jdStart;
+        double h1 = AER.calculate_AER(gs.getLla_deg_m(), sat.calculateTemePositionFromUT(time1), time1)[1] - gs.getElevationConst();
+
+        double lastRise = 0;
+
+        for (double jd = jdStart; jd <= jdStart + timeSpanDays; jd += timeStepSec / (60.0 * 60.0 * 24.0)) {
+            time0 = time1;
+            time1 = jd + timeStepSec / (60.0 * 60.0 * 24.0);
+
+            // calculate elevations at each time step (if needed)
+            h0 = h1;
+            // calculate the elevation at this newly visited point
+            h1 = AER.calculate_AER(gs.getLla_deg_m(), sat.calculateTemePositionFromUT(time1), time1)[1] - gs.getElevationConst();
+
+            // rise
+            if (h0 <= 0 && h1 > 0) {
+                double riseTime = findSatRiseSetRoot(sat, gs, time0, time1, h0, h1);
+                String crossTimeStr = startJulianDate.convertJD2String(riseTime);
+            }
+
+            // set
+            if (h1 <= 0 && h0 > 0) {
+                double setTime = findSatRiseSetRoot(sat, gs, time0, time1, h0, h1);
+                String crossTimeStr = startJulianDate.convertJD2String(setTime);
+
+                // add duration
+                if (lastRise > 0) {
+                    DecimalFormat fmt2Dig = new DecimalFormat("00.000");
+
+                    double duration = (setTime - lastRise) * 24.0 * 60.0 * 60.0; // seconds
+                    String durStr = fmt2Dig.format(duration);
+                }
+            }
+        }
+    }
+
+    @SuppressWarnings("Duplicates")
+    private double findSatRiseSetRoot(AbstractSatellite sat, GroundStation gs, double time0, double time1, double f0, double f1) {
+        double tol = (1.157407E-5) / 4;
+        while (Math.abs(time1 - time0) > 2 * tol) {
+            double timeMid = (time1 + time0) / 2.0;
+            double fmid = AER.calculate_AER(gs.getLla_deg_m(), sat.calculateTemePositionFromUT(timeMid), timeMid)[1] - gs.getElevationConst();
+            if (f0 * fmid > 0) {
+                f0 = fmid;
+                time0 = timeMid;
+
+            } else {
+                f1 = fmid;
+                time1 = timeMid;
+            }
+        }
+        double a = (f1 - f0) / (time1 - time0);
+        double b = f1 - a * time1;
+        return -b / a;
+
     }
 
     /**

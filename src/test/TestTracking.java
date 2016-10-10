@@ -21,20 +21,21 @@ public class TestTracking {
     Time currentJulianDate = new Time();
 
     public void testPass() throws Exception {
+        currentJulianDate.setDateFormat(dateformat);
 
         AbstractSatellite satellite = new SatelliteTleSGP4("ISS (ZARYA)",
-                "1 25544U 98067A   16272.20079568  .00004434  00000-0  74637-4 0  9991",
-                "2 25544  51.6450 264.1641 0006495  13.6278  73.6191 15.53958134 21013");
+                "1 25544U 98067A   16284.17420799  .00006778  00000-0  10957-3 0  9993",
+                "2 25544  51.6448 204.4850 0006808  61.5510  95.6847 15.54113582 22876");
 
 
         double[] lla = {35.69439,51.42151,0};
         GroundStation groundStation = new GroundStation("Tehran",lla,currentJulianDate.getJulianDate());
-        groundStation.setElevationConst(10);
+        groundStation.setElevationConst(0);
 
         satHash.put("ISS (ZARYA)",satellite);
         gsHash.put("Tehran",groundStation);
 
-        currentJulianDate.setDateFormat(dateformat);
+
         JTrackingPanel trackingBrowser = new JTrackingPanel(satHash,
                 gsHash,currentJulianDate.getDateTimeStr(),currentJulianDate);
 
