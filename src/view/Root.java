@@ -49,6 +49,7 @@ public class Root extends JFrame {
         top = new javax.swing.JPanel();
         Go = new javax.swing.JButton();
         removeFacilityFromList = new javax.swing.JButton();
+        runPassPrediction = new javax.swing.JButton();
         center = new javax.swing.JPanel();
         bottom = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -89,6 +90,17 @@ public class Root extends JFrame {
             }
         });
 
+        runPassPrediction.setBackground(new java.awt.Color(255, 255, 255));
+        runPassPrediction.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        runPassPrediction.setForeground(new java.awt.Color(0, 51, 153));
+        runPassPrediction.setText("Run");
+        runPassPrediction.setToolTipText("");
+        runPassPrediction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                runPassPredictionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout topLayout = new javax.swing.GroupLayout(top);
         top.setLayout(topLayout);
         topLayout.setHorizontalGroup(
@@ -98,16 +110,22 @@ public class Root extends JFrame {
                                 .addComponent(Go)
                                 .addGap(18, 18, 18)
                                 .addComponent(removeFacilityFromList)
-                                .addContainerGap(925, Short.MAX_VALUE))
+                                .addGap(347, 347, 347)
+                                .addComponent(runPassPrediction, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(447, Short.MAX_VALUE))
         );
         topLayout.setVerticalGroup(
                 topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(topLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Go)
-                                        .addComponent(removeFacilityFromList))
-                                .addContainerGap(32, Short.MAX_VALUE))
+                                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(topLayout.createSequentialGroup()
+                                                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(Go)
+                                                        .addComponent(removeFacilityFromList))
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                        .addComponent(runPassPrediction, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
+                                .addContainerGap())
         );
 
         getContentPane().add(top, java.awt.BorderLayout.PAGE_START);
@@ -307,6 +325,19 @@ public class Root extends JFrame {
         createSatelliteDialog.setVisible(true);
     }
 
+    private void runPassPredictionActionPerformed(java.awt.event.ActionEvent evt) {
+        if(facilityList.getModel().getSize()!=0){
+            try {
+                passPrediction();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "خطایی در پردازش شما رخ داده است.", "نا موفق", JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
+            }
+        }else {
+            JOptionPane.showMessageDialog(null, "طلفا تجهیزات خود را انتخاب کنید.", "نا موفق", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
     private void passPrediction() throws Exception {
         int countFacilities = facilityList.getModel().getSize();
         ListModel<Facility> listModel = facilityList.getModel();
@@ -335,7 +366,7 @@ public class Root extends JFrame {
                     String lineTwo = bufferedReader.readLine();
                     AbstractSatellite abstractSatellite = new SatelliteTleSGP4(satelliteName, lineOne, lineTwo);
 
-                    Calendar startCalendar = dateToCalendar(facility.getStartDate());
+                    Calendar startCalendar = EarthUtil.dateToCalendar(facility.getStartDate());
                     Time start = new Time(startCalendar.get(Calendar.YEAR),
                             startCalendar.get(Calendar.MONTH) + 1,
                             startCalendar.get(Calendar.DAY_OF_MONTH),
@@ -352,14 +383,7 @@ public class Root extends JFrame {
         }
     }
 
-    //Convert Date to Calendar
-    private static Calendar dateToCalendar(Date date) {
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        return calendar;
-
-    }
 
     @SuppressWarnings("Duplicates")
     public void runPassPrediction(double timeSpanDays, GroundStation gs, AbstractSatellite sat, Time startJulianDate) {
@@ -486,6 +510,7 @@ public class Root extends JFrame {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem newMenuItem;
     private javax.swing.JButton removeFacilityFromList;
+    private javax.swing.JButton runPassPrediction;
     private javax.swing.JCheckBoxMenuItem scaleMenuItem;
     private javax.swing.JPanel top;
     private javax.swing.JCheckBoxMenuItem worldMenuItem;
