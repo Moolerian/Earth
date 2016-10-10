@@ -1,9 +1,11 @@
 package util;
 
+import gov.nasa.worldwind.util.Logging;
 import model.Facility;
 import model.Satellite;
 import view.FacilityDialog;
 
+import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
 import java.sql.*;
@@ -261,6 +263,20 @@ public class EarthUtil {
         calendar.setTime(date);
         return calendar;
 
+    }
+
+
+    static {
+        try {
+            String architecture = System.getProperty("os.arch");
+            if ("x86".equals(architecture))
+                System.loadLibrary("WebView32");
+            else
+                System.loadLibrary("WebView64");
+        } catch (Throwable t) {
+            String message = Logging.getMessage("WebView.ExceptionCreatingWebView", t);
+            Logging.logger().severe(message);
+        }
     }
 
 }

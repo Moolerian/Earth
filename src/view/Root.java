@@ -452,13 +452,14 @@ public class Root extends JFrame {
             // rise
             if (h0 <= 0 && h1 > 0) {
                 double riseTime = findSatRiseSetRoot(sat, gs, time0, time1, h0, h1);
-                String crossTimeStr = startJulianDate.convertJD2String(riseTime);
+                lastRise = riseTime;
+                String riseTimeStr = startJulianDate.convertJD2String(riseTime);
             }
 
             // set
             if (h1 <= 0 && h0 > 0) {
                 double setTime = findSatRiseSetRoot(sat, gs, time0, time1, h0, h1);
-                String crossTimeStr = startJulianDate.convertJD2String(setTime);
+                String setTimeStr = startJulianDate.convertJD2String(setTime);
 
                 // add duration
                 if (lastRise > 0) {
