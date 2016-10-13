@@ -367,14 +367,14 @@ public class Root extends JFrame {
     }
 
     private void runPassPredictionActionPerformed(java.awt.event.ActionEvent evt) {
-        if(facilityList.getModel().getSize()!=0){
+        if (facilityList.getModel().getSize() != 0) {
             try {
                 passPrediction();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "خطایی در پردازش شما رخ داده است.", "نا موفق", JOptionPane.ERROR_MESSAGE);
                 e.printStackTrace();
             }
-        }else {
+        } else {
             JOptionPane.showMessageDialog(null, "طلفا تجهیزات خود را انتخاب کنید.", "نا موفق", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -414,6 +414,7 @@ public class Root extends JFrame {
                             startCalendar.get(Calendar.HOUR_OF_DAY),
                             startCalendar.get(Calendar.MINUTE),
                             startCalendar.get(Calendar.SECOND));
+                    start.setDateFormat(dateFormat);
 
                     double timeSpanDays = EarthUtil.daysBetween(facility.getStartDate(), facility.getEndDate());
 
@@ -425,9 +426,8 @@ public class Root extends JFrame {
     }
 
 
-
     @SuppressWarnings("Duplicates")
-    public void runPassPrediction(double timeSpanDays, GroundStation gs, AbstractSatellite sat, Time startJulianDate) {
+    private void runPassPrediction(double timeSpanDays, GroundStation gs, AbstractSatellite sat, Time startJulianDate) {
         // get info:
         double timeStepSec = 60d;
 
@@ -454,12 +454,14 @@ public class Root extends JFrame {
                 double riseTime = findSatRiseSetRoot(sat, gs, time0, time1, h0, h1);
                 lastRise = riseTime;
                 String riseTimeStr = startJulianDate.convertJD2String(riseTime);
+                System.out.println("riseTimeStr  :  " + riseTimeStr);
             }
 
             // set
             if (h1 <= 0 && h0 > 0) {
                 double setTime = findSatRiseSetRoot(sat, gs, time0, time1, h0, h1);
                 String setTimeStr = startJulianDate.convertJD2String(setTime);
+                System.out.println("setTimeStr  : " + setTimeStr);
 
                 // add duration
                 if (lastRise > 0) {
@@ -467,6 +469,7 @@ public class Root extends JFrame {
 
                     double duration = (setTime - lastRise) * 24.0 * 60.0 * 60.0; // seconds
                     String durStr = fmt2Dig.format(duration);
+                    System.out.println("durStr  :  " + durStr);
                 }
             }
         }
