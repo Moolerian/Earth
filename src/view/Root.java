@@ -5,23 +5,17 @@ import gov.nasa.worldwindx.examples.ClickAndGoSelectListener;
 import model.Facility;
 import model.Satellite;
 import name.gano.astro.AER;
-import name.gano.astro.AstroConst;
-import name.gano.astro.MathUtils;
-import name.gano.astro.bodies.Sun;
-import name.gano.astro.coordinates.CoordinateConversion;
 import name.gano.astro.time.Time;
 import util.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -58,6 +52,10 @@ public class Root extends JFrame {
         localTime = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         universalTime = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        localDate = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        universalDate = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         left = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -155,20 +153,42 @@ public class Root extends JFrame {
         universalTime.setForeground(new java.awt.Color(0, 0, 102));
         universalTime.setText("00:00:00");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setText("تاریخ محلی");
+
+        localDate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        localDate.setForeground(new java.awt.Color(0, 0, 102));
+        localDate.setText("14/10/2016");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setText("تاریخ جهانی");
+
+        universalDate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        universalDate.setForeground(new java.awt.Color(51, 0, 102));
+        universalDate.setText("14/10/2016");
+
         javax.swing.GroupLayout bottomLayout = new javax.swing.GroupLayout(bottom);
         bottom.setLayout(bottomLayout);
         bottomLayout.setHorizontalGroup(
                 bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bottomLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(104, 104, 104)
+                                .addComponent(universalDate, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(localDate, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addGap(58, 58, 58)
                                 .addComponent(universalTime)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
+                                .addGap(41, 41, 41)
                                 .addComponent(localTime, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bottomLayout.setVerticalGroup(
                 bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +198,11 @@ public class Root extends JFrame {
                                         .addComponent(jLabel1)
                                         .addComponent(localTime)
                                         .addComponent(jLabel2)
-                                        .addComponent(universalTime))
+                                        .addComponent(universalTime)
+                                        .addComponent(jLabel3)
+                                        .addComponent(localDate)
+                                        .addComponent(jLabel5)
+                                        .addComponent(universalDate))
                                 .addContainerGap())
         );
 
@@ -537,7 +561,7 @@ public class Root extends JFrame {
 
 /*****************************************************************************/
 /***************************** VARIABLES *************************************/
-    /*****************************************************************************/
+/*****************************************************************************/
 
     // Variables declaration - do not modify
     private javax.swing.JMenuItem CustomSatelliteMenuItem;
@@ -552,6 +576,8 @@ public class Root extends JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -560,6 +586,7 @@ public class Root extends JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPanel left;
+    private javax.swing.JLabel localDate;
     private javax.swing.JLabel localTime;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem newMenuItem;
@@ -567,6 +594,7 @@ public class Root extends JFrame {
     private javax.swing.JButton runPassPrediction;
     private javax.swing.JCheckBoxMenuItem scaleMenuItem;
     private javax.swing.JPanel top;
+    private javax.swing.JLabel universalDate;
     private javax.swing.JLabel universalTime;
     private javax.swing.JCheckBoxMenuItem worldMenuItem;
     // End of variables declaration
