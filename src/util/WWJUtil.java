@@ -51,11 +51,11 @@ public class WWJUtil {
         String balloonText;
         if (facility.getLatitude() == null || facility.getLongitude() == null) {
             position = new Position(LatLon.fromDegrees(iranLat, iranLon), 0d);
-            balloonText = "lat: " + iranLat + " lon : " + iranLon +
+            balloonText = "name :  " + facility.getDisplayName() + "lat: " + iranLat + " lon : " + iranLon +
                     " width: " + " not-defined" + " Length: " + "not-defined";
         } else {
             position = new Position(LatLon.fromDegrees(facility.getLatitude(), facility.getLongitude()), 0d);
-            balloonText = "lat: " + facility.getLatitude() + " lon : " + facility.getLongitude() +
+            balloonText = "name :  " + facility.getDisplayName() + "lat: " + facility.getLatitude() + " lon : " + facility.getLongitude() +
                     " width: " + facility.getWidth() + " Length: " + facility.getLength();
         }
 

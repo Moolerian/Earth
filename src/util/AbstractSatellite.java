@@ -13,6 +13,9 @@ import model.TLE;
 public abstract class AbstractSatellite implements Serializable
 {
 
+    public abstract String getDisplayName();
+
+    public abstract void setDisplayName(String displayName);
     /**
      * Calculate J2K position of this sat at a given JulDateTime (doesn't save the time) - can be useful for event searches or optimization
      * @param julDate - julian date

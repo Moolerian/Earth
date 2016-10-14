@@ -13,6 +13,8 @@ import name.gano.astro.time.Time;
 import util.*;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -386,6 +388,8 @@ public class Root extends JFrame {
         Time currentJulianDate = new Time();
         currentJulianDate.setDateFormat(dateFormat);
         List<Satellite> satellites = EarthUtil.getSatellites();
+        ResultDialog resultDialog = new ResultDialog(this, true);
+        DefaultTableModel model = (DefaultTableModel) ResultDialog.resultTable.getModel();
 
 
         for (int index = 0; index < countFacilities; index++) {
@@ -397,6 +401,7 @@ public class Root extends JFrame {
                     double[] lla = {facility.getLatitude(), facility.getLongitude(), 0};
                     GroundStation groundStation = new GroundStation("", lla, currentJulianDate.getJulianDate());
                     groundStation.setElevationConst(0);
+                    groundStation.setStationName(facility.getDisplayName());
 
                     // Define AbstractSatellite by reading tle file
                     File file = new File("src/resource/tle/" + satellite.getTleFile());
@@ -406,6 +411,8 @@ public class Root extends JFrame {
                     String lineOne = bufferedReader.readLine();
                     String lineTwo = bufferedReader.readLine();
                     AbstractSatellite abstractSatellite = new SatelliteTleSGP4(satelliteName, lineOne, lineTwo);
+                    abstractSatellite.setDisplayName(satelliteName);
+
 
                     Calendar startCalendar = EarthUtil.dateToCalendar(facility.getStartDate());
                     Time start = new Time(startCalendar.get(Calendar.YEAR),
@@ -418,7 +425,8 @@ public class Root extends JFrame {
 
                     double timeSpanDays = EarthUtil.daysBetween(facility.getStartDate(), facility.getEndDate());
 
-                    runPassPrediction(timeSpanDays, groundStation, abstractSatellite, start);
+                    runPassPrediction(timeSpanDays, groundStation, abstractSatellite, start, model);
+                    resultDialog.setVisible(true);
 
                 }
             }
@@ -427,51 +435,45 @@ public class Root extends JFrame {
 
 
     @SuppressWarnings("Duplicates")
-    private void runPassPrediction(double timeSpanDays, GroundStation gs, AbstractSatellite sat, Time startJulianDate) {
-        // get info:
+    private void runPassPrediction(double timeSpanDays, GroundStation gs, AbstractSatellite sat,
+                                   Time startJulianDate, DefaultTableModel model) {
         double timeStepSec = 60d;
-
-        // start time Jul Date
         double jdStart = startJulianDate.getJulianDate();
-
         double time0, h0;
         double time1 = jdStart;
         double h1 = AER.calculate_AER(gs.getLla_deg_m(), sat.calculateTemePositionFromUT(time1), time1)[1] - gs.getElevationConst();
-
         double lastRise = 0;
+        int row = -1;
 
         for (double jd = jdStart; jd <= jdStart + timeSpanDays; jd += timeStepSec / (60.0 * 60.0 * 24.0)) {
             time0 = time1;
             time1 = jd + timeStepSec / (60.0 * 60.0 * 24.0);
-
-            // calculate elevations at each time step (if needed)
             h0 = h1;
-            // calculate the elevation at this newly visited point
             h1 = AER.calculate_AER(gs.getLla_deg_m(), sat.calculateTemePositionFromUT(time1), time1)[1] - gs.getElevationConst();
-
             // rise
             if (h0 <= 0 && h1 > 0) {
                 double riseTime = findSatRiseSetRoot(sat, gs, time0, time1, h0, h1);
                 lastRise = riseTime;
                 String riseTimeStr = startJulianDate.convertJD2String(riseTime);
-                System.out.println("riseTimeStr  :  " + riseTimeStr);
+                model.addRow(new Object[]{gs.getStationName(), sat.getDisplayName(), riseTimeStr, null});
+                row++;
             }
 
             // set
             if (h1 <= 0 && h0 > 0) {
                 double setTime = findSatRiseSetRoot(sat, gs, time0, time1, h0, h1);
                 String setTimeStr = startJulianDate.convertJD2String(setTime);
-                System.out.println("setTimeStr  : " + setTimeStr);
-
                 // add duration
                 if (lastRise > 0) {
                     DecimalFormat fmt2Dig = new DecimalFormat("00.000");
 
                     double duration = (setTime - lastRise) * 24.0 * 60.0 * 60.0; // seconds
                     String durStr = fmt2Dig.format(duration);
-                    System.out.println("durStr  :  " + durStr);
+                    model.setValueAt(durStr, row, 3);
                 }
             }
+
+
         }
     }
 

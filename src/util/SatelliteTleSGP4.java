@@ -23,6 +23,8 @@ import net.java.joglutils.model.ModelFactory;
  */
 public class SatelliteTleSGP4 extends AbstractSatellite
 {
+
+    private String displayName;
     private TLE tle;
     private SGP4SatData sgp4SatData; // sgp4 propogator data
 
@@ -124,6 +126,16 @@ public class SatelliteTleSGP4 extends AbstractSatellite
         // calculate TLE age
         tleEpochJD = sgp4SatData.jdsatepoch;
 
+    }
+
+    @Override
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    @Override
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     @Override
