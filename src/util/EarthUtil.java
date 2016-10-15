@@ -1,5 +1,6 @@
 package util;
 
+import gov.nasa.worldwind.Configuration;
 import gov.nasa.worldwind.util.Logging;
 import model.Facility;
 import model.Satellite;
@@ -266,17 +267,6 @@ public class EarthUtil {
     }
 
 
-    static {
-        try {
-            String architecture = System.getProperty("os.arch");
-            if ("x86".equals(architecture))
-                System.loadLibrary("WebView32");
-            else
-                System.loadLibrary("WebView64");
-        } catch (Throwable t) {
-            String message = Logging.getMessage("WebView.ExceptionCreatingWebView", t);
-            Logging.logger().severe(message);
-        }
-    }
+
 
 }

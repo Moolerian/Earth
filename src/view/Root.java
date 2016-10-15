@@ -1,6 +1,8 @@
 package view;
 
+import gov.nasa.worldwind.Configuration;
 import gov.nasa.worldwind.layers.WorldMapLayer;
+import gov.nasa.worldwind.util.Logging;
 import gov.nasa.worldwindx.examples.ClickAndGoSelectListener;
 import model.Facility;
 import model.Satellite;
@@ -29,6 +31,23 @@ public class Root extends JFrame {
     public Root() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+    }
+
+    static {
+        try {
+            String architecture = System.getProperty("os.arch");
+            if ("x86".equals(architecture))
+                System.loadLibrary("WebView32");
+            else
+                System.loadLibrary("WebView64");
+        } catch (Throwable t) {
+            String message = Logging.getMessage("WebView.ExceptionCreatingWebView", t);
+            Logging.logger().severe(message);
+        }
+
+        Configuration.setValue(
+                "gov.nasa.worldwind.avkey.DataFileStoreConfigurationFileName",
+                "src/resource/CacheLocationConfiguration.xml");
     }
 
 
@@ -356,9 +375,13 @@ public class Root extends JFrame {
     }
 
     private void newMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
-        FacilityDialog facilityDialog = new FacilityDialog(this, true);
-        EarthUtil.createFacilityTree();
-        facilityDialog.setVisible(true);
+        try {
+            FacilityDialog facilityDialog = new FacilityDialog(this, true);
+            EarthUtil.createFacilityTree();
+            facilityDialog.setVisible(true);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "خطایی در پردازش شما رخ داده است.", "نا موفق", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     private void facilityListMouseClicked(java.awt.event.MouseEvent evt) {
