@@ -73,6 +73,8 @@ public class Root extends JFrame {
         Compass = new javax.swing.JToggleButton();
         WorldView = new javax.swing.JToggleButton();
         Scale = new javax.swing.JToggleButton();
+        Save = new javax.swing.JButton();
+        Exit = new javax.swing.JButton();
         center = new javax.swing.JPanel();
         bottom = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -110,7 +112,7 @@ public class Root extends JFrame {
         top.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         top.setPreferredSize(new java.awt.Dimension(701, 70));
 
-        Go.setText("Go");
+        Go.setText("GoToLatLon");
         Go.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GoActionPerformed(evt);
@@ -127,7 +129,7 @@ public class Root extends JFrame {
         });
 
         runPassPrediction.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        runPassPrediction.setForeground(new java.awt.Color(0, 51, 153));
+        runPassPrediction.setForeground(new java.awt.Color(255, 255, 0));
         runPassPrediction.setText("Run");
         runPassPrediction.setToolTipText("");
         runPassPrediction.addActionListener(new java.awt.event.ActionListener() {
@@ -192,6 +194,20 @@ public class Root extends JFrame {
             }
         });
 
+        Save.setText("Save");
+        Save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveActionPerformed(evt);
+            }
+        });
+
+        Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout topLayout = new javax.swing.GroupLayout(top);
         top.setLayout(topLayout);
         topLayout.setHorizontalGroup(
@@ -199,53 +215,51 @@ public class Root extends JFrame {
                         .addGroup(topLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(Go)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(removeFacilityFromList)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(NewFacility)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(CustomFacility, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(CustomSatellite, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(runPassPrediction, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Compass, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Scale)
                                 .addGap(18, 18, 18)
                                 .addComponent(WorldView)
                                 .addGap(18, 18, 18)
-                                .addComponent(Scale)
+                                .addComponent(Compass, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(Help)
                                 .addGap(18, 18, 18)
-                                .addComponent(About, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                .addComponent(About, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Save)
+                                .addGap(18, 18, 18)
+                                .addComponent(Exit)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
+                                .addComponent(runPassPrediction, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
         );
         topLayout.setVerticalGroup(
                 topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(topLayout.createSequentialGroup()
-                                .addContainerGap(21, Short.MAX_VALUE)
-                                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(topLayout.createSequentialGroup()
-                                                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(Help)
-                                                        .addComponent(About)
-                                                        .addComponent(Compass)
-                                                        .addComponent(WorldView)
-                                                        .addComponent(Scale))
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                        .addGroup(topLayout.createSequentialGroup()
-                                                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(Go)
-                                                        .addComponent(removeFacilityFromList)
-                                                        .addComponent(NewFacility)
-                                                        .addComponent(CustomFacility)
-                                                        .addComponent(CustomSatellite))
-                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGroup(topLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(runPassPrediction, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 11, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(runPassPrediction, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Go)
+                                        .addComponent(removeFacilityFromList)
+                                        .addComponent(NewFacility)
+                                        .addComponent(CustomFacility)
+                                        .addComponent(CustomSatellite)
+                                        .addComponent(Scale)
+                                        .addComponent(WorldView)
+                                        .addComponent(Compass)
+                                        .addComponent(Help)
+                                        .addComponent(About)
+                                        .addComponent(Save)
+                                        .addComponent(Exit))
+                                .addContainerGap())
         );
 
         getContentPane().add(top, java.awt.BorderLayout.PAGE_START);
@@ -256,28 +270,28 @@ public class Root extends JFrame {
         jLabel1.setText("زمان محلی");
 
         localTime.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        localTime.setForeground(new java.awt.Color(0, 0, 102));
+        localTime.setForeground(new java.awt.Color(255, 255, 0));
         localTime.setText("00:00:00");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("زمان جهانی");
 
         universalTime.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        universalTime.setForeground(new java.awt.Color(0, 0, 102));
+        universalTime.setForeground(new java.awt.Color(255, 255, 0));
         universalTime.setText("00:00:00");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("تاریخ محلی");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("14/10/2016");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("تاریخ جهانی");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 0, 102));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 0));
         jLabel6.setText("14/10/2016");
 
         javax.swing.GroupLayout bottomLayout = new javax.swing.GroupLayout(bottom);
@@ -326,12 +340,12 @@ public class Root extends JFrame {
         centerLayout.setHorizontalGroup(
                 centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(bottom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(WWJUtil.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, 957, Short.MAX_VALUE)
+                        .addComponent(WWJUtil.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, 1401, Short.MAX_VALUE)
         );
         centerLayout.setVerticalGroup(
                 centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, centerLayout.createSequentialGroup()
-                                .addComponent(WWJUtil.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                                .addComponent(WWJUtil.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -356,7 +370,7 @@ public class Root extends JFrame {
         );
         leftLayout.setVerticalGroup(
                 leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
         );
 
         getContentPane().add(left, java.awt.BorderLayout.LINE_START);
@@ -441,7 +455,7 @@ public class Root extends JFrame {
 
 /****************************************************************************************/
 /*************************************** METHODS ****************************************/
-/****************************************************************************************/
+    /****************************************************************************************/
     Facility facility = null;
 
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {
@@ -482,7 +496,7 @@ public class Root extends JFrame {
             FacilityDialog facilityDialog = new FacilityDialog(this, true);
             EarthUtil.createFacilityTree();
             facilityDialog.setVisible(true);
-        }catch (Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "خطایی در پردازش شما رخ داده است.", "نا موفق", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -552,6 +566,21 @@ public class Root extends JFrame {
 
     private void SaveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+    }
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {
+
+        int confirmed = JOptionPane.showConfirmDialog(null,
+                "آیا تمایل به خروج از برنامه را دارید ؟", "خروج",
+                JOptionPane.YES_NO_OPTION);
+
+        if (confirmed == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }
 
     private void runPassPredictionActionPerformed(java.awt.event.ActionEvent evt) {
@@ -689,36 +718,9 @@ public class Root extends JFrame {
      */
     public static void main(String args[]) {
         WWJUtil.createWWJ();
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-
         try {
-            // select Look and Feel
             UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
-            // start application
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
@@ -732,18 +734,20 @@ public class Root extends JFrame {
 
 /*****************************************************************************/
 /***************************** VARIABLES *************************************/
-/*****************************************************************************/
+    /*****************************************************************************/
 
 
 // Variables declaration - do not modify
-private javax.swing.JButton About;
+    private javax.swing.JButton About;
     private javax.swing.JToggleButton Compass;
     private javax.swing.JButton CustomFacility;
     private javax.swing.JButton CustomSatellite;
     private javax.swing.JMenuItem CustomSatelliteMenuItem;
+    private javax.swing.JButton Exit;
     private javax.swing.JButton Go;
     private javax.swing.JButton Help;
     private javax.swing.JButton NewFacility;
+    private javax.swing.JButton Save;
     private javax.swing.JMenuItem SaveMenuItem;
     private javax.swing.JToggleButton Scale;
     private javax.swing.JToggleButton WorldView;

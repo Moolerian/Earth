@@ -73,7 +73,7 @@ public class WWJUtil {
         balloon.setAttributes(attrs);
 
         PointPlacemark placemark = new PointPlacemark(position);
-        placemark.setLabelText(facility.getId().toString());
+        placemark.setLabelText("\u202B" + facility.getDisplayName());
         placemark.setValue(AVKey.BALLOON, balloon);
 
         RenderableLayer layer = new RenderableLayer();
