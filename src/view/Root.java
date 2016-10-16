@@ -65,6 +65,14 @@ public class Root extends JFrame {
         Go = new javax.swing.JButton();
         removeFacilityFromList = new javax.swing.JButton();
         runPassPrediction = new javax.swing.JButton();
+        NewFacility = new javax.swing.JButton();
+        CustomFacility = new javax.swing.JButton();
+        CustomSatellite = new javax.swing.JButton();
+        Help = new javax.swing.JButton();
+        About = new javax.swing.JButton();
+        Compass = new javax.swing.JToggleButton();
+        WorldView = new javax.swing.JToggleButton();
+        Scale = new javax.swing.JToggleButton();
         center = new javax.swing.JPanel();
         bottom = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -72,9 +80,9 @@ public class Root extends JFrame {
         jLabel2 = new javax.swing.JLabel();
         universalTime = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        localDate = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        universalDate = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         left = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -87,6 +95,7 @@ public class Root extends JFrame {
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
         CustomSatelliteMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
+        SaveMenuItem = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         compassMenuItem = new javax.swing.JCheckBoxMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
@@ -127,6 +136,62 @@ public class Root extends JFrame {
             }
         });
 
+        NewFacility.setText("NewFacility");
+        NewFacility.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NewFacilityActionPerformed(evt);
+            }
+        });
+
+        CustomFacility.setText("CustomFacility");
+        CustomFacility.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CustomFacilityActionPerformed(evt);
+            }
+        });
+
+        CustomSatellite.setText("CustomSatellite");
+        CustomSatellite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CustomSatelliteActionPerformed(evt);
+            }
+        });
+
+        Help.setText("Help");
+        Help.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HelpActionPerformed(evt);
+            }
+        });
+
+        About.setText("About");
+        About.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AboutActionPerformed(evt);
+            }
+        });
+
+        Compass.setText("Compass");
+        Compass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CompassActionPerformed(evt);
+            }
+        });
+
+        WorldView.setText("WorldView");
+        WorldView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WorldViewActionPerformed(evt);
+            }
+        });
+
+        Scale.setText("Scale");
+        Scale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ScaleActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout topLayout = new javax.swing.GroupLayout(top);
         top.setLayout(topLayout);
         topLayout.setHorizontalGroup(
@@ -134,24 +199,53 @@ public class Root extends JFrame {
                         .addGroup(topLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(Go)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(removeFacilityFromList)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(NewFacility)
+                                .addGap(18, 18, 18)
+                                .addComponent(CustomFacility, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(CustomSatellite, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(runPassPrediction, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(448, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(Compass, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(WorldView)
+                                .addGap(18, 18, 18)
+                                .addComponent(Scale)
+                                .addGap(18, 18, 18)
+                                .addComponent(Help)
+                                .addGap(18, 18, 18)
+                                .addComponent(About, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                .addContainerGap())
         );
         topLayout.setVerticalGroup(
                 topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(topLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap(21, Short.MAX_VALUE)
                                 .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(topLayout.createSequentialGroup()
                                                 .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(Go)
-                                                        .addComponent(removeFacilityFromList))
+                                                        .addComponent(Help)
+                                                        .addComponent(About)
+                                                        .addComponent(Compass)
+                                                        .addComponent(WorldView)
+                                                        .addComponent(Scale))
                                                 .addGap(0, 0, Short.MAX_VALUE))
-                                        .addComponent(runPassPrediction, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(topLayout.createSequentialGroup()
+                                                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(Go)
+                                                        .addComponent(removeFacilityFromList)
+                                                        .addComponent(NewFacility)
+                                                        .addComponent(CustomFacility)
+                                                        .addComponent(CustomSatellite))
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(topLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(runPassPrediction, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         getContentPane().add(top, java.awt.BorderLayout.PAGE_START);
@@ -175,39 +269,39 @@ public class Root extends JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("تاریخ محلی");
 
-        localDate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        localDate.setForeground(new java.awt.Color(0, 0, 102));
-        localDate.setText("14/10/2016");
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel4.setText("14/10/2016");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("تاریخ جهانی");
 
-        universalDate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        universalDate.setForeground(new java.awt.Color(51, 0, 102));
-        universalDate.setText("14/10/2016");
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 0, 102));
+        jLabel6.setText("14/10/2016");
 
         javax.swing.GroupLayout bottomLayout = new javax.swing.GroupLayout(bottom);
         bottom.setLayout(bottomLayout);
         bottomLayout.setHorizontalGroup(
                 bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bottomLayout.createSequentialGroup()
-                                .addGap(104, 104, 104)
-                                .addComponent(universalDate, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(localDate, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel3)
-                                .addGap(58, 58, 58)
+                                .addGap(18, 18, 18)
                                 .addComponent(universalTime)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel2)
-                                .addGap(41, 41, 41)
-                                .addComponent(localTime, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
+                                .addComponent(localTime, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap())
         );
         bottomLayout.setVerticalGroup(
                 bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,9 +313,9 @@ public class Root extends JFrame {
                                         .addComponent(jLabel2)
                                         .addComponent(universalTime)
                                         .addComponent(jLabel3)
-                                        .addComponent(localDate)
+                                        .addComponent(jLabel4)
                                         .addComponent(jLabel5)
-                                        .addComponent(universalDate))
+                                        .addComponent(jLabel6))
                                 .addContainerGap())
         );
 
@@ -232,7 +326,7 @@ public class Root extends JFrame {
         centerLayout.setHorizontalGroup(
                 centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(bottom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(WWJUtil.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, 954, Short.MAX_VALUE)
+                        .addComponent(WWJUtil.getWwj(), javax.swing.GroupLayout.DEFAULT_SIZE, 957, Short.MAX_VALUE)
         );
         centerLayout.setVerticalGroup(
                 centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,6 +392,15 @@ public class Root extends JFrame {
         menuBar.add(fileMenu);
 
         editMenu.setText("Edit");
+
+        SaveMenuItem.setText("Save");
+        SaveMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveMenuItemActionPerformed(evt);
+            }
+        });
+        editMenu.add(SaveMenuItem);
+
         menuBar.add(editMenu);
 
         jMenu1.setText("view");
@@ -413,6 +516,42 @@ public class Root extends JFrame {
     private void CustomSatelliteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
         CreateSatelliteDialog createSatelliteDialog = new CreateSatelliteDialog(this, rootPaneCheckingEnabled);
         createSatelliteDialog.setVisible(true);
+    }
+
+    private void NewFacilityActionPerformed(java.awt.event.ActionEvent evt) {
+        newMenuItemActionPerformed(evt);
+    }
+
+    private void CustomFacilityActionPerformed(java.awt.event.ActionEvent evt) {
+        customeFacilityMenuItemActionPerformed(evt);
+    }
+
+    private void CustomSatelliteActionPerformed(java.awt.event.ActionEvent evt) {
+        CustomSatelliteMenuItemActionPerformed(evt);
+    }
+
+    private void CompassActionPerformed(java.awt.event.ActionEvent evt) {
+        System.out.println(evt);
+    }
+
+    private void WorldViewActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void ScaleActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void HelpActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void AboutActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void SaveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
     }
 
     private void runPassPredictionActionPerformed(java.awt.event.ActionEvent evt) {
@@ -586,9 +725,19 @@ public class Root extends JFrame {
 /***************************** VARIABLES *************************************/
 /*****************************************************************************/
 
-    // Variables declaration - do not modify
+
+// Variables declaration - do not modify
+private javax.swing.JButton About;
+    private javax.swing.JToggleButton Compass;
+    private javax.swing.JButton CustomFacility;
+    private javax.swing.JButton CustomSatellite;
     private javax.swing.JMenuItem CustomSatelliteMenuItem;
     private javax.swing.JButton Go;
+    private javax.swing.JButton Help;
+    private javax.swing.JButton NewFacility;
+    private javax.swing.JMenuItem SaveMenuItem;
+    private javax.swing.JToggleButton Scale;
+    private javax.swing.JToggleButton WorldView;
     private javax.swing.JPanel bottom;
     private javax.swing.JPanel center;
     private javax.swing.JCheckBoxMenuItem compassMenuItem;
@@ -600,7 +749,9 @@ public class Root extends JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -609,7 +760,6 @@ public class Root extends JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPanel left;
-    private javax.swing.JLabel localDate;
     private javax.swing.JLabel localTime;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem newMenuItem;
@@ -617,7 +767,6 @@ public class Root extends JFrame {
     private javax.swing.JButton runPassPrediction;
     private javax.swing.JCheckBoxMenuItem scaleMenuItem;
     private javax.swing.JPanel top;
-    private javax.swing.JLabel universalDate;
     private javax.swing.JLabel universalTime;
     private javax.swing.JCheckBoxMenuItem worldMenuItem;
     // End of variables declaration
