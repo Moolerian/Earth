@@ -18,12 +18,14 @@ import java.io.FileReader;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 /**
  * @author Mohammad
  */
-public class Root extends JFrame {
+public class Root extends JFrame implements Runnable {
 
     /**
      * Creates new form root
@@ -31,6 +33,32 @@ public class Root extends JFrame {
     public Root() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        Thread thread = new Thread(this);
+        thread.start();
+    }
+
+
+    @Override
+    public void run() {
+        /******* Date Section*******/
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = Calendar.getInstance().getTime();
+        this.localDate.setText(EarthUtil.convertJulianToPersianForUi(date));
+        this.universalDate.setText(dateFormat.format(date));
+
+        /******** Time Section *********/
+        SimpleDateFormat localFormatter = new SimpleDateFormat("hh:mm:ss");
+        SimpleDateFormat universalFormatter = new SimpleDateFormat("hh:mm:ss");
+        universalFormatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+        try {
+            while (true) {
+                Date time = Calendar.getInstance().getTime();
+                this.localTime.setText(localFormatter.format(time));
+                this.universalTime.setText(universalFormatter.format(time));
+                Thread.sleep(1000);
+            }
+        } catch (Exception ignored) {
+        }
     }
 
     static {
@@ -49,6 +77,10 @@ public class Root extends JFrame {
                 "gov.nasa.worldwind.avkey.DataFileStoreConfigurationFileName",
                 "src/resource/CacheLocationConfiguration.xml");
     }
+
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
 
 
     /**
@@ -82,9 +114,9 @@ public class Root extends JFrame {
         jLabel2 = new javax.swing.JLabel();
         universalTime = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        localDate = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        universalDate = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         left = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -283,16 +315,16 @@ public class Root extends JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("تاریخ محلی");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel4.setText("14/10/2016");
+        localDate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        localDate.setForeground(new java.awt.Color(255, 255, 0));
+        localDate.setText("14/10/2016");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("تاریخ جهانی");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel6.setText("14/10/2016");
+        universalDate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        universalDate.setForeground(new java.awt.Color(255, 255, 0));
+        universalDate.setText("14/10/2016");
 
         javax.swing.GroupLayout bottomLayout = new javax.swing.GroupLayout(bottom);
         bottom.setLayout(bottomLayout);
@@ -300,11 +332,11 @@ public class Root extends JFrame {
                 bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bottomLayout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(universalDate, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(localDate, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
@@ -327,9 +359,9 @@ public class Root extends JFrame {
                                         .addComponent(jLabel2)
                                         .addComponent(universalTime)
                                         .addComponent(jLabel3)
-                                        .addComponent(jLabel4)
+                                        .addComponent(localDate)
                                         .addComponent(jLabel5)
-                                        .addComponent(jLabel6))
+                                        .addComponent(universalDate))
                                 .addContainerGap())
         );
 
@@ -455,7 +487,8 @@ public class Root extends JFrame {
 
 /****************************************************************************************/
 /*************************************** METHODS ****************************************/
-    /****************************************************************************************/
+/****************************************************************************************/
+
     Facility facility = null;
 
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {
@@ -641,11 +674,12 @@ public class Root extends JFrame {
                     double timeSpanDays = EarthUtil.daysBetween(facility.getStartDate(), facility.getEndDate());
 
                     runPassPrediction(timeSpanDays, groundStation, abstractSatellite, start, model);
-                    resultDialog.setVisible(true);
+
 
                 }
             }
         }
+        resultDialog.setVisible(true);
     }
 
 
@@ -677,7 +711,6 @@ public class Root extends JFrame {
             // set
             if (h1 <= 0 && h0 > 0) {
                 double setTime = findSatRiseSetRoot(sat, gs, time0, time1, h0, h1);
-                String setTimeStr = startJulianDate.convertJD2String(setTime);
                 // add duration
                 if (lastRise > 0) {
                     DecimalFormat fmt2Dig = new DecimalFormat("00.000");
@@ -737,7 +770,7 @@ public class Root extends JFrame {
     /*****************************************************************************/
 
 
-// Variables declaration - do not modify
+    // Variables declaration - do not modify
     private javax.swing.JButton About;
     private javax.swing.JToggleButton Compass;
     private javax.swing.JButton CustomFacility;
@@ -762,9 +795,7 @@ public class Root extends JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -773,6 +804,7 @@ public class Root extends JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPanel left;
+    private javax.swing.JLabel localDate;
     private javax.swing.JLabel localTime;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem newMenuItem;
@@ -780,6 +812,7 @@ public class Root extends JFrame {
     private javax.swing.JButton runPassPrediction;
     private javax.swing.JCheckBoxMenuItem scaleMenuItem;
     private javax.swing.JPanel top;
+    private javax.swing.JLabel universalDate;
     private javax.swing.JLabel universalTime;
     private javax.swing.JCheckBoxMenuItem worldMenuItem;
     // End of variables declaration

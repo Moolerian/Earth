@@ -1,9 +1,11 @@
 package util;
 
+import com.ibm.icu.util.*;
 import gov.nasa.worldwind.Configuration;
 import gov.nasa.worldwind.util.Logging;
 import model.Facility;
 import model.Satellite;
+import org.joda.time.DateTime;
 import view.FacilityDialog;
 
 import javax.swing.*;
@@ -12,6 +14,7 @@ import javax.swing.tree.TreeModel;
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
+import java.util.Calendar;
 
 /**
  * Created by Mohammad on 9/16/2016.
@@ -264,6 +267,68 @@ public class EarthUtil {
         calendar.setTime(date);
         return calendar;
 
+    }
+
+    public static String convertJulianToPersianForUi(java.util.Date date) {
+        if (date == null) {
+            return "";
+        }
+        com.ibm.icu.util.Calendar calendar = j2p(date);
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        return year + "/" + (month + 1) + "/" + day;
+
+    }
+
+    public static java.util.Date convertPersianToJulian(String persianDate) {
+        String[] parts = persianDate.split("[/-]");
+        return convertPersianToJulian(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]) - 1, Integer.parseInt(parts[2]));
+    }
+
+    private static java.util.Date convertPersianToJulian(int year, int month, int day_of_month) {
+
+        com.ibm.icu.util.Calendar calendar = p2j(year, month, day_of_month);
+        return new DateTime(calendar.getTimeInMillis()).toDate();
+    }
+
+    private static com.ibm.icu.util.Calendar p2j(int year, int month, int day_of_month) {
+        String timeZoneId = "Iran";
+        String loc = "fa_IR";
+
+        com.ibm.icu.util.TimeZone timeZone = com.ibm.icu.util.TimeZone.getTimeZone(timeZoneId);
+        com.ibm.icu.util.ULocale uLocale = com.ibm.icu.util.ULocale.createCanonical(loc);
+        com.ibm.icu.util.Calendar calendar = new com.ghasemkiani.util.icu.PersianCalendar(timeZone, uLocale);
+
+        calendar.set(com.ibm.icu.util.Calendar.YEAR, year);
+        calendar.set(com.ibm.icu.util.Calendar.MONTH, month);
+        calendar.set(com.ibm.icu.util.Calendar.DAY_OF_MONTH, day_of_month);
+
+        return clearTime(calendar);
+    }
+
+    private static com.ibm.icu.util.Calendar clearTime(com.ibm.icu.util.Calendar calendar) {
+        calendar.set(com.ibm.icu.util.Calendar.HOUR_OF_DAY, 0);
+        calendar.set(com.ibm.icu.util.Calendar.MINUTE, 0);
+        calendar.set(com.ibm.icu.util.Calendar.SECOND, 0);
+        calendar.set(com.ibm.icu.util.Calendar.MILLISECOND, 0);
+        return calendar;
+    }
+
+
+    private static com.ibm.icu.util.Calendar j2p(java.util.Date date) {
+        if (date == null) {
+            return null;
+        }
+        String timeZoneId = "Iran";
+        String loc = "fa_IR";
+
+        com.ibm.icu.util.TimeZone timeZone = com.ibm.icu.util.TimeZone.getTimeZone(timeZoneId);
+        com.ibm.icu.util.ULocale uLocale = com.ibm.icu.util.ULocale.createCanonical(loc);
+        com.ibm.icu.util.Calendar calendar = new com.ghasemkiani.util.icu.PersianCalendar(timeZone, uLocale);
+        calendar.setTimeInMillis(new DateTime(date).getMillis());
+        return calendar;
     }
 
 

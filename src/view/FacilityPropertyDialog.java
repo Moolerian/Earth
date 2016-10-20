@@ -2,10 +2,15 @@ package view;
 
 
 import model.Facility;
+import util.EarthUtil;
 import util.WWJUtil;
 
+import javax.swing.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * @author Mohammad
@@ -21,6 +26,7 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -111,30 +117,31 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(facilityPropertyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jLabel2)
-                                                        .addGap(18, 18, 18)
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(jLabel1)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addComponent(jLabel5)
-                                                                        .addGroup(layout.createSequentialGroup()
-                                                                                .addComponent(jLabel10)
-                                                                                .addGap(12, 12, 12)))))
-                                                .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(facilityPropertyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jLabel2)
+                                                                .addGap(18, 18, 18)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jLabel1)
+                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                .addComponent(jLabel5)
+                                                                                .addGroup(layout.createSequentialGroup()
+                                                                                        .addComponent(jLabel10)
+                                                                                        .addGap(12, 12, 12))))))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel8))
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(facilityName, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,12 +154,12 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
                                                         .addComponent(facilityEndDate))
                                                 .addComponent(facilityLat, javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(facilityLon, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addGroup(layout.createSequentialGroup()
                                                         .addComponent(facilityLength, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addGap(46, 46, 46)
                                                         .addComponent(jLabel9)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(facilityWidth))))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(facilityWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -206,11 +213,9 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
     }// </editor-fold>
 
 
-
-
-    /************************************************************************************/
-    /**************************************** METHODS ***********************************/
-    /************************************************************************************/
+/************************************************************************************/
+/**************************************** METHODS ***********************************/
+/************************************************************************************/
 
     private void facilityPropertyButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Facility facility = currentFacility;
@@ -218,8 +223,14 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         facility.setLongitude(Long.parseLong(facilityLon.getText()));
         facility.setWidth(Integer.parseInt(facilityWidth.getText()));
         facility.setLength(Integer.parseInt(facilityLength.getText()));
-        facility.setStartDate((Date)facilityStartDate.getValue());
-        facility.setEndDate((Date)facilityEndDate.getValue());
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        String start = dateFormat.format((Date) facilityStartDate.getValue());
+        String end = dateFormat.format((Date) facilityEndDate.getValue());
+
+        facility.setStartDate(EarthUtil.convertPersianToJulian(start));
+        facility.setEndDate(EarthUtil.convertPersianToJulian(end));
 
         WWJUtil.addFacilityToEarth(facility);
         this.dispose();
@@ -235,8 +246,21 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         facilityLon.setText((currentFacility.getLongitude()) == null ? "" : currentFacility.getLongitude().toString());
         facilityWidth.setText((currentFacility.getWidth()) == null ? "" : currentFacility.getWidth().toString());
         facilityLength.setText((currentFacility.getLength() == null) ? "" : currentFacility.getLength().toString());
-        facilityStartDate.getModel().setValue(new Date());
-        facilityEndDate.getModel().setValue(new Date());
+
+        facilityEndDate.setEditor(new JSpinner.DateEditor(facilityEndDate, "yyyy/MM/dd hh:mm"));
+        facilityStartDate.setEditor(new JSpinner.DateEditor(facilityStartDate, "yyyy/MM/dd hh:mm"));
+
+        String date = EarthUtil.convertJulianToPersianForUi(new Date());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date currentParsedDate = null;
+        try {
+            currentParsedDate = dateFormat.parse(date);
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(null, "خطایی در پردازش شما رخ داده است.", "نا موفق", JOptionPane.ERROR_MESSAGE);
+        }
+
+        facilityStartDate.getModel().setValue(currentParsedDate);
+        facilityEndDate.getModel().setValue(currentParsedDate);
     }
 
     private Facility currentFacility;
@@ -249,9 +273,10 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         this.currentFacility = currentFacility;
         initialFacility();
     }
-    /***********************************************************************************/
+
+/***********************************************************************************/
 /********************************** VARIABLES **************************************/
-    /***********************************************************************************/
+/***********************************************************************************/
 
     // Variables declaration - do not modify
     private javax.swing.JSpinner facilityEndDate;
