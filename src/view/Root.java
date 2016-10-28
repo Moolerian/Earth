@@ -510,6 +510,7 @@ public class Root extends JFrame implements Runnable {
         JCheckBoxMenuItem scale = (JCheckBoxMenuItem) evt.getSource();
         if (scale.isSelected()) {
             WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getWorldMapLayer());
+            WWJUtil.getWwj().addSelectListener(new ClickAndGoSelectListener(WWJUtil.getWwj(), WorldMapLayer.class));
         } else {
             WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getWorldMapLayer());
         }
@@ -578,15 +579,32 @@ public class Root extends JFrame implements Runnable {
     }
 
     private void CompassActionPerformed(java.awt.event.ActionEvent evt) {
-        System.out.println(evt);
+        JToggleButton source = (JToggleButton) evt.getSource();
+        if (source.isSelected()) {
+            WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getCompassLayer());
+        } else {
+            WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getCompassLayer());
+        }
     }
 
     private void WorldViewActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        JToggleButton source = (JToggleButton) evt.getSource();
+        if (source.isSelected()) {
+            WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getWorldMapLayer());
+            WWJUtil.getWwj().addSelectListener(new ClickAndGoSelectListener(WWJUtil.getWwj(), WorldMapLayer.class));
+        } else {
+            WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getWorldMapLayer());
+        }
     }
 
     private void ScaleActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        JToggleButton source = (JToggleButton) evt.getSource();
+        if (source.isSelected()) {
+            WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getScaleLayer());
+            WWJUtil.getWwj().addSelectListener(new ClickAndGoSelectListener(WWJUtil.getWwj(), WorldMapLayer.class));
+        } else {
+            WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getScaleLayer());
+        }
     }
 
     private void HelpActionPerformed(java.awt.event.ActionEvent evt) {
@@ -594,7 +612,8 @@ public class Root extends JFrame implements Runnable {
     }
 
     private void AboutActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        AboutDialog aboutDialog = new AboutDialog(this,true);
+        aboutDialog.setVisible(true);
     }
 
     private void SaveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
