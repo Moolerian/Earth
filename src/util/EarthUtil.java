@@ -287,6 +287,22 @@ public class EarthUtil {
         return convertPersianToJulian(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]) - 1, Integer.parseInt(parts[2]));
     }
 
+    public static String convertJulianToPersian(java.util.Date date) {
+        return convertJulianToPersian(date, "EEEE d MMMM y");
+    }
+
+    public static String convertJulianToPersian(java.util.Date date, String format) {
+        if (date == null) {
+            return "";
+        }
+        com.ibm.icu.util.Calendar calendar = j2p(date);
+
+        com.ibm.icu.util.ULocale uLocale = com.ibm.icu.util.ULocale.createCanonical("fa_IR");
+        com.ibm.icu.text.SimpleDateFormat sdf = (com.ibm.icu.text.SimpleDateFormat) calendar.getDateTimeFormat(0, 0, uLocale);
+        sdf.applyPattern(format);
+        return sdf.format(calendar.getTime());
+    }
+
     private static java.util.Date convertPersianToJulian(int year, int month, int day_of_month) {
 
         com.ibm.icu.util.Calendar calendar = p2j(year, month, day_of_month);

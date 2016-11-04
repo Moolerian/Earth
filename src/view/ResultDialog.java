@@ -13,7 +13,6 @@ public class ResultDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,17 +28,18 @@ public class ResultDialog extends javax.swing.JDialog {
         saveAsExcel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         resultTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
 
                 },
                 new String [] {
-                        "تجهیزات", "ماهواره", "تاریخ", "مدت"
+                        "تجهیزات", "ماهواره", "تاریخ"
                 }
         ) {
             boolean[] canEdit = new boolean [] {
-                    false, false, false, false
+                    false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
