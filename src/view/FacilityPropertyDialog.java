@@ -90,8 +90,8 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         jLabel9.setText("عرض");
 
         facilityPropertyButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        facilityPropertyButton.setForeground(new java.awt.Color(102, 0, 102));
-        facilityPropertyButton.setText("Submit");
+        facilityPropertyButton.setForeground(new java.awt.Color(51, 255, 255));
+        facilityPropertyButton.setText("ذخیره");
         facilityPropertyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 facilityPropertyButtonActionPerformed(evt);

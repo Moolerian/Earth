@@ -20,6 +20,7 @@ class CreateSatelliteDialog extends javax.swing.JDialog {
         initComponents();
     }
 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -76,7 +77,9 @@ class CreateSatelliteDialog extends javax.swing.JDialog {
             }
         });
 
-        saveSatellite.setText("save");
+        saveSatellite.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        saveSatellite.setForeground(new java.awt.Color(102, 255, 255));
+        saveSatellite.setText("ذخیره");
         saveSatellite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveSatelliteActionPerformed(evt);

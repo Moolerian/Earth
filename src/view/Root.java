@@ -14,7 +14,6 @@ import util.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
@@ -32,7 +31,90 @@ import java.util.TimeZone;
  */
 public class Root extends JFrame implements Runnable {
 
+    public static javax.swing.JList<Facility> facilityList;
+
+    static {
+        try {
+            String architecture = System.getProperty("os.arch");
+            if ("x86".equals(architecture))
+                System.loadLibrary("WebView32");
+            else
+                System.loadLibrary("WebView64");
+        } catch (Throwable t) {
+            String message = Logging.getMessage("WebView.ExceptionCreatingWebView", t);
+            Logging.logger().severe(message);
+        }
+
+        Configuration.setValue(
+                "gov.nasa.worldwind.avkey.DataFileStoreConfigurationFileName",
+                "src/resource/CacheLocationConfiguration.xml");
+    }
+
+    /****************************************************************************************/
+
+    Facility facility = null;
     private StatusBar statusBar;
+
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+    /*****************************************************************************/
+
+
+    // Variables declaration - do not modify
+    private javax.swing.JToggleButton Compass;
+
+
+/****************************************************************************************/
+    /***************************************
+     * METHODS
+     ****************************************/
+    private javax.swing.JButton CustomFacility;
+    private javax.swing.JButton CustomSatellite;
+    private javax.swing.JMenuItem CustomSatelliteMenuItem;
+    private javax.swing.JButton Exit;
+    private javax.swing.JButton Go;
+    private javax.swing.JButton Help;
+    private javax.swing.JButton NewFacility;
+    private javax.swing.JButton Save;
+    private javax.swing.JMenuItem SaveMenuItem;
+    private javax.swing.JToggleButton Scale;
+    private javax.swing.JToggleButton WorldView;
+    private javax.swing.JPanel bottom;
+    private javax.swing.JPanel center;
+    private javax.swing.JCheckBoxMenuItem compassMenuItem;
+    private javax.swing.JMenuItem customeFacilityMenuItem;
+    private javax.swing.JMenu editMenu;
+    private javax.swing.JMenu fileMenu;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+
+/*****************************************************************************/
+    /*****************************
+     * VARIABLES
+     *************************************/
+    private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JPopupMenu.Separator jSeparator4;
+    private javax.swing.JPanel left;
+    private javax.swing.JLabel localDate;
+    private javax.swing.JLabel localTime;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenuItem newMenuItem;
+    private javax.swing.JButton removeFacilityFromList;
+    private javax.swing.JButton runPassPrediction;
+    private javax.swing.JCheckBoxMenuItem scaleMenuItem;
+    private javax.swing.JPanel top;
+    private javax.swing.JLabel universalDate;
+    private javax.swing.JLabel universalTime;
+    private javax.swing.JCheckBoxMenuItem worldMenuItem;
 
     /**
      * Creates new form root
@@ -44,6 +126,26 @@ public class Root extends JFrame implements Runnable {
         thread.start();
     }
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        WWJUtil.createWWJ();
+        try {
+            UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+//        Root r = new Root();
+//        r.testTable();
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Root().setVisible(true);
+            }
+        });
+    }
 
     @Override
     public void run() {
@@ -75,28 +177,6 @@ public class Root extends JFrame implements Runnable {
         menuBar.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
     }
 
-    static {
-        try {
-            String architecture = System.getProperty("os.arch");
-            if ("x86".equals(architecture))
-                System.loadLibrary("WebView32");
-            else
-                System.loadLibrary("WebView64");
-        } catch (Throwable t) {
-            String message = Logging.getMessage("WebView.ExceptionCreatingWebView", t);
-            Logging.logger().severe(message);
-        }
-
-        Configuration.setValue(
-                "gov.nasa.worldwind.avkey.DataFileStoreConfigurationFileName",
-                "src/resource/CacheLocationConfiguration.xml");
-    }
-
-/********************************************************************************************/
-/********************************************************************************************/
-/********************************************************************************************/
-
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -115,7 +195,6 @@ public class Root extends JFrame implements Runnable {
         CustomFacility = new javax.swing.JButton();
         CustomSatellite = new javax.swing.JButton();
         Help = new javax.swing.JButton();
-        About = new javax.swing.JButton();
         Compass = new javax.swing.JToggleButton();
         WorldView = new javax.swing.JToggleButton();
         Scale = new javax.swing.JToggleButton();
@@ -158,14 +237,14 @@ public class Root extends JFrame implements Runnable {
         top.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         top.setPreferredSize(new java.awt.Dimension(701, 70));
 
-        Go.setText("GoToLatLon");
+        Go.setText("برو");
         Go.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GoActionPerformed(evt);
             }
         });
 
-        removeFacilityFromList.setText("remove");
+        removeFacilityFromList.setText("حذف از لیست");
         removeFacilityFromList.setToolTipText("");
         removeFacilityFromList.setEnabled(false);
         removeFacilityFromList.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +255,7 @@ public class Root extends JFrame implements Runnable {
 
         runPassPrediction.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         runPassPrediction.setForeground(new java.awt.Color(255, 255, 0));
-        runPassPrediction.setText("Run");
+        runPassPrediction.setText("پردازش");
         runPassPrediction.setToolTipText("");
         runPassPrediction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,70 +263,63 @@ public class Root extends JFrame implements Runnable {
             }
         });
 
-        NewFacility.setText("NewFacility");
+        NewFacility.setText("تجهیزات");
         NewFacility.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NewFacilityActionPerformed(evt);
             }
         });
 
-        CustomFacility.setText("CustomFacility");
+        CustomFacility.setText("معرفی تجهیزات");
         CustomFacility.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CustomFacilityActionPerformed(evt);
             }
         });
 
-        CustomSatellite.setText("CustomSatellite");
+        CustomSatellite.setText("ماهواره");
         CustomSatellite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CustomSatelliteActionPerformed(evt);
             }
         });
 
-        Help.setText("Help");
+        Help.setText("راهنما");
         Help.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HelpActionPerformed(evt);
             }
         });
 
-        About.setText("About");
-        About.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AboutActionPerformed(evt);
-            }
-        });
-
-        Compass.setText("Compass");
+        Compass.setText("جهت");
         Compass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CompassActionPerformed(evt);
             }
         });
 
-        WorldView.setText("WorldView");
+        WorldView.setText("دید جهانی");
         WorldView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 WorldViewActionPerformed(evt);
             }
         });
 
-        Scale.setText("Scale");
+        Scale.setText("مقیاس");
         Scale.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ScaleActionPerformed(evt);
             }
         });
 
-        Save.setText("Save");
+        Save.setText("ذخیره");
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
             }
         });
 
-        Exit.setText("Exit");
+        Exit.setText("خروج");
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
@@ -266,26 +338,24 @@ public class Root extends JFrame implements Runnable {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(NewFacility)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(CustomFacility, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(CustomSatellite, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(CustomFacility, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CustomSatellite)
+                                .addGap(18, 18, 18)
                                 .addComponent(Scale)
                                 .addGap(18, 18, 18)
                                 .addComponent(WorldView)
                                 .addGap(18, 18, 18)
-                                .addComponent(Compass, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addComponent(Compass)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(Help)
-                                .addGap(18, 18, 18)
-                                .addComponent(About, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(Save)
                                 .addGap(18, 18, 18)
                                 .addComponent(Exit)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
                                 .addComponent(runPassPrediction, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
+                                .addContainerGap(419, Short.MAX_VALUE))
         );
         topLayout.setVerticalGroup(
                 topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,7 +372,6 @@ public class Root extends JFrame implements Runnable {
                                         .addComponent(WorldView)
                                         .addComponent(Compass)
                                         .addComponent(Help)
-                                        .addComponent(About)
                                         .addComponent(Save)
                                         .addComponent(Exit))
                                 .addContainerGap())
@@ -423,7 +492,7 @@ public class Root extends JFrame implements Runnable {
 
         fileMenu.setText("File");
 
-        newMenuItem.setText("NewFacility");
+        newMenuItem.setText("تجهیزات");
         newMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newMenuItemActionPerformed(evt);
@@ -432,7 +501,7 @@ public class Root extends JFrame implements Runnable {
         fileMenu.add(newMenuItem);
         fileMenu.add(jSeparator3);
 
-        customeFacilityMenuItem.setText("CustomFacility");
+        customeFacilityMenuItem.setText("تعریف تجهیزات");
         customeFacilityMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 customeFacilityMenuItemActionPerformed(evt);
@@ -441,7 +510,7 @@ public class Root extends JFrame implements Runnable {
         fileMenu.add(customeFacilityMenuItem);
         fileMenu.add(jSeparator4);
 
-        CustomSatelliteMenuItem.setText("CustomSatellite");
+        CustomSatelliteMenuItem.setText("تعریف ماهواره");
         CustomSatelliteMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CustomSatelliteMenuItemActionPerformed(evt);
@@ -497,13 +566,6 @@ public class Root extends JFrame implements Runnable {
 
         pack();
     }// </editor-fold>
-
-
-/****************************************************************************************/
-/*************************************** METHODS ****************************************/
-    /****************************************************************************************/
-
-    Facility facility = null;
 
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {
         GoDialog goDialog = new GoDialog(this, false);
@@ -624,7 +686,10 @@ public class Root extends JFrame implements Runnable {
     }
 
     private void HelpActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+
+        AboutDialog aboutDialog = new AboutDialog(this, false);
+        aboutDialog.setVisible(true);
+
     }
 
     private void AboutActionPerformed(java.awt.event.ActionEvent evt) {
@@ -663,14 +728,13 @@ public class Root extends JFrame implements Runnable {
         }
     }
 
-
-    private void testTable(){
+    private void testTable() {
         ResultDialog resultDialog = new ResultDialog(this, true);
         DefaultTableModel model = (DefaultTableModel) ResultDialog.resultTable.getModel();
         DefaultTableCellRenderer firstColumn = new DefaultTableCellRenderer();
         DefaultTableCellRenderer secondColumn = new DefaultTableCellRenderer();
         DefaultTableCellRenderer thirdColumn = new DefaultTableCellRenderer();
-        for(int i = 0 ; i<20 ; i++) {
+        for (int i = 0; i < 20; i++) {
             model.addRow(new Object[]{"asghar", "akbar", EarthUtil.convertJulianToPersian(new Date())});
 
 
@@ -753,7 +817,6 @@ public class Root extends JFrame implements Runnable {
         resultDialog.setVisible(true);
     }
 
-
     @SuppressWarnings("Duplicates")
     private void runPassPrediction(double timeSpanDays, GroundStation gs, AbstractSatellite sat,
                                    Time startJulianDate, DefaultTableModel model) throws ParseException {
@@ -826,11 +889,11 @@ public class Root extends JFrame implements Runnable {
                 ResultDialog.resultTable.getColumnModel().getColumn(1).setMaxWidth(180);
 
                 thirdColumn.setHorizontalAlignment(SwingConstants.RIGHT);
-               // thirdColumn.setBackground(Color.RED);
+                // thirdColumn.setBackground(Color.RED);
                 ResultDialog.resultTable.getColumnModel().getColumn(2).setCellRenderer(thirdColumn);
 
                 riseTimeStr = null;
-                durStr = null ;
+                durStr = null;
 
             }
 
@@ -858,77 +921,5 @@ public class Root extends JFrame implements Runnable {
         return -b / a;
 
     }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        WWJUtil.createWWJ();
-        try {
-            UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-//        Root r = new Root();
-//        r.testTable();
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Root().setVisible(true);
-            }
-        });
-    }
-
-/*****************************************************************************/
-/***************************** VARIABLES *************************************/
-    /*****************************************************************************/
-
-
-    // Variables declaration - do not modify
-    private javax.swing.JButton About;
-    private javax.swing.JToggleButton Compass;
-    private javax.swing.JButton CustomFacility;
-    private javax.swing.JButton CustomSatellite;
-    private javax.swing.JMenuItem CustomSatelliteMenuItem;
-    private javax.swing.JButton Exit;
-    private javax.swing.JButton Go;
-    private javax.swing.JButton Help;
-    private javax.swing.JButton NewFacility;
-    private javax.swing.JButton Save;
-    private javax.swing.JMenuItem SaveMenuItem;
-    private javax.swing.JToggleButton Scale;
-    private javax.swing.JToggleButton WorldView;
-    private javax.swing.JPanel bottom;
-    private javax.swing.JPanel center;
-    private javax.swing.JCheckBoxMenuItem compassMenuItem;
-    private javax.swing.JMenuItem customeFacilityMenuItem;
-    private javax.swing.JMenu editMenu;
-    public static javax.swing.JList<Facility> facilityList;
-    private javax.swing.JMenu fileMenu;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JPopupMenu.Separator jSeparator2;
-    private javax.swing.JPopupMenu.Separator jSeparator3;
-    private javax.swing.JPopupMenu.Separator jSeparator4;
-    private javax.swing.JPanel left;
-    private javax.swing.JLabel localDate;
-    private javax.swing.JLabel localTime;
-    private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem newMenuItem;
-    private javax.swing.JButton removeFacilityFromList;
-    private javax.swing.JButton runPassPrediction;
-    private javax.swing.JCheckBoxMenuItem scaleMenuItem;
-    private javax.swing.JPanel top;
-    private javax.swing.JLabel universalDate;
-    private javax.swing.JLabel universalTime;
-    private javax.swing.JCheckBoxMenuItem worldMenuItem;
     // End of variables declaration
 }
