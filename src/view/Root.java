@@ -3,6 +3,7 @@ package view;
 import gov.nasa.worldwind.Configuration;
 import gov.nasa.worldwind.layers.WorldMapLayer;
 import gov.nasa.worldwind.util.Logging;
+import gov.nasa.worldwind.util.StatusBar;
 import gov.nasa.worldwindx.examples.ClickAndGoSelectListener;
 import model.Facility;
 import model.Satellite;
@@ -31,6 +32,8 @@ import java.util.TimeZone;
  */
 public class Root extends JFrame implements Runnable {
 
+    private StatusBar statusBar;
+
     /**
      * Creates new form root
      */
@@ -44,6 +47,11 @@ public class Root extends JFrame implements Runnable {
 
     @Override
     public void run() {
+        this.statusBar = new StatusBar();
+        this.add(statusBar, BorderLayout.PAGE_END);
+        this.statusBar.setEventSource(WWJUtil.getWwj());
+
+
         /******* Date Section*******/
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Date date = Calendar.getInstance().getTime();
@@ -63,6 +71,8 @@ public class Root extends JFrame implements Runnable {
             }
         } catch (Exception ignored) {
         }
+
+        menuBar.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
     }
 
     static {
