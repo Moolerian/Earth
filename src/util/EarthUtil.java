@@ -1,20 +1,16 @@
 package util;
 
-import com.ibm.icu.util.*;
-import gov.nasa.worldwind.Configuration;
-import gov.nasa.worldwind.util.Logging;
 import model.Facility;
 import model.Satellite;
 import org.joda.time.DateTime;
 import view.FacilityDialog;
 
-import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
 import java.sql.*;
-import java.sql.Date;
-import java.util.*;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by Mohammad on 9/16/2016.
@@ -173,14 +169,22 @@ public class EarthUtil {
                 maxId = resultSet.getLong("id");
             }
 
-            String sql = "INSERT INTO satellite (id, displayName, tleFile, width,length) VALUES (?, ?, ?, ? , ?)";
+            String sql = "INSERT INTO satellite (id," +
+                    " displayName," +
+                    " tleFile," +
+                    " satelliteOne," +
+                    " satelliteTwo," +
+                    "satelliteThree ," +
+                    "satelliteFour) VALUES (?, ?, ?, ? , ? , ? , ?)";
 
             statement = connection.prepareStatement(sql);
             statement.setLong(1, maxId + 1);
             statement.setString(2, toBeInserted.getDisplayName());
             statement.setString(3, toBeInserted.getTleFile());
-            statement.setLong(4, toBeInserted.getWidth());
-            statement.setLong(5, toBeInserted.getLength());
+            statement.setInt(4, toBeInserted.getSatelliteOne());
+            statement.setInt(5, toBeInserted.getSatelliteTwo());
+            statement.setInt(6, toBeInserted.getSatelliteThree());
+            statement.setInt(7, toBeInserted.getSatelliteFour());
 
             int rowsInserted = statement.executeUpdate();
 
@@ -239,10 +243,12 @@ public class EarthUtil {
                 Long id = resultSet.getLong("id");
                 String displayName = resultSet.getString("displayName");
                 String tleFile = resultSet.getString("tleFile");
-                Long width = resultSet.getLong("width");
-                Long length = resultSet.getLong("length");
+                Integer satelliteOne = resultSet.getInt("satelliteOne");
+                Integer satelliteTwo = resultSet.getInt("satelliteTwo");
+                Integer satelliteThree = resultSet.getInt("satelliteThree");
+                Integer satelliteFour = resultSet.getInt("satelliteFour");
 
-                Satellite satellite = new Satellite(id,displayName,tleFile,width,length);
+                Satellite satellite = new Satellite(id, displayName, tleFile, satelliteOne, satelliteTwo, satelliteThree, satelliteFour);
                 satellites.add(satellite);
             }
             resultSet.close();
@@ -346,8 +352,6 @@ public class EarthUtil {
         calendar.setTimeInMillis(new DateTime(date).getMillis());
         return calendar;
     }
-
-
 
 
 }

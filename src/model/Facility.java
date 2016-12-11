@@ -17,9 +17,13 @@ public class Facility implements Serializable {
 
     private Long longitude;
 
-    private Integer width;
+    private Integer facilityOne;
 
-    private Integer length;
+    private Integer facilityTwo;
+
+    private Integer facilityThree;
+
+    private Integer facilityFour;
 
     private Date startDate;
 
@@ -73,20 +77,36 @@ public class Facility implements Serializable {
         this.longitude = longitude;
     }
 
-    public Integer getWidth() {
-        return width;
+    public Integer getFacilityOne() {
+        return facilityOne;
     }
 
-    public void setWidth(Integer width) {
-        this.width = width;
+    public void setFacilityOne(Integer facilityOne) {
+        this.facilityOne = facilityOne;
     }
 
-    public Integer getLength() {
-        return length;
+    public Integer getFacilityTwo() {
+        return facilityTwo;
     }
 
-    public void setLength(Integer length) {
-        this.length = length;
+    public void setFacilityTwo(Integer facilityTwo) {
+        this.facilityTwo = facilityTwo;
+    }
+
+    public Integer getFacilityThree() {
+        return facilityThree;
+    }
+
+    public void setFacilityThree(Integer facilityThree) {
+        this.facilityThree = facilityThree;
+    }
+
+    public Integer getFacilityFour() {
+        return facilityFour;
+    }
+
+    public void setFacilityFour(Integer facilityFour) {
+        this.facilityFour = facilityFour;
     }
 
     public Date getStartDate() {

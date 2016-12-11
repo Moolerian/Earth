@@ -778,7 +778,7 @@ public class Root extends JFrame implements Runnable {
         for (int index = 0; index < countFacilities; index++) {
             Facility facility = listModel.getElementAt(index);
             for (Satellite satellite : satellites) {
-                if (satellite.getLength() >= facility.getLength() && satellite.getWidth() >= facility.getWidth()) {
+                if (checkCondition(facility,satellite)) {
 
                     // Define GroundStation
                     double[] lla = {facility.getLatitude(), facility.getLongitude(), 0};
@@ -815,6 +815,11 @@ public class Root extends JFrame implements Runnable {
             }
         }
         resultDialog.setVisible(true);
+    }
+
+    private boolean checkCondition(Facility facility , Satellite satellite){
+        boolean valid = true;
+        return  valid;
     }
 
     @SuppressWarnings("Duplicates")

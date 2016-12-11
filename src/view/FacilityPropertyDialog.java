@@ -8,14 +8,15 @@ import util.WWJUtil;
 import javax.swing.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.Locale;
 
 /**
  * @author Mohammad
  */
 public class FacilityPropertyDialog extends javax.swing.JDialog {
+
+    private Facility currentFacility;
+
 
     /**
      * Creates new form FacilityPropertyDialog
@@ -26,8 +27,6 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,21 +51,15 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         facilityStartDate = new javax.swing.JSpinner();
         jLabel13 = new javax.swing.JLabel();
         facilityEndDate = new javax.swing.JSpinner();
-        jLabel14 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jLabel5 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        facilityFour = new javax.swing.JComboBox<>();
+        facilityOne = new javax.swing.JComboBox<>();
+        facilityTwo = new javax.swing.JComboBox<>();
+        facilityThree = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBounds(new java.awt.Rectangle(100, 100, 0, 0));
@@ -109,122 +102,92 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
 
         facilityEndDate.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), null, null, java.util.Calendar.HOUR));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel14.setText("سنجنده");
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel9.setText("سطح تفسیر پذیری");
 
-        jCheckBox1.setText("پانکروماتیک");
-
-        jCheckBox2.setText("چند طیفی");
-
-        jCheckBox3.setText("حرارتی");
-
-        jCheckBox4.setText("ابرطیفی");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setText("توان تفکیکی");
-
-        jCheckBox5.setText("قدرت تفکیک طیفی");
-
-        jCheckBox6.setText("قدرت تفکیک زمانی");
-
-        jCheckBox7.setText("قدرت تفکیک رادیومتریک");
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel11.setText("توان تکنیکی");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel7.setText("سطح تفسیر پذیری");
+        jLabel7.setText("فاصله تفکیک مکانی");
 
-        jCheckBox8.setText("آشکارسازی");
+        facilityFour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1.2 تا 0.4", "0.4 تا 0.75", "0.75 تا 1.2", "1.2 تا 2.5", "2.5 تا 4.5", "4.5 تا 9", "بیش از 9 متر" }));
 
-        jCheckBox9.setText("تمایز");
+        facilityOne.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "پانکروماتیک", "چند طیفی", "حرارتی", "ابر طیفی", "رادار روزنه مصنوعی" }));
 
-        jCheckBox10.setText("شناسایی");
+        facilityTwo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "قدرت تفکیک طیفی", "قدرت تفکیک زمانی", "قدرت تفکیک رادیو متریک" }));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel8.setText("فاصله تفکیک مکانی");
+        facilityThree.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "آشکار سازی", "تمایز", "شناسایی" }));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1.2 تا 0.4", "0.4 تا 0.75", "0.75 تا 1.2", "1.2 تا 2.5", "2.5 تا 4.5", "4.5 تا 9", "بیش از 9 متر" }));
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setText("ویژگی ها");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setText("سنجنده");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel2)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(facilityName, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addGap(129, 129, 129)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addComponent(jLabel7)
-                                                                        .addComponent(jLabel10)))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(jLabel8)))
-                                                .addGap(184, 184, 184))
-                                        .addGroup(layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(jLabel2)
-                                                                .addGap(29, 29, 29)
-                                                                .addComponent(jLabel6))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                                .addGap(73, 73, 73)
-                                                                .addComponent(facilityPropertyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(facilityPropertyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(46, 46, 46)
+                                                                .addComponent(facilityEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(jLabel13)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(facilityStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(jLabel12)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(jLabel10))
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addGap(47, 47, 47)
-                                                                .addComponent(jLabel1))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                .addComponent(jLabel14)
-                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addGroup(layout.createSequentialGroup()
-                                                                                                .addComponent(jCheckBox4)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addComponent(jCheckBox3)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addComponent(jCheckBox2)
-                                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                                                .addComponent(jCheckBox1))
-                                                                                        .addGroup(layout.createSequentialGroup()
-                                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                        .addComponent(facilityLat, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addComponent(facilityLon, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                                                .addComponent(jLabel5))
+                                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                                         .addGroup(layout.createSequentialGroup()
-                                                                                .addComponent(jCheckBox7)
-                                                                                .addGap(18, 18, 18)
-                                                                                .addComponent(jCheckBox6)
-                                                                                .addGap(18, 18, 18)
-                                                                                .addComponent(jCheckBox5))
-                                                                        .addGroup(layout.createSequentialGroup()
-                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addComponent(jCheckBox8)
+                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                                                         .addGroup(layout.createSequentialGroup()
-                                                                                                .addGap(8, 8, 8)
-                                                                                                .addComponent(jLabel12)
+                                                                                                .addComponent(facilityLon, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                .addGap(17, 17, 17)
+                                                                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                        .addComponent(facilityTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addGap(18, 18, 18)
+                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                                                .addComponent(facilityLat, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                                                .addComponent(facilityStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                .addGap(18, 18, 18)
-                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addGroup(layout.createSequentialGroup()
-                                                                                                .addComponent(jCheckBox10)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addComponent(jCheckBox9))
-                                                                                        .addGroup(layout.createSequentialGroup()
-                                                                                                .addGap(14, 14, 14)
-                                                                                                .addComponent(jLabel13)
+                                                                                                .addComponent(jLabel3)
+                                                                                                .addGap(21, 21, 21)
+                                                                                                .addComponent(jLabel6)
                                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(facilityEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                                                .addGap(155, 155, 155))))
+                                                                                                .addComponent(jLabel1))
+                                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                                                .addComponent(jLabel11)
+                                                                                                .addGap(18, 18, 18)
+                                                                                                .addComponent(facilityOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                .addGap(18, 18, 18)
+                                                                                                .addComponent(jLabel5))
+                                                                                        .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                                                        .addGroup(layout.createSequentialGroup()
+                                                                                .addComponent(facilityFour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addGap(18, 18, 18)
+                                                                                .addComponent(jLabel7)
+                                                                                .addGap(18, 18, 18)
+                                                                                .addComponent(facilityThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addGap(18, 18, 18)
+                                                                                .addComponent(jLabel9)))))
+                                                .addContainerGap(19, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(103, 103, 103)
+                                                .addComponent(facilityName, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,66 +196,47 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(facilityName)
-                                                .addGap(37, 37, 37)
+                                                .addGap(34, 34, 34)
+                                                .addComponent(jLabel15)
+                                                .addGap(18, 18, 18)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(jLabel1)
-                                                        .addComponent(jLabel6))
-                                                .addGap(17, 17, 17)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(jLabel6)
+                                                        .addComponent(jLabel3)
                                                         .addComponent(facilityLat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jLabel3))
-                                                .addGap(18, 18, 18)
+                                                        .addComponent(jLabel4)
+                                                        .addComponent(facilityLon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(23, 23, 23)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(facilityLon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jLabel4))
-                                                .addGap(33, 33, 33)
-                                                .addComponent(jLabel14)
-                                                .addGap(18, 18, 18)
+                                                        .addComponent(jLabel5)
+                                                        .addComponent(facilityOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel11)
+                                                        .addComponent(facilityTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(30, 30, 30)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jCheckBox1)
-                                                        .addComponent(jCheckBox2)
-                                                        .addComponent(jCheckBox3)
-                                                        .addComponent(jCheckBox4))
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel5))
+                                                        .addComponent(jLabel9)
+                                                        .addComponent(facilityThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel7)
+                                                        .addComponent(facilityFour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(18, 18, 18)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                        .addComponent(jLabel10)
+                                                                        .addComponent(jLabel12)
+                                                                        .addComponent(facilityStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLabel13)
+                                                                        .addComponent(facilityEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(facilityPropertyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addComponent(jLabel2))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jCheckBox5)
-                                        .addComponent(jCheckBox6)
-                                        .addComponent(jCheckBox7))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel7)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jCheckBox8)
-                                                        .addComponent(jCheckBox9)
-                                                        .addComponent(jCheckBox10))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jLabel8)
-                                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(13, 13, 13)
-                                                .addComponent(facilityPropertyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(facilityEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel13)
-                                        .addComponent(facilityStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel12))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
-    }// </editor-fold>  
+    }// </editor-fold>
 
-
-/************************************************************************************/
 /**************************************** METHODS ***********************************/
 /************************************************************************************/
 
@@ -300,8 +244,6 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         Facility facility = currentFacility;
         facility.setLatitude((Long.parseLong(facilityLat.getText())));
         facility.setLongitude(Long.parseLong(facilityLon.getText()));
-        facility.setWidth(2);
-        facility.setLength(2);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -311,6 +253,10 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         facility.setStartDate(EarthUtil.convertPersianToJulian(start));
         facility.setEndDate(EarthUtil.convertPersianToJulian(end));
 
+        facility.setFacilityOne(facilityOne.getSelectedIndex());
+        facility.setFacilityTwo(facilityTwo.getSelectedIndex());
+        facility.setFacilityThree(facilityThree.getSelectedIndex());
+        facility.setFacilityFour(facilityFour.getSelectedIndex());
         WWJUtil.addFacilityToEarth(facility);
         this.dispose();
     }
@@ -323,8 +269,10 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         facilityName.setText(currentFacility.getDisplayName());
         facilityLat.setText((currentFacility.getLatitude()) == null ? "" : currentFacility.getLatitude().toString());
         facilityLon.setText((currentFacility.getLongitude()) == null ? "" : currentFacility.getLongitude().toString());
-       // facilityWidth.setText((currentFacility.getWidth()) == null ? "" : currentFacility.getWidth().toString());
-        //facilityLength.setText((currentFacility.getLength() == null) ? "" : currentFacility.getLength().toString());
+        facilityOne.setSelectedIndex((currentFacility.getFacilityOne()) == null ? 0 : currentFacility.getFacilityOne());
+        facilityTwo.setSelectedIndex((currentFacility.getFacilityTwo()) == null ? 0 : currentFacility.getFacilityTwo());
+        facilityThree.setSelectedIndex((currentFacility.getFacilityThree()) == null ? 0 : currentFacility.getFacilityThree());
+        facilityFour.setSelectedIndex((currentFacility.getFacilityFour()) == null ? 0 : currentFacility.getFacilityFour());
 
         facilityEndDate.setEditor(new JSpinner.DateEditor(facilityEndDate, "yyyy/MM/dd hh:mm"));
         facilityStartDate.setEditor(new JSpinner.DateEditor(facilityStartDate, "yyyy/MM/dd hh:mm"));
@@ -342,8 +290,6 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         facilityEndDate.getModel().setValue(currentParsedDate);
     }
 
-    private Facility currentFacility;
-
     public Facility getCurrentFacility() {
         return currentFacility;
     }
@@ -353,39 +299,34 @@ public class FacilityPropertyDialog extends javax.swing.JDialog {
         initialFacility();
     }
 
-/***********************************************************************************/
-/********************************** VARIABLES **************************************/
-/***********************************************************************************/
 
-// Variables declaration - do not modify
-private javax.swing.JSpinner facilityEndDate;
+/**************************************** VARIABLES *********************************/
+/************************************************************************************/
+
+    // Variables declaration - do not modify
+    private javax.swing.JSpinner facilityEndDate;
+    private javax.swing.JComboBox<String> facilityFour;
     private javax.swing.JTextField facilityLat;
     private javax.swing.JTextField facilityLon;
     private javax.swing.JLabel facilityName;
+    private javax.swing.JComboBox<String> facilityOne;
     private javax.swing.JButton facilityPropertyButton;
     private javax.swing.JSpinner facilityStartDate;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> facilityThree;
+    private javax.swing.JComboBox<String> facilityTwo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration
+
 }
