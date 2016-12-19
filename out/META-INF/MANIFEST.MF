@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Class-Path: js.jar gdal.jar plugin.jar jogl-all.jar xml-apis.jar JOGLU
+ TILS.jar junit-4.5.jar worldwind.jar gluegen-rt.jar Jama-1.0.2.jar wo
+ rldwindx.jar vpf-symbols.jar xalan-2.6.0.jar xerces-2.9.0.jar xml-api
+ s-ext.jar JTattoo-1.6.11.jar pdf-transcoder.jar joda-time-2.9.1.jar s
+ qlite-jdbc-3.7.2.jar com.ibm.icu_3.4.4.1.jar persiancalendar-2.1.jar 
+ worldwind-buildutil.jar jogl-all-natives-linux-i586.jar jogl-all-nati
+ ves-linux-amd64.jar gluegen-rt-natives-linux-i586.jar jogl-all-native
+ s-windows-i586.jar gluegen-rt-natives-linux-amd64.jar jogl-all-native
+ s-windows-amd64.jar gluegen-rt-natives-windows-i586.jar gluegen-rt-na
+ tives-windows-amd64.jar jogl-all-natives-macosx-universal.jar gluegen
+ -rt-natives-macosx-universal.jar
+Main-Class: view.Root
+

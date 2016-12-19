@@ -32,7 +32,7 @@ public class TestTracking {
         GroundStation groundStation = new GroundStation("Tehran",lla,currentJulianDate.getJulianDate());
         groundStation.setElevationConst(0);
 
-        satHash.put("ISS (ZARYA)",satellite);
+        satHash.put("ISS (ZARYA)             ",satellite);
         gsHash.put("Tehran",groundStation);
 
 
