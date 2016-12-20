@@ -58,33 +58,33 @@ public class WWJUtil {
                     + facility.getLongitude() ;
         }
 
-        AbstractBrowserBalloon balloon = new GlobeBrowserBalloon("", position);
-        balloon.setDrawTitleBar(false);
-        balloon.setVisible(false);
-        balloon.setDrawBrowserControls(false);
-        balloon.setText(balloonText);
-
-        BalloonAttributes attrs = new BasicBalloonAttributes();
-        Size size = new Size();
-        size.setHeight("", 120, "");
-        size.setWidth("", 650, "");
-        attrs.setSize(size);
-        balloon.setAttributes(attrs);
-
-        PointPlacemark placemark = new PointPlacemark(position);
-        placemark.setLabelText("\u202B" + facility.getDisplayName());
-        placemark.setValue(AVKey.BALLOON, balloon);
-
-        RenderableLayer layer = new RenderableLayer();
-        layer.setName(facility.getId().toString());
-        layer.addRenderable(balloon);
-        layer.addRenderable(placemark);
+//        AbstractBrowserBalloon balloon = new GlobeBrowserBalloon("", position);
+//        balloon.setDrawTitleBar(false);
+//        balloon.setVisible(false);
+//        balloon.setDrawBrowserControls(false);
+//        balloon.setText(balloonText);
+//
+//        BalloonAttributes attrs = new BasicBalloonAttributes();
+//        Size size = new Size();
+//        size.setHeight("", 120, "");
+//        size.setWidth("", 650, "");
+//        attrs.setSize(size);
+//        balloon.setAttributes(attrs);
+//
+//        PointPlacemark placemark = new PointPlacemark(position);
+//        placemark.setLabelText("\u202B" + facility.getDisplayName());
+//        placemark.setValue(AVKey.BALLOON, balloon);
+//
+//        RenderableLayer layer = new RenderableLayer();
+//        layer.setName(facility.getId().toString());
+//        layer.addRenderable(balloon);
+//        layer.addRenderable(placemark);
 
         Layer facilityLayer = wwj.getModel().getLayers().getLayerByName(facility.getId().toString());
         if (facilityLayer != null) {
             wwj.getModel().getLayers().remove(facilityLayer);
         }
-        wwj.getModel().getLayers().add(layer);
+       // wwj.getModel().getLayers().add(layer);
     }
 
     public static WorldWindowGLJPanel getWwj() {
