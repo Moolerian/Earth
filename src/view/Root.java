@@ -14,6 +14,9 @@ import util.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellEditor;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.tree.DefaultTreeCellEditor;
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,8 +33,8 @@ import java.util.TimeZone;
  * @author Mohammad
  */
 public class Root extends JFrame implements Runnable {
-
-    public static javax.swing.JList<Facility> facilityList;
+    private static final long serialVersionUID = -5720473795150511569L;
+    private Facility facility = null;
 
     static {
         try {
@@ -50,25 +53,8 @@ public class Root extends JFrame implements Runnable {
                 "src/resource/CacheLocationConfiguration.xml");
     }
 
-    /****************************************************************************************/
-
-    Facility facility = null;
-    private StatusBar statusBar;
-
-/********************************************************************************************/
-/********************************************************************************************/
-/********************************************************************************************/
-    /*****************************************************************************/
-
-
     // Variables declaration - do not modify
     private javax.swing.JToggleButton Compass;
-
-
-/****************************************************************************************/
-    /***************************************
-     * METHODS
-     ****************************************/
     private javax.swing.JButton CustomFacility;
     private javax.swing.JButton CustomSatellite;
     private javax.swing.JMenuItem CustomSatelliteMenuItem;
@@ -85,6 +71,7 @@ public class Root extends JFrame implements Runnable {
     private javax.swing.JCheckBoxMenuItem compassMenuItem;
     private javax.swing.JMenuItem customeFacilityMenuItem;
     private javax.swing.JMenu editMenu;
+    public static javax.swing.JList<Facility> facilityList;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -96,11 +83,6 @@ public class Root extends JFrame implements Runnable {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
-
-/*****************************************************************************/
-    /*****************************
-     * VARIABLES
-     *************************************/
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPanel left;
@@ -108,6 +90,8 @@ public class Root extends JFrame implements Runnable {
     private javax.swing.JLabel localTime;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem newMenuItem;
+    private javax.swing.JCheckBoxMenuItem openStreetMenuItem;
+    private javax.swing.JCheckBoxMenuItem placeNameMenuItem;
     private javax.swing.JButton removeFacilityFromList;
     private javax.swing.JButton runPassPrediction;
     private javax.swing.JCheckBoxMenuItem scaleMenuItem;
@@ -115,6 +99,7 @@ public class Root extends JFrame implements Runnable {
     private javax.swing.JLabel universalDate;
     private javax.swing.JLabel universalTime;
     private javax.swing.JCheckBoxMenuItem worldMenuItem;
+    // End of variables declaration
 
     /**
      * Creates new form root
@@ -149,9 +134,9 @@ public class Root extends JFrame implements Runnable {
 
     @Override
     public void run() {
-        this.statusBar = new StatusBar();
+        StatusBar statusBar = new StatusBar();
         this.add(statusBar, BorderLayout.PAGE_END);
-        this.statusBar.setEventSource(WWJUtil.getWwj());
+        statusBar.setEventSource(WWJUtil.getWwj());
 
 
         /******* Date Section*******/
@@ -229,6 +214,8 @@ public class Root extends JFrame implements Runnable {
         worldMenuItem = new javax.swing.JCheckBoxMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         scaleMenuItem = new javax.swing.JCheckBoxMenuItem();
+        placeNameMenuItem = new javax.swing.JCheckBoxMenuItem();
+        openStreetMenuItem = new javax.swing.JCheckBoxMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -522,7 +509,7 @@ public class Root extends JFrame implements Runnable {
 
         editMenu.setText("Edit");
 
-        SaveMenuItem.setText("Save");
+        SaveMenuItem.setText("ذخیره");
         SaveMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveMenuItemActionPerformed(evt);
@@ -534,7 +521,7 @@ public class Root extends JFrame implements Runnable {
 
         jMenu1.setText("view");
 
-        compassMenuItem.setText("compass");
+        compassMenuItem.setText("جهت");
         compassMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 compassMenuItemActionPerformed(evt);
@@ -543,7 +530,7 @@ public class Root extends JFrame implements Runnable {
         jMenu1.add(compassMenuItem);
         jMenu1.add(jSeparator1);
 
-        worldMenuItem.setText("worldView");
+        worldMenuItem.setText("دید جهانی");
         worldMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 worldMenuItemActionPerformed(evt);
@@ -552,13 +539,29 @@ public class Root extends JFrame implements Runnable {
         jMenu1.add(worldMenuItem);
         jMenu1.add(jSeparator2);
 
-        scaleMenuItem.setText("Scale");
+        scaleMenuItem.setText("مقیاس");
         scaleMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scaleMenuItemActionPerformed(evt);
             }
         });
         jMenu1.add(scaleMenuItem);
+
+        placeNameMenuItem.setText("نام مناطق جهان");
+        placeNameMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                placeNameMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(placeNameMenuItem);
+
+        openStreetMenuItem.setText("نام مناطق و راهها");
+        openStreetMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openStreetMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(openStreetMenuItem);
 
         menuBar.add(jMenu1);
 
@@ -576,7 +579,6 @@ public class Root extends JFrame implements Runnable {
         JCheckBoxMenuItem scale = (JCheckBoxMenuItem) evt.getSource();
         if (scale.isSelected()) {
             WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getScaleLayer());
-            WWJUtil.getWwj().addSelectListener(new ClickAndGoSelectListener(WWJUtil.getWwj(), WorldMapLayer.class));
         } else {
             WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getScaleLayer());
         }
@@ -599,6 +601,25 @@ public class Root extends JFrame implements Runnable {
             WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getCompassLayer());
         } else {
             WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getCompassLayer());
+        }
+    }
+
+    private void placeNameMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
+        JCheckBoxMenuItem placeNames = (JCheckBoxMenuItem) evt.getSource();
+        if (placeNames.isSelected()) {
+            WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getPlaceNameLayer());
+        } else {
+            WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getPlaceNameLayer());
+        }
+    }
+
+    private void openStreetMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
+        System.out.println(WWJUtil.getOpenStreetLayer());
+        JCheckBoxMenuItem openStreet = (JCheckBoxMenuItem) evt.getSource();
+        if (openStreet.isSelected()) {
+            WWJUtil.getWwj().getModel().getLayers().add(WWJUtil.getOpenStreetLayer());
+        } else {
+            WWJUtil.getWwj().getModel().getLayers().remove(WWJUtil.getOpenStreetLayer());
         }
     }
 
@@ -734,7 +755,7 @@ public class Root extends JFrame implements Runnable {
         DefaultTableCellRenderer firstColumn = new DefaultTableCellRenderer();
         DefaultTableCellRenderer secondColumn = new DefaultTableCellRenderer();
         DefaultTableCellRenderer thirdColumn = new DefaultTableCellRenderer();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             model.addRow(new Object[]{"asghar", "akbar", EarthUtil.convertJulianToPersian(new Date())});
 
 
@@ -778,7 +799,7 @@ public class Root extends JFrame implements Runnable {
         for (int index = 0; index < countFacilities; index++) {
             Facility facility = listModel.getElementAt(index);
             for (Satellite satellite : satellites) {
-                if (checkCondition(facility,satellite)) {
+                if (checkCondition(facility, satellite)) {
 
                     // Define GroundStation
                     double[] lla = {facility.getLatitude(), facility.getLongitude(), 0};
@@ -817,15 +838,15 @@ public class Root extends JFrame implements Runnable {
         resultDialog.setVisible(true);
     }
 
-    private boolean checkCondition(Facility facility , Satellite satellite){
+    private boolean checkCondition(Facility facility, Satellite satellite) {
         boolean valid = true;
-        return  valid;
+        return valid;
     }
 
     @SuppressWarnings("Duplicates")
     private void runPassPrediction(double timeSpanDays, GroundStation gs, AbstractSatellite sat,
                                    Time startJulianDate, DefaultTableModel model) throws ParseException {
-        double timeStepSec = 60d;
+        double timeStepSec = 60;
         double jdStart = startJulianDate.getJulianDate();
         double time0, h0;
         double time1 = jdStart;
@@ -833,10 +854,11 @@ public class Root extends JFrame implements Runnable {
         double lastRise = 0;
         String riseTimeStr = null;
         String durStr = null;
+        int row = 0;
+        Date lastDay = null;
+        StringBuilder eachDay = new StringBuilder();
 
-        DefaultTableCellRenderer firstColumn = new DefaultTableCellRenderer();
-        DefaultTableCellRenderer secondColumn = new DefaultTableCellRenderer();
-        DefaultTableCellRenderer thirdColumn = new DefaultTableCellRenderer();
+        DefaultTableCellRenderer cell = new DefaultTableCellRenderer();
 
         for (double jd = jdStart; jd <= jdStart + timeSpanDays; jd += timeStepSec / (60.0 * 60.0 * 24.0)) {
             time0 = time1;
@@ -867,6 +889,21 @@ public class Root extends JFrame implements Runnable {
                 SimpleDateFormat format = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSSZ");
                 format.setTimeZone(TimeZone.getTimeZone("Iran"));
                 Date parse = format.parse(riseTimeStr);
+
+                if (lastDay == null) {
+                    lastDay = parse;
+                }
+
+
+                Calendar parsCal = Calendar.getInstance();
+                parsCal.setTime(parse);
+                int parsDay = parsCal.get(Calendar.DAY_OF_MONTH);
+
+                Calendar lastCal = Calendar.getInstance();
+                lastCal.setTime(lastDay);
+                int lDay = lastCal.get(Calendar.DAY_OF_MONTH);
+
+
                 String riseDate = EarthUtil.convertJulianToPersian(parse, "EEEE d MMMM y");
                 String riseTime = EarthUtil.convertJulianToPersian(parse, "HH:mm:ss");
                 Float floatDur = Float.parseFloat(durStr);
@@ -878,24 +915,68 @@ public class Root extends JFrame implements Runnable {
                 Date time = cal.getTime();
                 String untilTime = EarthUtil.convertJulianToPersian(time, "HH:mm:ss");
 
+                Calendar cal1 = Calendar.getInstance();
+                cal1.setTime(parse);
+                cal1.set(Calendar.HOUR_OF_DAY, 0);
+                cal1.set(Calendar.MINUTE, 0);
+                cal1.set(Calendar.SECOND, 0);
+                cal1.set(Calendar.MILLISECOND, 0);
+                Date x1 = cal.getTime();
+
+                Calendar cal2 = Calendar.getInstance();
+                cal2.setTime(lastDay);
+                cal2.set(Calendar.HOUR_OF_DAY, 0);
+                cal2.set(Calendar.MINUTE, 0);
+                cal2.set(Calendar.SECOND, 0);
+                cal2.set(Calendar.MILLISECOND, 0);
+                Date x2 = cal2.getTime();
+
+
+                int diffInDays = (int) ((x1.getTime() - x2.getTime()) / (1000 * 60 * 60 * 24));
+                if (diffInDays == 1) {
+                    System.out.println(eachDay);
+                    System.out.println("***************************");
+                    lastDay = parse;
+                    // TODO add new row
+                    Object[] objects = new Object[27];
+                    objects[25] = sat.getDisplayName();
+                    objects[26] = gs.getStationName();
+
+                    model.addRow(objects);
+
+                    String[] split = eachDay.toString().split("-");
+                    for (String s : split) {
+                        int column = Integer.parseInt(s.substring(11, 13));
+                        System.out.println("Row : " + row + "  column  : " + column);
+
+                        ResultDialog.resultTable.setValueAt("X", row, column);
+
+                    }
+                    eachDay = new StringBuilder();
+                    row++;
+                } else if (parsDay - lDay < 1) {
+                    eachDay.append(parse);
+                    eachDay.append("-");
+                }
+
                 String rise = riseDate + "از ساعت" + riseTime + "تا ساعت " + untilTime;
 
-                model.addRow(new Object[]{gs.getStationName(), sat.getDisplayName(), rise});
+                //  model.addRow(new Object[]{gs.getStationName(), sat.getDisplayName(), rise});
 
-                firstColumn.setHorizontalAlignment(SwingConstants.RIGHT);
-                ResultDialog.resultTable.getColumnModel().getColumn(0).setCellRenderer(firstColumn);
-                ResultDialog.resultTable.getColumnModel().getColumn(0).setPreferredWidth(200);
-                ResultDialog.resultTable.getColumnModel().getColumn(0).setMaxWidth(200);
-
-
-                secondColumn.setHorizontalAlignment(SwingConstants.CENTER);
-                ResultDialog.resultTable.getColumnModel().getColumn(1).setCellRenderer(secondColumn);
-                ResultDialog.resultTable.getColumnModel().getColumn(1).setPreferredWidth(180);
-                ResultDialog.resultTable.getColumnModel().getColumn(1).setMaxWidth(180);
-
-                thirdColumn.setHorizontalAlignment(SwingConstants.RIGHT);
-                // thirdColumn.setBackground(Color.RED);
-                ResultDialog.resultTable.getColumnModel().getColumn(2).setCellRenderer(thirdColumn);
+//                firstColumn.setHorizontalAlignment(SwingConstants.RIGHT);
+//                ResultDialog.resultTable.getColumnModel().getColumn(0).setCellRenderer(firstColumn);
+//                ResultDialog.resultTable.getColumnModel().getColumn(0).setPreferredWidth(200);
+//                ResultDialog.resultTable.getColumnModel().getColumn(0).setMaxWidth(200);
+//
+//
+//                secondColumn.setHorizontalAlignment(SwingConstants.CENTER);
+//                ResultDialog.resultTable.getColumnModel().getColumn(1).setCellRenderer(secondColumn);
+//                ResultDialog.resultTable.getColumnModel().getColumn(1).setPreferredWidth(180);
+//                ResultDialog.resultTable.getColumnModel().getColumn(1).setMaxWidth(180);
+//
+//                thirdColumn.setHorizontalAlignment(SwingConstants.RIGHT);
+//                // thirdColumn.setBackground(Color.RED);
+//                ResultDialog.resultTable.getColumnModel().getColumn(2).setCellRenderer(thirdColumn);
 
                 riseTimeStr = null;
                 durStr = null;

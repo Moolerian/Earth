@@ -9,6 +9,7 @@ import gov.nasa.worldwind.geom.Position;
 import gov.nasa.worldwind.layers.Layer;
 import gov.nasa.worldwind.layers.RenderableLayer;
 import gov.nasa.worldwind.render.*;
+import gov.nasa.worldwindx.examples.ApplicationTemplate;
 import gov.nasa.worldwindx.examples.util.BalloonController;
 import gov.nasa.worldwindx.examples.util.HotSpotController;
 import model.Facility;
@@ -29,6 +30,8 @@ public class WWJUtil {
     private static Layer worldMapLayer;
     private static Layer compassLayer;
     private static Layer scaleLayer;
+    private static Layer placeNameLayer;
+    private static Layer openStreetLayer;
 
     public static void createWWJ() {
         wwj = new WorldWindowGLJPanel();
@@ -41,6 +44,10 @@ public class WWJUtil {
         wwj.getModel().getLayers().remove(compassLayer);
         scaleLayer = wwj.getModel().getLayers().getLayerByName("Scale bar");
         wwj.getModel().getLayers().remove(scaleLayer);
+        placeNameLayer = wwj.getModel().getLayers().getLayerByName("Place Names");
+        wwj.getModel().getLayers().remove(placeNameLayer);
+        openStreetLayer = wwj.getModel().getLayers().getLayerByName("Open Street Map");
+        wwj.getModel().getLayers().add(openStreetLayer);
     }
 
     public static void addFacilityToEarth(Facility facility) {
@@ -58,33 +65,33 @@ public class WWJUtil {
                     + facility.getLongitude() ;
         }
 
-//        AbstractBrowserBalloon balloon = new GlobeBrowserBalloon("", position);
-//        balloon.setDrawTitleBar(false);
-//        balloon.setVisible(false);
-//        balloon.setDrawBrowserControls(false);
-//        balloon.setText(balloonText);
-//
-//        BalloonAttributes attrs = new BasicBalloonAttributes();
-//        Size size = new Size();
-//        size.setHeight("", 120, "");
-//        size.setWidth("", 650, "");
-//        attrs.setSize(size);
-//        balloon.setAttributes(attrs);
-//
-//        PointPlacemark placemark = new PointPlacemark(position);
-//        placemark.setLabelText("\u202B" + facility.getDisplayName());
-//        placemark.setValue(AVKey.BALLOON, balloon);
-//
-//        RenderableLayer layer = new RenderableLayer();
-//        layer.setName(facility.getId().toString());
-//        layer.addRenderable(balloon);
-//        layer.addRenderable(placemark);
+        AbstractBrowserBalloon balloon = new GlobeBrowserBalloon("", position);
+        balloon.setDrawTitleBar(false);
+        balloon.setVisible(false);
+        balloon.setDrawBrowserControls(false);
+        balloon.setText(balloonText);
+
+        BalloonAttributes attrs = new BasicBalloonAttributes();
+        Size size = new Size();
+        size.setHeight("", 120, "");
+        size.setWidth("", 650, "");
+        attrs.setSize(size);
+        balloon.setAttributes(attrs);
+
+        PointPlacemark placemark = new PointPlacemark(position);
+        placemark.setLabelText("\u202B" + facility.getDisplayName());
+        placemark.setValue(AVKey.BALLOON, balloon);
+
+        RenderableLayer layer = new RenderableLayer();
+        layer.setName(facility.getId().toString());
+        layer.addRenderable(balloon);
+        layer.addRenderable(placemark);
 
         Layer facilityLayer = wwj.getModel().getLayers().getLayerByName(facility.getId().toString());
         if (facilityLayer != null) {
             wwj.getModel().getLayers().remove(facilityLayer);
         }
-       // wwj.getModel().getLayers().add(layer);
+        wwj.getModel().getLayers().add(layer);
     }
 
     public static WorldWindowGLJPanel getWwj() {
@@ -117,6 +124,22 @@ public class WWJUtil {
 
     public static void setScaleLayer(Layer scaleLayer) {
         WWJUtil.scaleLayer = scaleLayer;
+    }
+
+    public static Layer getPlaceNameLayer() {
+        return placeNameLayer;
+    }
+
+    public static void setPlaceNameLayer(Layer placeNameLayer) {
+        WWJUtil.placeNameLayer = placeNameLayer;
+    }
+
+    public static Layer getOpenStreetLayer() {
+        return openStreetLayer;
+    }
+
+    public static void setOpenStreetLayer(Layer openStreetLayer) {
+        WWJUtil.openStreetLayer = openStreetLayer;
     }
 
     public static ArrayList<Facility> getUserFacilities() {

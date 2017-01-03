@@ -2,21 +2,188 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f133f111-7cd5-4dae-a1de-cd22f599a2b5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/vpf-symbols.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jogl.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/worldwind.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/worldwindx.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Earth_jar/jogl.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Earth_jar/vpf-symbols.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Earth_jar/worldwind.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Earth_jar/worldwindx.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/resource/tle/CELESTIS.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/view/ResultDialog$4$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/view/ResultDialog$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resource/tle/CELESTIS.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/gluegen-rt.jar" afterPath="$PROJECT_DIR$/lib/gluegen-rt.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/plugin.jar" afterPath="$PROJECT_DIR$/lib/plugin.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/worldwind.jar" afterPath="$PROJECT_DIR$/lib/worldwind.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Earth_jar/Earth.jar" afterPath="$PROJECT_DIR$/out/artifacts/Earth_jar/Earth.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Earth_jar/gluegen-rt.jar" afterPath="$PROJECT_DIR$/out/artifacts/Earth_jar/gluegen-rt.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Earth_jar/plugin.jar" afterPath="$PROJECT_DIR$/out/artifacts/Earth_jar/plugin.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Earth_jar/worldwind.jar" afterPath="$PROJECT_DIR$/out/artifacts/Earth_jar/worldwind.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/Main.class" afterPath="$PROJECT_DIR$/out/test/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/AER.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/AER.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/AstroConst.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/AstroConst.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/GeoFunctions.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/GeoFunctions.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/JulianDay.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/JulianDay.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/Kepler.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/Kepler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/Sidereal.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/Sidereal.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/bodies/Moon.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/bodies/Moon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/bodies/Sun.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/bodies/Sun.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/coordinates/CoordinateConversion.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/coordinates/CoordinateConversion.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion$Direction.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion$Direction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion$Opt.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion$Opt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit$1.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit$Gravconsttype.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit$Gravconsttype.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils$1.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils$MDHMS.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils$MDHMS.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4verification.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4verification.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/solvers/RungeKutta4.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/solvers/RungeKutta4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/solvers/RungeKutta78.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/solvers/RungeKutta78.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/time/Time.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/time/Time.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/file/IOFileFilter.class" afterPath="$PROJECT_DIR$/out/name/gano/file/IOFileFilter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/file/SaveImageFile.class" afterPath="$PROJECT_DIR$/out/name/gano/file/SaveImageFile.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/file/StkEphemerisReader.class" afterPath="$PROJECT_DIR$/out/name/gano/file/StkEphemerisReader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/ModifiedBroydenSolver.class" afterPath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/ModifiedBroydenSolver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/ModifiedNewtonFiniteDiffSolver.class" afterPath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/ModifiedNewtonFiniteDiffSolver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/TestDC.class" afterPath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/TestDC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/resource/TreeExample$1.class" afterPath="$PROJECT_DIR$/out/resource/TreeExample$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/resource/TreeExample$2.class" afterPath="$PROJECT_DIR$/out/resource/TreeExample$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/resource/TreeExample.class" afterPath="$PROJECT_DIR$/out/resource/TreeExample.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/TestTracking.class" afterPath="$PROJECT_DIR$/out/test/TestTracking.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/util/EarthUtil.class" afterPath="$PROJECT_DIR$/out/util/EarthUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/util/GroundStation.class" afterPath="$PROJECT_DIR$/out/util/GroundStation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/util/JPolarPlotLabel.class" afterPath="$PROJECT_DIR$/out/util/JPolarPlotLabel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/util/SatelliteTleSGP4.class" afterPath="$PROJECT_DIR$/out/util/SatelliteTleSGP4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/util/WWJUtil.class" afterPath="$PROJECT_DIR$/out/util/WWJUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/AboutDialog$1$1.class" afterPath="$PROJECT_DIR$/out/view/AboutDialog$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/AboutDialog$1.class" afterPath="$PROJECT_DIR$/out/view/AboutDialog$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/AboutDialog.class" afterPath="$PROJECT_DIR$/out/view/AboutDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/CreateFacilityDialog$1.class" afterPath="$PROJECT_DIR$/out/view/CreateFacilityDialog$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/CreateFacilityDialog.class" afterPath="$PROJECT_DIR$/out/view/CreateFacilityDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/CreateSatelliteDialog$1.class" afterPath="$PROJECT_DIR$/out/view/CreateSatelliteDialog$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/CreateSatelliteDialog$2.class" afterPath="$PROJECT_DIR$/out/view/CreateSatelliteDialog$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/CreateSatelliteDialog.class" afterPath="$PROJECT_DIR$/out/view/CreateSatelliteDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/FacilityDialog$1.class" afterPath="$PROJECT_DIR$/out/view/FacilityDialog$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/FacilityDialog.class" afterPath="$PROJECT_DIR$/out/view/FacilityDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/FacilityPropertyDialog$1.class" afterPath="$PROJECT_DIR$/out/view/FacilityPropertyDialog$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/FacilityPropertyDialog.class" afterPath="$PROJECT_DIR$/out/view/FacilityPropertyDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/GoDialog$1.class" afterPath="$PROJECT_DIR$/out/view/GoDialog$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/GoDialog$2.class" afterPath="$PROJECT_DIR$/out/view/GoDialog$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/GoDialog$3$1.class" afterPath="$PROJECT_DIR$/out/view/GoDialog$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/GoDialog$3.class" afterPath="$PROJECT_DIR$/out/view/GoDialog$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/GoDialog.class" afterPath="$PROJECT_DIR$/out/view/GoDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$1.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$10.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$11.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$12.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$13.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$14.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$15.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$2.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$3.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$4.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$5.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$6.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$7.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$8.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$9.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/ResultDialog$1.class" afterPath="$PROJECT_DIR$/out/view/ResultDialog$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/ResultDialog$2.class" afterPath="$PROJECT_DIR$/out/view/ResultDialog$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/ResultDialog$3.class" afterPath="$PROJECT_DIR$/out/view/ResultDialog$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/ResultDialog.class" afterPath="$PROJECT_DIR$/out/view/ResultDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$1.class" afterPath="$PROJECT_DIR$/out/view/Root$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$10.class" afterPath="$PROJECT_DIR$/out/view/Root$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$11.class" afterPath="$PROJECT_DIR$/out/view/Root$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$12.class" afterPath="$PROJECT_DIR$/out/view/Root$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$13.class" afterPath="$PROJECT_DIR$/out/view/Root$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$14.class" afterPath="$PROJECT_DIR$/out/view/Root$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$15.class" afterPath="$PROJECT_DIR$/out/view/Root$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$16.class" afterPath="$PROJECT_DIR$/out/view/Root$16.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$17.class" afterPath="$PROJECT_DIR$/out/view/Root$17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$18.class" afterPath="$PROJECT_DIR$/out/view/Root$18.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$19.class" afterPath="$PROJECT_DIR$/out/view/Root$19.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$2.class" afterPath="$PROJECT_DIR$/out/view/Root$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$20.class" afterPath="$PROJECT_DIR$/out/view/Root$20.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$21.class" afterPath="$PROJECT_DIR$/out/view/Root$21.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$3.class" afterPath="$PROJECT_DIR$/out/view/Root$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$4.class" afterPath="$PROJECT_DIR$/out/view/Root$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$5.class" afterPath="$PROJECT_DIR$/out/view/Root$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$6.class" afterPath="$PROJECT_DIR$/out/view/Root$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$7.class" afterPath="$PROJECT_DIR$/out/view/Root$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$8.class" afterPath="$PROJECT_DIR$/out/view/Root$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$9.class" afterPath="$PROJECT_DIR$/out/view/Root$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root.class" afterPath="$PROJECT_DIR$/out/view/Root.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/resource/CacheLocationConfiguration.xml" afterPath="$PROJECT_DIR$/out/resource/CacheLocationConfiguration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/resource/tle/noaa.txt" afterPath="$PROJECT_DIR$/out/resource/tle/noaa.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Facility.java" afterPath="$PROJECT_DIR$/src/model/Facility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Satellite.java" afterPath="$PROJECT_DIR$/src/model/Satellite.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/TLE.java" afterPath="$PROJECT_DIR$/src/model/TLE.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/AER.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/AER.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/AstroConst.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/AstroConst.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/Atmosphere.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/Atmosphere.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/GeoFunctions.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/GeoFunctions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/GravityField.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/GravityField.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/JulianDay.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/JulianDay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/Kepler.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/Kepler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/MathUtils.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/MathUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/Sidereal.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/Sidereal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/bodies/Moon.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/bodies/Moon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/bodies/Sun.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/bodies/Sun.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/coordinates/CoordinateConversion.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/coordinates/CoordinateConversion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/coordinates/J2kCoordinateConversion.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/coordinates/J2kCoordinateConversion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4SatData.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4SatData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4test.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4unit.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4unit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4utils.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4utils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4verification.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4verification.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/ApsisStopCond.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/ApsisStopCond.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/OrbitProblem.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/OrbitProblem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/RungeKutta4.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/RungeKutta4.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/RungeKutta78.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/RungeKutta78.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/StoppingCondition.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/StoppingCondition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/time/Time.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/time/Time.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/file/FileTypeFilter.java" afterPath="$PROJECT_DIR$/src/name/gano/file/FileTypeFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/file/FileUtilities.java" afterPath="$PROJECT_DIR$/src/name/gano/file/FileUtilities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/file/IOFileFilter.java" afterPath="$PROJECT_DIR$/src/name/gano/file/IOFileFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/file/SaveImageFile.java" afterPath="$PROJECT_DIR$/src/name/gano/file/SaveImageFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/file/StkEphemerisReader.java" afterPath="$PROJECT_DIR$/src/name/gano/file/StkEphemerisReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/QuadraticInterpolatorSimp.java" afterPath="$PROJECT_DIR$/src/name/gano/math/QuadraticInterpolatorSimp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/interpolation/LagrangeInterp.java" afterPath="$PROJECT_DIR$/src/name/gano/math/interpolation/LagrangeInterp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/interpolation/PolynomialInterp.java" afterPath="$PROJECT_DIR$/src/name/gano/math/interpolation/PolynomialInterp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/ModifiedBroydenSolver.java" afterPath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/ModifiedBroydenSolver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/ModifiedNewtonFiniteDiffSolver.java" afterPath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/ModifiedNewtonFiniteDiffSolver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/NonLinearEquationSystemProblem.java" afterPath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/NonLinearEquationSystemProblem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/NonLinearEquationSystemSolver.java" afterPath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/NonLinearEquationSystemSolver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/TestDC.java" afterPath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/TestDC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource/CacheLocationConfiguration.xml" afterPath="$PROJECT_DIR$/src/resource/CacheLocationConfiguration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource/TreeExample.java" afterPath="$PROJECT_DIR$/src/resource/TreeExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource/tle/noaa.txt" afterPath="$PROJECT_DIR$/src/resource/tle/noaa.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/Main.java" afterPath="$PROJECT_DIR$/src/test/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/TestTracking.java" afterPath="$PROJECT_DIR$/src/test/TestTracking.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/AbstractSatellite.java" afterPath="$PROJECT_DIR$/src/util/AbstractSatellite.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Constants.java" afterPath="$PROJECT_DIR$/src/util/Constants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/CustomFileFilter.java" afterPath="$PROJECT_DIR$/src/util/CustomFileFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/EarthUtil.java" afterPath="$PROJECT_DIR$/src/util/EarthUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/GroundStation.java" afterPath="$PROJECT_DIR$/src/util/GroundStation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/HierarchyTreeModel.java" afterPath="$PROJECT_DIR$/src/util/HierarchyTreeModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/JPolarPlotLabel.java" afterPath="$PROJECT_DIR$/src/util/JPolarPlotLabel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/SatelliteTleSGP4.java" afterPath="$PROJECT_DIR$/src/util/SatelliteTleSGP4.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/StateVector.java" afterPath="$PROJECT_DIR$/src/util/StateVector.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/WWJUtil.java" afterPath="$PROJECT_DIR$/src/util/WWJUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/AboutDialog.java" afterPath="$PROJECT_DIR$/src/view/AboutDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/CreateFacilityDialog.java" afterPath="$PROJECT_DIR$/src/view/CreateFacilityDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/CreateSatelliteDialog.java" afterPath="$PROJECT_DIR$/src/view/CreateSatelliteDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/FacilityDialog.java" afterPath="$PROJECT_DIR$/src/view/FacilityDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/FacilityPropertyDialog.java" afterPath="$PROJECT_DIR$/src/view/FacilityPropertyDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/GoDialog.java" afterPath="$PROJECT_DIR$/src/view/GoDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/JTrackingPanel.java" afterPath="$PROJECT_DIR$/src/view/JTrackingPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/ResultDialog.java" afterPath="$PROJECT_DIR$/src/view/ResultDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/Root.java" afterPath="$PROJECT_DIR$/src/view/Root.java" />
     </list>
     <ignored path="Earth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +195,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -38,166 +204,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WWJUtil.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WWJUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/WWJUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="60" column="32" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AVKey.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/worldwind.jar!/gov/nasa/worldwind/avlist/AVKey.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestTracking.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/TestTracking.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+            <state relative-caret-position="950">
+              <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <element signature="e#3970#3971#0" expanded="false" />
+                <element signature="e#3996#3997#0" expanded="false" />
+                <element signature="e#4054#4055#0" expanded="false" />
+                <element signature="e#4087#4088#0" expanded="false" />
+                <element signature="e#4133#4134#0" expanded="false" />
+                <element signature="e#4169#4170#0" expanded="false" />
+                <element signature="e#4233#4234#0" expanded="false" />
+                <element signature="e#4286#4287#0" expanded="false" />
+                <element signature="e#4331#4332#0" expanded="false" />
+                <element signature="e#4366#4367#0" expanded="false" />
+                <element signature="e#4428#4429#0" expanded="false" />
+                <element signature="e#4479#4480#0" expanded="false" />
+                <element signature="e#4522#4523#0" expanded="false" />
+                <element signature="e#4555#4556#0" expanded="false" />
+                <element signature="e#4613#4614#0" expanded="false" />
+                <element signature="e#4660#4661#0" expanded="false" />
+                <element signature="e#4707#4708#0" expanded="false" />
+                <element signature="e#4744#4745#0" expanded="false" />
+                <element signature="e#4810#4811#0" expanded="false" />
+                <element signature="e#4865#4866#0" expanded="false" />
+                <element signature="e#4913#4914#0" expanded="false" />
+                <element signature="e#4951#4952#0" expanded="false" />
+                <element signature="e#5019#5020#0" expanded="false" />
+                <element signature="e#5076#5077#0" expanded="false" />
+                <element signature="e#5137#5138#0" expanded="false" />
+                <element signature="e#5174#5175#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="noaa.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resource/tle/noaa.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="69" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/GoDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="102" column="11" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#673#736#0" expanded="false" />
-                <element signature="e#1163#1345#0" expanded="false" />
-                <element signature="e#1344#1345#0" expanded="false" />
-                <element signature="e#1642#1823#0" expanded="false" />
-                <element signature="e#1822#1823#0" expanded="false" />
-                <element signature="e#5674#5761#0" expanded="false" />
-                <element signature="e#7102#7563#0" expanded="false" />
-                <element signature="e#7272#7496#0" expanded="false" />
-                <element signature="e#7495#7496#0" expanded="false" />
-                <element signature="e#7562#7563#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="View.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/worldwind.jar!/gov/nasa/worldwind/View.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Root.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Root.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/view/Root.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="139" column="24" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+            <state relative-caret-position="247">
+              <caret line="951" column="73" lean-forward="false" selection-start-line="951" selection-start-column="73" selection-end-line="951" selection-end-column="73" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#5097#5214#0" expanded="false" />
-                <element signature="e#5213#5214#0" expanded="false" />
-                <element signature="docComment;method#initComponents#0;class#Root#0" expanded="false" />
-                <element signature="e#6672#6735#0" expanded="false" />
-                <element signature="e#9247#9422#0" expanded="false" />
-                <element signature="e#9421#9422#0" expanded="false" />
-                <element signature="e#9631#9826#0" expanded="false" />
-                <element signature="e#9825#9826#0" expanded="false" />
-                <element signature="e#10120#10310#0" expanded="false" />
-                <element signature="e#10309#10310#0" expanded="false" />
-                <element signature="e#10392#10576#0" expanded="false" />
-                <element signature="e#10575#10576#0" expanded="false" />
-                <element signature="e#10670#10857#0" expanded="false" />
-                <element signature="e#10856#10857#0" expanded="false" />
-                <element signature="e#10947#11135#0" expanded="false" />
-                <element signature="e#11134#11135#0" expanded="false" />
-                <element signature="e#11202#11379#0" expanded="false" />
-                <element signature="e#11378#11379#0" expanded="false" />
-                <element signature="e#11449#11629#0" expanded="false" />
-                <element signature="e#11628#11629#0" expanded="false" />
-                <element signature="e#11709#11891#0" expanded="false" />
-                <element signature="e#11890#11891#0" expanded="false" />
-                <element signature="e#11959#12137#0" expanded="false" />
-                <element signature="e#12136#12137#0" expanded="false" />
-                <element signature="e#12203#12380#0" expanded="false" />
-                <element signature="e#12379#12380#0" expanded="false" />
-                <element signature="e#12445#12622#0" expanded="false" />
-                <element signature="e#12621#12622#0" expanded="false" />
-                <element signature="e#21797#21973#0" expanded="false" />
-                <element signature="e#21972#21973#0" expanded="false" />
-                <element signature="e#22876#23060#0" expanded="false" />
-                <element signature="e#23059#23060#0" expanded="false" />
-                <element signature="e#23242#23438#0" expanded="false" />
-                <element signature="e#23437#23438#0" expanded="false" />
-                <element signature="e#23632#23828#0" expanded="false" />
-                <element signature="e#23827#23828#0" expanded="false" />
-                <element signature="e#24023#24208#0" expanded="false" />
-                <element signature="e#24207#24208#0" expanded="false" />
-                <element signature="e#24399#24587#0" expanded="false" />
-                <element signature="e#24586#24587#0" expanded="false" />
-                <element signature="e#24745#24931#0" expanded="false" />
-                <element signature="e#24930#24931#0" expanded="false" />
-                <element signature="e#25083#25269#0" expanded="false" />
-                <element signature="e#25268#25269#0" expanded="false" />
-                <element signature="e#28823#28824#0" expanded="false" />
-                <element signature="e#28870#28871#0" expanded="false" />
+                <element signature="e#6130#6160#0" expanded="true" />
+                <element signature="e#37750#37781#0" expanded="true" />
+                <element signature="e#43968#43999#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+      <file leaf-file-name="ResultDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/ResultDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="988">
+              <caret line="109" column="9" lean-forward="false" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+              <folding>
+                <element signature="e#534#597#0" expanded="false" />
+                <element signature="e#1669#1670#0" expanded="false" />
+                <element signature="e#1729#1730#0" expanded="false" />
+                <element signature="e#2061#2062#0" expanded="false" />
+                <element signature="e#2124#2125#0" expanded="false" />
+                <element signature="e#5748#5749#0" expanded="false" />
+                <element signature="e#5810#5811#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,6 +282,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>firstColumn</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -226,12 +303,13 @@
         <option value="$PROJECT_DIR$/src/view/NewJFrame.java" />
         <option value="$PROJECT_DIR$/src/view/RootView.java" />
         <option value="$PROJECT_DIR$/src/view/AboutDialog.java" />
-        <option value="$PROJECT_DIR$/src/view/Root.java" />
         <option value="$PROJECT_DIR$/src/view/lane/J3DEarthPanel.java" />
         <option value="$PROJECT_DIR$/src/test/TestTracking.java" />
         <option value="$PROJECT_DIR$/src/test/Main.java" />
         <option value="$PROJECT_DIR$/src/util/WWJUtil.java" />
         <option value="$PROJECT_DIR$/src/view/GoDialog.java" />
+        <option value="$PROJECT_DIR$/src/view/ResultDialog.java" />
+        <option value="$PROJECT_DIR$/src/view/Root.java" />
       </list>
     </option>
   </component>
@@ -248,16 +326,6 @@
     <option name="width" value="1616" />
     <option name="height" value="876" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -273,14 +341,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Earth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Earth" />
@@ -343,9 +408,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,6 +418,8 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -364,26 +428,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Root">
-    <configuration default="false" name="RootView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="view.RootView" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Earth" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="Root" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -459,10 +503,86 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="ResultDialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="view.ResultDialog" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Earth" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -639,6 +759,7 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
       <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
@@ -655,27 +776,6 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -706,6 +806,12 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -732,13 +838,6 @@
       <option name="workingDirectory" />
       <option name="isAlternativeJrePathEnabled" value="false" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -783,34 +882,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -834,19 +905,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.RootView" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Root" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="3" class="java.lang.String" itemvalue="Application.TestTracking" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Root" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="2" class="java.lang.String" itemvalue="Application.TestTracking" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ResultDialog" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Root" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TestTracking" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="4" class="java.lang.String" itemvalue="Application.RootView" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ResultDialog" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TestTracking" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -872,45 +943,56 @@
       <workItem from="1482169399289" duration="5359000" />
       <workItem from="1482176076458" duration="2215000" />
       <workItem from="1482179704739" duration="1711000" />
+      <workItem from="1483356436561" duration="334000" />
+      <workItem from="1483357222556" duration="10942000" />
+      <workItem from="1483372715857" duration="664000" />
+      <workItem from="1483421994124" duration="1185000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41727000" />
+    <option name="totallyTimeSpent" value="54852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32258064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel remote servers log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24935733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2622108" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39784947" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32258064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32258064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel remote servers log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -928,18 +1010,30 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/view/Root.java</url>
-          <line>519</line>
+          <line>522</line>
           <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/view/Root.java</url>
-          <line>581</line>
+          <line>584</line>
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/Root.java</url>
+          <line>957</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/Root.java</url>
+          <line>936</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="21" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -948,62 +1042,52 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/GoDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="106" column="14" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#673#736#0" expanded="false" />
-            <element signature="e#1163#1345#0" expanded="false" />
-            <element signature="e#1344#1345#0" expanded="false" />
-            <element signature="e#1642#1823#0" expanded="false" />
-            <element signature="e#1822#1823#0" expanded="false" />
-            <element signature="e#5674#5761#0" expanded="false" />
-            <element signature="e#7102#7563#0" expanded="false" />
-            <element signature="e#7272#7496#0" expanded="false" />
-            <element signature="e#7495#7496#0" expanded="false" />
-            <element signature="e#7562#7563#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/AbstractSatellite.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/CreateSatelliteDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="666">
-          <caret line="193" column="61" selection-start-line="193" selection-start-column="61" selection-end-line="193" selection-end-column="61" />
+          <caret line="193" column="61" lean-forward="false" selection-start-line="193" selection-start-column="61" selection-end-line="193" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/WWJUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3970#3971#0" expanded="false" />
+            <element signature="e#3996#3997#0" expanded="false" />
+            <element signature="e#4054#4055#0" expanded="false" />
+            <element signature="e#4087#4088#0" expanded="false" />
+            <element signature="e#4133#4134#0" expanded="false" />
+            <element signature="e#4169#4170#0" expanded="false" />
+            <element signature="e#4233#4234#0" expanded="false" />
+            <element signature="e#4286#4287#0" expanded="false" />
+            <element signature="e#4331#4332#0" expanded="false" />
+            <element signature="e#4366#4367#0" expanded="false" />
+            <element signature="e#4428#4429#0" expanded="false" />
+            <element signature="e#4479#4480#0" expanded="false" />
+            <element signature="e#4522#4523#0" expanded="false" />
+            <element signature="e#4555#4556#0" expanded="false" />
+            <element signature="e#4613#4614#0" expanded="false" />
+            <element signature="e#4660#4661#0" expanded="false" />
+            <element signature="e#4707#4708#0" expanded="false" />
+            <element signature="e#4744#4745#0" expanded="false" />
+            <element signature="e#4810#4811#0" expanded="false" />
+            <element signature="e#4865#4866#0" expanded="false" />
+            <element signature="e#4913#4914#0" expanded="false" />
+            <element signature="e#4951#4952#0" expanded="false" />
+            <element signature="e#5019#5020#0" expanded="false" />
+            <element signature="e#5076#5077#0" expanded="false" />
+            <element signature="e#5137#5138#0" expanded="false" />
+            <element signature="e#5174#5175#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1011,32 +1095,28 @@
     <entry file="file://$PROJECT_DIR$/src/util/EarthUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/TestTracking.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1044,82 +1124,25 @@
     <entry file="file://$PROJECT_DIR$/src/view/GoDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
-          <caret line="106" column="14" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#673#736#0" expanded="false" />
-            <element signature="e#1163#1345#0" expanded="false" />
-            <element signature="e#1344#1345#0" expanded="false" />
-            <element signature="e#1642#1823#0" expanded="false" />
-            <element signature="e#1822#1823#0" expanded="false" />
-            <element signature="e#5674#5761#0" expanded="false" />
-            <element signature="e#7102#7563#0" expanded="false" />
-            <element signature="e#7272#7496#0" expanded="false" />
-            <element signature="e#7495#7496#0" expanded="false" />
-            <element signature="e#7562#7563#0" expanded="false" />
-          </folding>
+          <caret line="106" column="14" lean-forward="false" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/AbstractSatellite.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/Root.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7758">
-          <caret line="845" column="19" selection-start-line="845" selection-start-column="19" selection-end-line="845" selection-end-column="19" />
+          <caret line="845" column="19" lean-forward="false" selection-start-line="845" selection-start-column="19" selection-end-line="845" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5097#5214#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="docComment;method#initComponents#0;class#Root#0" expanded="false" />
-            <element signature="e#6672#6735#0" expanded="false" />
-            <element signature="e#9247#9422#0" expanded="false" />
-            <element signature="e#9421#9422#0" expanded="false" />
-            <element signature="e#9631#9826#0" expanded="false" />
-            <element signature="e#9825#9826#0" expanded="false" />
-            <element signature="e#10120#10310#0" expanded="false" />
-            <element signature="e#10309#10310#0" expanded="false" />
-            <element signature="e#10392#10576#0" expanded="false" />
-            <element signature="e#10575#10576#0" expanded="false" />
-            <element signature="e#10670#10857#0" expanded="false" />
-            <element signature="e#10856#10857#0" expanded="false" />
-            <element signature="e#10947#11135#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11202#11379#0" expanded="false" />
-            <element signature="e#11378#11379#0" expanded="false" />
-            <element signature="e#11449#11629#0" expanded="false" />
-            <element signature="e#11628#11629#0" expanded="false" />
-            <element signature="e#11709#11891#0" expanded="false" />
-            <element signature="e#11890#11891#0" expanded="false" />
-            <element signature="e#11959#12137#0" expanded="false" />
-            <element signature="e#12136#12137#0" expanded="false" />
-            <element signature="e#12203#12380#0" expanded="false" />
-            <element signature="e#12379#12380#0" expanded="false" />
-            <element signature="e#12445#12622#0" expanded="false" />
-            <element signature="e#12621#12622#0" expanded="false" />
-            <element signature="e#21797#21973#0" expanded="false" />
-            <element signature="e#21972#21973#0" expanded="false" />
-            <element signature="e#22876#23060#0" expanded="false" />
-            <element signature="e#23059#23060#0" expanded="false" />
-            <element signature="e#23242#23438#0" expanded="false" />
-            <element signature="e#23437#23438#0" expanded="false" />
-            <element signature="e#23632#23828#0" expanded="false" />
-            <element signature="e#23827#23828#0" expanded="false" />
-            <element signature="e#24023#24208#0" expanded="false" />
-            <element signature="e#24207#24208#0" expanded="false" />
-            <element signature="e#24399#24587#0" expanded="false" />
-            <element signature="e#24586#24587#0" expanded="false" />
-            <element signature="e#24745#24931#0" expanded="false" />
-            <element signature="e#24930#24931#0" expanded="false" />
-            <element signature="e#25083#25269#0" expanded="false" />
-            <element signature="e#25268#25269#0" expanded="false" />
-            <element signature="e#28823#28824#0" expanded="false" />
-            <element signature="e#28870#28871#0" expanded="false" />
+            <element signature="e#6130#6160#0" expanded="true" />
+            <element signature="e#37750#37781#0" expanded="true" />
+            <element signature="e#43968#43999#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1127,16 +1150,42 @@
     <entry file="file://$PROJECT_DIR$/src/view/CreateSatelliteDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="666">
-          <caret line="193" column="61" selection-start-line="193" selection-start-column="61" selection-end-line="193" selection-end-column="61" />
+          <caret line="193" column="61" lean-forward="false" selection-start-line="193" selection-start-column="61" selection-end-line="193" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/WWJUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3970#3971#0" expanded="false" />
+            <element signature="e#3996#3997#0" expanded="false" />
+            <element signature="e#4054#4055#0" expanded="false" />
+            <element signature="e#4087#4088#0" expanded="false" />
+            <element signature="e#4133#4134#0" expanded="false" />
+            <element signature="e#4169#4170#0" expanded="false" />
+            <element signature="e#4233#4234#0" expanded="false" />
+            <element signature="e#4286#4287#0" expanded="false" />
+            <element signature="e#4331#4332#0" expanded="false" />
+            <element signature="e#4366#4367#0" expanded="false" />
+            <element signature="e#4428#4429#0" expanded="false" />
+            <element signature="e#4479#4480#0" expanded="false" />
+            <element signature="e#4522#4523#0" expanded="false" />
+            <element signature="e#4555#4556#0" expanded="false" />
+            <element signature="e#4613#4614#0" expanded="false" />
+            <element signature="e#4660#4661#0" expanded="false" />
+            <element signature="e#4707#4708#0" expanded="false" />
+            <element signature="e#4744#4745#0" expanded="false" />
+            <element signature="e#4810#4811#0" expanded="false" />
+            <element signature="e#4865#4866#0" expanded="false" />
+            <element signature="e#4913#4914#0" expanded="false" />
+            <element signature="e#4951#4952#0" expanded="false" />
+            <element signature="e#5019#5020#0" expanded="false" />
+            <element signature="e#5076#5077#0" expanded="false" />
+            <element signature="e#5137#5138#0" expanded="false" />
+            <element signature="e#5174#5175#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1145,55 +1194,11 @@
     <entry file="file://$PROJECT_DIR$/src/view/Root.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13914">
-          <caret line="845" column="19" selection-start-line="845" selection-start-column="19" selection-end-line="845" selection-end-column="19" />
+          <caret line="845" column="19" lean-forward="false" selection-start-line="845" selection-start-column="19" selection-end-line="845" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5097#5214#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="docComment;method#initComponents#0;class#Root#0" expanded="false" />
-            <element signature="e#6672#6735#0" expanded="false" />
-            <element signature="e#9247#9422#0" expanded="false" />
-            <element signature="e#9421#9422#0" expanded="false" />
-            <element signature="e#9631#9826#0" expanded="false" />
-            <element signature="e#9825#9826#0" expanded="false" />
-            <element signature="e#10120#10310#0" expanded="false" />
-            <element signature="e#10309#10310#0" expanded="false" />
-            <element signature="e#10392#10576#0" expanded="false" />
-            <element signature="e#10575#10576#0" expanded="false" />
-            <element signature="e#10670#10857#0" expanded="false" />
-            <element signature="e#10856#10857#0" expanded="false" />
-            <element signature="e#10947#11135#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11202#11379#0" expanded="false" />
-            <element signature="e#11378#11379#0" expanded="false" />
-            <element signature="e#11449#11629#0" expanded="false" />
-            <element signature="e#11628#11629#0" expanded="false" />
-            <element signature="e#11709#11891#0" expanded="false" />
-            <element signature="e#11890#11891#0" expanded="false" />
-            <element signature="e#11959#12137#0" expanded="false" />
-            <element signature="e#12136#12137#0" expanded="false" />
-            <element signature="e#12203#12380#0" expanded="false" />
-            <element signature="e#12379#12380#0" expanded="false" />
-            <element signature="e#12445#12622#0" expanded="false" />
-            <element signature="e#12621#12622#0" expanded="false" />
-            <element signature="e#21797#21973#0" expanded="false" />
-            <element signature="e#21972#21973#0" expanded="false" />
-            <element signature="e#22876#23060#0" expanded="false" />
-            <element signature="e#23059#23060#0" expanded="false" />
-            <element signature="e#23242#23438#0" expanded="false" />
-            <element signature="e#23437#23438#0" expanded="false" />
-            <element signature="e#23632#23828#0" expanded="false" />
-            <element signature="e#23827#23828#0" expanded="false" />
-            <element signature="e#24023#24208#0" expanded="false" />
-            <element signature="e#24207#24208#0" expanded="false" />
-            <element signature="e#24399#24587#0" expanded="false" />
-            <element signature="e#24586#24587#0" expanded="false" />
-            <element signature="e#24745#24931#0" expanded="false" />
-            <element signature="e#24930#24931#0" expanded="false" />
-            <element signature="e#25083#25269#0" expanded="false" />
-            <element signature="e#25268#25269#0" expanded="false" />
-            <element signature="e#28823#28824#0" expanded="false" />
-            <element signature="e#28870#28871#0" expanded="false" />
+            <element signature="e#6130#6160#0" expanded="true" />
+            <element signature="e#37750#37781#0" expanded="true" />
+            <element signature="e#43968#43999#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1201,16 +1206,42 @@
     <entry file="file://$PROJECT_DIR$/src/view/CreateSatelliteDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/WWJUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3970#3971#0" expanded="false" />
+            <element signature="e#3996#3997#0" expanded="false" />
+            <element signature="e#4054#4055#0" expanded="false" />
+            <element signature="e#4087#4088#0" expanded="false" />
+            <element signature="e#4133#4134#0" expanded="false" />
+            <element signature="e#4169#4170#0" expanded="false" />
+            <element signature="e#4233#4234#0" expanded="false" />
+            <element signature="e#4286#4287#0" expanded="false" />
+            <element signature="e#4331#4332#0" expanded="false" />
+            <element signature="e#4366#4367#0" expanded="false" />
+            <element signature="e#4428#4429#0" expanded="false" />
+            <element signature="e#4479#4480#0" expanded="false" />
+            <element signature="e#4522#4523#0" expanded="false" />
+            <element signature="e#4555#4556#0" expanded="false" />
+            <element signature="e#4613#4614#0" expanded="false" />
+            <element signature="e#4660#4661#0" expanded="false" />
+            <element signature="e#4707#4708#0" expanded="false" />
+            <element signature="e#4744#4745#0" expanded="false" />
+            <element signature="e#4810#4811#0" expanded="false" />
+            <element signature="e#4865#4866#0" expanded="false" />
+            <element signature="e#4913#4914#0" expanded="false" />
+            <element signature="e#4951#4952#0" expanded="false" />
+            <element signature="e#5019#5020#0" expanded="false" />
+            <element signature="e#5076#5077#0" expanded="false" />
+            <element signature="e#5137#5138#0" expanded="false" />
+            <element signature="e#5174#5175#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1219,55 +1250,11 @@
     <entry file="file://$PROJECT_DIR$/src/view/Root.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5097#5214#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="docComment;method#initComponents#0;class#Root#0" expanded="false" />
-            <element signature="e#6672#6735#0" expanded="false" />
-            <element signature="e#9247#9422#0" expanded="false" />
-            <element signature="e#9421#9422#0" expanded="false" />
-            <element signature="e#9631#9826#0" expanded="false" />
-            <element signature="e#9825#9826#0" expanded="false" />
-            <element signature="e#10120#10310#0" expanded="false" />
-            <element signature="e#10309#10310#0" expanded="false" />
-            <element signature="e#10392#10576#0" expanded="false" />
-            <element signature="e#10575#10576#0" expanded="false" />
-            <element signature="e#10670#10857#0" expanded="false" />
-            <element signature="e#10856#10857#0" expanded="false" />
-            <element signature="e#10947#11135#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11202#11379#0" expanded="false" />
-            <element signature="e#11378#11379#0" expanded="false" />
-            <element signature="e#11449#11629#0" expanded="false" />
-            <element signature="e#11628#11629#0" expanded="false" />
-            <element signature="e#11709#11891#0" expanded="false" />
-            <element signature="e#11890#11891#0" expanded="false" />
-            <element signature="e#11959#12137#0" expanded="false" />
-            <element signature="e#12136#12137#0" expanded="false" />
-            <element signature="e#12203#12380#0" expanded="false" />
-            <element signature="e#12379#12380#0" expanded="false" />
-            <element signature="e#12445#12622#0" expanded="false" />
-            <element signature="e#12621#12622#0" expanded="false" />
-            <element signature="e#21797#21973#0" expanded="false" />
-            <element signature="e#21972#21973#0" expanded="false" />
-            <element signature="e#22876#23060#0" expanded="false" />
-            <element signature="e#23059#23060#0" expanded="false" />
-            <element signature="e#23242#23438#0" expanded="false" />
-            <element signature="e#23437#23438#0" expanded="false" />
-            <element signature="e#23632#23828#0" expanded="false" />
-            <element signature="e#23827#23828#0" expanded="false" />
-            <element signature="e#24023#24208#0" expanded="false" />
-            <element signature="e#24207#24208#0" expanded="false" />
-            <element signature="e#24399#24587#0" expanded="false" />
-            <element signature="e#24586#24587#0" expanded="false" />
-            <element signature="e#24745#24931#0" expanded="false" />
-            <element signature="e#24930#24931#0" expanded="false" />
-            <element signature="e#25083#25269#0" expanded="false" />
-            <element signature="e#25268#25269#0" expanded="false" />
-            <element signature="e#28823#28824#0" expanded="false" />
-            <element signature="e#28870#28871#0" expanded="false" />
+            <element signature="e#6130#6160#0" expanded="true" />
+            <element signature="e#37750#37781#0" expanded="true" />
+            <element signature="e#43968#43999#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1275,9 +1262,35 @@
     <entry file="file://$PROJECT_DIR$/src/util/WWJUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3970#3971#0" expanded="false" />
+            <element signature="e#3996#3997#0" expanded="false" />
+            <element signature="e#4054#4055#0" expanded="false" />
+            <element signature="e#4087#4088#0" expanded="false" />
+            <element signature="e#4133#4134#0" expanded="false" />
+            <element signature="e#4169#4170#0" expanded="false" />
+            <element signature="e#4233#4234#0" expanded="false" />
+            <element signature="e#4286#4287#0" expanded="false" />
+            <element signature="e#4331#4332#0" expanded="false" />
+            <element signature="e#4366#4367#0" expanded="false" />
+            <element signature="e#4428#4429#0" expanded="false" />
+            <element signature="e#4479#4480#0" expanded="false" />
+            <element signature="e#4522#4523#0" expanded="false" />
+            <element signature="e#4555#4556#0" expanded="false" />
+            <element signature="e#4613#4614#0" expanded="false" />
+            <element signature="e#4660#4661#0" expanded="false" />
+            <element signature="e#4707#4708#0" expanded="false" />
+            <element signature="e#4744#4745#0" expanded="false" />
+            <element signature="e#4810#4811#0" expanded="false" />
+            <element signature="e#4865#4866#0" expanded="false" />
+            <element signature="e#4913#4914#0" expanded="false" />
+            <element signature="e#4951#4952#0" expanded="false" />
+            <element signature="e#5019#5020#0" expanded="false" />
+            <element signature="e#5076#5077#0" expanded="false" />
+            <element signature="e#5137#5138#0" expanded="false" />
+            <element signature="e#5174#5175#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1286,55 +1299,11 @@
     <entry file="file://$PROJECT_DIR$/src/view/Root.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5097#5214#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="docComment;method#initComponents#0;class#Root#0" expanded="false" />
-            <element signature="e#6672#6735#0" expanded="false" />
-            <element signature="e#9247#9422#0" expanded="false" />
-            <element signature="e#9421#9422#0" expanded="false" />
-            <element signature="e#9631#9826#0" expanded="false" />
-            <element signature="e#9825#9826#0" expanded="false" />
-            <element signature="e#10120#10310#0" expanded="false" />
-            <element signature="e#10309#10310#0" expanded="false" />
-            <element signature="e#10392#10576#0" expanded="false" />
-            <element signature="e#10575#10576#0" expanded="false" />
-            <element signature="e#10670#10857#0" expanded="false" />
-            <element signature="e#10856#10857#0" expanded="false" />
-            <element signature="e#10947#11135#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11202#11379#0" expanded="false" />
-            <element signature="e#11378#11379#0" expanded="false" />
-            <element signature="e#11449#11629#0" expanded="false" />
-            <element signature="e#11628#11629#0" expanded="false" />
-            <element signature="e#11709#11891#0" expanded="false" />
-            <element signature="e#11890#11891#0" expanded="false" />
-            <element signature="e#11959#12137#0" expanded="false" />
-            <element signature="e#12136#12137#0" expanded="false" />
-            <element signature="e#12203#12380#0" expanded="false" />
-            <element signature="e#12379#12380#0" expanded="false" />
-            <element signature="e#12445#12622#0" expanded="false" />
-            <element signature="e#12621#12622#0" expanded="false" />
-            <element signature="e#21797#21973#0" expanded="false" />
-            <element signature="e#21972#21973#0" expanded="false" />
-            <element signature="e#22876#23060#0" expanded="false" />
-            <element signature="e#23059#23060#0" expanded="false" />
-            <element signature="e#23242#23438#0" expanded="false" />
-            <element signature="e#23437#23438#0" expanded="false" />
-            <element signature="e#23632#23828#0" expanded="false" />
-            <element signature="e#23827#23828#0" expanded="false" />
-            <element signature="e#24023#24208#0" expanded="false" />
-            <element signature="e#24207#24208#0" expanded="false" />
-            <element signature="e#24399#24587#0" expanded="false" />
-            <element signature="e#24586#24587#0" expanded="false" />
-            <element signature="e#24745#24931#0" expanded="false" />
-            <element signature="e#24930#24931#0" expanded="false" />
-            <element signature="e#25083#25269#0" expanded="false" />
-            <element signature="e#25268#25269#0" expanded="false" />
-            <element signature="e#28823#28824#0" expanded="false" />
-            <element signature="e#28870#28871#0" expanded="false" />
+            <element signature="e#6130#6160#0" expanded="true" />
+            <element signature="e#37750#37781#0" expanded="true" />
+            <element signature="e#43968#43999#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1342,7 +1311,7 @@
     <entry file="file://$PROJECT_DIR$/src/view/AboutDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
-          <caret line="181" column="40" selection-start-line="181" selection-start-column="40" selection-end-line="181" selection-end-column="40" />
+          <caret line="181" column="40" lean-forward="false" selection-start-line="181" selection-start-column="40" selection-end-line="181" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1350,55 +1319,11 @@
     <entry file="file://$PROJECT_DIR$/src/view/Root.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5097#5214#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="docComment;method#initComponents#0;class#Root#0" expanded="false" />
-            <element signature="e#6672#6735#0" expanded="false" />
-            <element signature="e#9247#9422#0" expanded="false" />
-            <element signature="e#9421#9422#0" expanded="false" />
-            <element signature="e#9631#9826#0" expanded="false" />
-            <element signature="e#9825#9826#0" expanded="false" />
-            <element signature="e#10120#10310#0" expanded="false" />
-            <element signature="e#10309#10310#0" expanded="false" />
-            <element signature="e#10392#10576#0" expanded="false" />
-            <element signature="e#10575#10576#0" expanded="false" />
-            <element signature="e#10670#10857#0" expanded="false" />
-            <element signature="e#10856#10857#0" expanded="false" />
-            <element signature="e#10947#11135#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11202#11379#0" expanded="false" />
-            <element signature="e#11378#11379#0" expanded="false" />
-            <element signature="e#11449#11629#0" expanded="false" />
-            <element signature="e#11628#11629#0" expanded="false" />
-            <element signature="e#11709#11891#0" expanded="false" />
-            <element signature="e#11890#11891#0" expanded="false" />
-            <element signature="e#11959#12137#0" expanded="false" />
-            <element signature="e#12136#12137#0" expanded="false" />
-            <element signature="e#12203#12380#0" expanded="false" />
-            <element signature="e#12379#12380#0" expanded="false" />
-            <element signature="e#12445#12622#0" expanded="false" />
-            <element signature="e#12621#12622#0" expanded="false" />
-            <element signature="e#21797#21973#0" expanded="false" />
-            <element signature="e#21972#21973#0" expanded="false" />
-            <element signature="e#22876#23060#0" expanded="false" />
-            <element signature="e#23059#23060#0" expanded="false" />
-            <element signature="e#23242#23438#0" expanded="false" />
-            <element signature="e#23437#23438#0" expanded="false" />
-            <element signature="e#23632#23828#0" expanded="false" />
-            <element signature="e#23827#23828#0" expanded="false" />
-            <element signature="e#24023#24208#0" expanded="false" />
-            <element signature="e#24207#24208#0" expanded="false" />
-            <element signature="e#24399#24587#0" expanded="false" />
-            <element signature="e#24586#24587#0" expanded="false" />
-            <element signature="e#24745#24931#0" expanded="false" />
-            <element signature="e#24930#24931#0" expanded="false" />
-            <element signature="e#25083#25269#0" expanded="false" />
-            <element signature="e#25268#25269#0" expanded="false" />
-            <element signature="e#28823#28824#0" expanded="false" />
-            <element signature="e#28870#28871#0" expanded="false" />
+            <element signature="e#6130#6160#0" expanded="true" />
+            <element signature="e#37750#37781#0" expanded="true" />
+            <element signature="e#43968#43999#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1407,80 +1332,30 @@
     <entry file="file://$PROJECT_DIR$/src/view/Root.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
-          <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+          <caret line="67" column="43" lean-forward="false" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5097#5214#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="docComment;method#initComponents#0;class#Root#0" expanded="false" />
-            <element signature="e#6672#6735#0" expanded="false" />
-            <element signature="e#9247#9422#0" expanded="false" />
-            <element signature="e#9421#9422#0" expanded="false" />
-            <element signature="e#9631#9826#0" expanded="false" />
-            <element signature="e#9825#9826#0" expanded="false" />
-            <element signature="e#10120#10310#0" expanded="false" />
-            <element signature="e#10309#10310#0" expanded="false" />
-            <element signature="e#10392#10576#0" expanded="false" />
-            <element signature="e#10575#10576#0" expanded="false" />
-            <element signature="e#10670#10857#0" expanded="false" />
-            <element signature="e#10856#10857#0" expanded="false" />
-            <element signature="e#10947#11135#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11202#11379#0" expanded="false" />
-            <element signature="e#11378#11379#0" expanded="false" />
-            <element signature="e#11449#11629#0" expanded="false" />
-            <element signature="e#11628#11629#0" expanded="false" />
-            <element signature="e#11709#11891#0" expanded="false" />
-            <element signature="e#11890#11891#0" expanded="false" />
-            <element signature="e#11959#12137#0" expanded="false" />
-            <element signature="e#12136#12137#0" expanded="false" />
-            <element signature="e#12203#12380#0" expanded="false" />
-            <element signature="e#12379#12380#0" expanded="false" />
-            <element signature="e#12445#12622#0" expanded="false" />
-            <element signature="e#12621#12622#0" expanded="false" />
-            <element signature="e#21797#21973#0" expanded="false" />
-            <element signature="e#21972#21973#0" expanded="false" />
-            <element signature="e#22876#23060#0" expanded="false" />
-            <element signature="e#23059#23060#0" expanded="false" />
-            <element signature="e#23242#23438#0" expanded="false" />
-            <element signature="e#23437#23438#0" expanded="false" />
-            <element signature="e#23632#23828#0" expanded="false" />
-            <element signature="e#23827#23828#0" expanded="false" />
-            <element signature="e#24023#24208#0" expanded="false" />
-            <element signature="e#24207#24208#0" expanded="false" />
-            <element signature="e#24399#24587#0" expanded="false" />
-            <element signature="e#24586#24587#0" expanded="false" />
-            <element signature="e#24745#24931#0" expanded="false" />
-            <element signature="e#24930#24931#0" expanded="false" />
-            <element signature="e#25083#25269#0" expanded="false" />
-            <element signature="e#25268#25269#0" expanded="false" />
-            <element signature="e#28823#28824#0" expanded="false" />
-            <element signature="e#28870#28871#0" expanded="false" />
+            <element signature="e#6130#6160#0" expanded="true" />
+            <element signature="e#37750#37781#0" expanded="true" />
+            <element signature="e#43968#43999#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/NewJFrame.java" />
-    <entry file="jar://$PROJECT_DIR$/lib/worldwind.jar!/gov/nasa/worldwind/awt/WorldWindowGLJPanel.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3859">
-          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/worldwind.jar!/gov/nasa/worldwind/awt/WorldWindowGLJPanel.class" />
     <entry file="file://$PROJECT_DIR$/src/view/NewJFrame.java" />
     <entry file="file://$PROJECT_DIR$/src/view/RootView.java" />
     <entry file="file://$PROJECT_DIR$/src/view/AboutDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
-          <caret line="181" column="40" selection-start-line="181" selection-start-column="40" selection-end-line="181" selection-end-column="40" />
+          <caret line="181" column="40" lean-forward="false" selection-start-line="181" selection-start-column="40" selection-end-line="181" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/CreateSatelliteDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="666">
-          <caret line="193" column="61" selection-start-line="193" selection-start-column="61" selection-end-line="193" selection-end-column="61" />
+          <caret line="193" column="61" lean-forward="false" selection-start-line="193" selection-start-column="61" selection-end-line="193" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1488,7 +1363,7 @@
     <entry file="file://$PROJECT_DIR$/src/util/AbstractSatellite.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1497,157 +1372,134 @@
     <entry file="file://$PROJECT_DIR$/src/util/EarthUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="95">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/TestTracking.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="494">
+          <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resource/tle/noaa.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="69" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="69" />
-          <folding />
+        <state relative-caret-position="38">
+          <caret line="2" column="69" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/worldwind.jar!/gov/nasa/worldwind/avlist/AVKey.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/worldwind.jar!/gov/nasa/worldwind/awt/WorldWindowGLJPanel.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/Root.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="139" column="24" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5097#5214#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="docComment;method#initComponents#0;class#Root#0" expanded="false" />
-            <element signature="e#6672#6735#0" expanded="false" />
-            <element signature="e#9247#9422#0" expanded="false" />
-            <element signature="e#9421#9422#0" expanded="false" />
-            <element signature="e#9631#9826#0" expanded="false" />
-            <element signature="e#9825#9826#0" expanded="false" />
-            <element signature="e#10120#10310#0" expanded="false" />
-            <element signature="e#10309#10310#0" expanded="false" />
-            <element signature="e#10392#10576#0" expanded="false" />
-            <element signature="e#10575#10576#0" expanded="false" />
-            <element signature="e#10670#10857#0" expanded="false" />
-            <element signature="e#10856#10857#0" expanded="false" />
-            <element signature="e#10947#11135#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11202#11379#0" expanded="false" />
-            <element signature="e#11378#11379#0" expanded="false" />
-            <element signature="e#11449#11629#0" expanded="false" />
-            <element signature="e#11628#11629#0" expanded="false" />
-            <element signature="e#11709#11891#0" expanded="false" />
-            <element signature="e#11890#11891#0" expanded="false" />
-            <element signature="e#11959#12137#0" expanded="false" />
-            <element signature="e#12136#12137#0" expanded="false" />
-            <element signature="e#12203#12380#0" expanded="false" />
-            <element signature="e#12379#12380#0" expanded="false" />
-            <element signature="e#12445#12622#0" expanded="false" />
-            <element signature="e#12621#12622#0" expanded="false" />
-            <element signature="e#21797#21973#0" expanded="false" />
-            <element signature="e#21972#21973#0" expanded="false" />
-            <element signature="e#22876#23060#0" expanded="false" />
-            <element signature="e#23059#23060#0" expanded="false" />
-            <element signature="e#23242#23438#0" expanded="false" />
-            <element signature="e#23437#23438#0" expanded="false" />
-            <element signature="e#23632#23828#0" expanded="false" />
-            <element signature="e#23827#23828#0" expanded="false" />
-            <element signature="e#24023#24208#0" expanded="false" />
-            <element signature="e#24207#24208#0" expanded="false" />
-            <element signature="e#24399#24587#0" expanded="false" />
-            <element signature="e#24586#24587#0" expanded="false" />
-            <element signature="e#24745#24931#0" expanded="false" />
-            <element signature="e#24930#24931#0" expanded="false" />
-            <element signature="e#25083#25269#0" expanded="false" />
-            <element signature="e#25268#25269#0" expanded="false" />
-            <element signature="e#28823#28824#0" expanded="false" />
-            <element signature="e#28870#28871#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/worldwind.jar!/gov/nasa/worldwind/avlist/AVKey.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/worldwind.jar!/gov/nasa/worldwind/awt/WorldWindowGLJPanel.class" />
     <entry file="file://$PROJECT_DIR$/src/test/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="266">
+          <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/GoDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="102" column="11" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
+        <state relative-caret-position="589">
+          <caret line="102" column="11" lean-forward="false" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/worldwind.jar!/gov/nasa/worldwind/View.class" />
+    <entry file="file://$PROJECT_DIR$/src/util/WWJUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#673#736#0" expanded="false" />
-            <element signature="e#1163#1345#0" expanded="false" />
-            <element signature="e#1344#1345#0" expanded="false" />
-            <element signature="e#1642#1823#0" expanded="false" />
-            <element signature="e#1822#1823#0" expanded="false" />
-            <element signature="e#5674#5761#0" expanded="false" />
-            <element signature="e#7102#7563#0" expanded="false" />
-            <element signature="e#7272#7496#0" expanded="false" />
-            <element signature="e#7495#7496#0" expanded="false" />
-            <element signature="e#7562#7563#0" expanded="false" />
+            <element signature="e#3970#3971#0" expanded="false" />
+            <element signature="e#3996#3997#0" expanded="false" />
+            <element signature="e#4054#4055#0" expanded="false" />
+            <element signature="e#4087#4088#0" expanded="false" />
+            <element signature="e#4133#4134#0" expanded="false" />
+            <element signature="e#4169#4170#0" expanded="false" />
+            <element signature="e#4233#4234#0" expanded="false" />
+            <element signature="e#4286#4287#0" expanded="false" />
+            <element signature="e#4331#4332#0" expanded="false" />
+            <element signature="e#4366#4367#0" expanded="false" />
+            <element signature="e#4428#4429#0" expanded="false" />
+            <element signature="e#4479#4480#0" expanded="false" />
+            <element signature="e#4522#4523#0" expanded="false" />
+            <element signature="e#4555#4556#0" expanded="false" />
+            <element signature="e#4613#4614#0" expanded="false" />
+            <element signature="e#4660#4661#0" expanded="false" />
+            <element signature="e#4707#4708#0" expanded="false" />
+            <element signature="e#4744#4745#0" expanded="false" />
+            <element signature="e#4810#4811#0" expanded="false" />
+            <element signature="e#4865#4866#0" expanded="false" />
+            <element signature="e#4913#4914#0" expanded="false" />
+            <element signature="e#4951#4952#0" expanded="false" />
+            <element signature="e#5019#5020#0" expanded="false" />
+            <element signature="e#5076#5077#0" expanded="false" />
+            <element signature="e#5137#5138#0" expanded="false" />
+            <element signature="e#5174#5175#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/worldwind.jar!/gov/nasa/worldwind/View.class">
+    <entry file="file://$PROJECT_DIR$/src/view/ResultDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="988">
+          <caret line="109" column="9" lean-forward="false" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+          <folding>
+            <element signature="e#534#597#0" expanded="false" />
+            <element signature="e#1669#1670#0" expanded="false" />
+            <element signature="e#1729#1730#0" expanded="false" />
+            <element signature="e#2061#2062#0" expanded="false" />
+            <element signature="e#2124#2125#0" expanded="false" />
+            <element signature="e#5748#5749#0" expanded="false" />
+            <element signature="e#5810#5811#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/WWJUtil.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_02/src.zip!/javax/swing/table/TableCellEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="60" column="32" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="32" />
+        <state relative-caret-position="-17">
+          <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_02/src.zip!/javax/swing/JTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="5620" column="15" lean-forward="true" selection-start-line="5620" selection-start-column="15" selection-end-line="5620" selection-end-column="15" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#215642#215643#0" expanded="false" />
+            <element signature="e#215675#215676#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/Root.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="951" column="73" lean-forward="false" selection-start-line="951" selection-start-column="73" selection-end-line="951" selection-end-column="73" />
+          <folding>
+            <element signature="e#6130#6160#0" expanded="true" />
+            <element signature="e#37750#37781#0" expanded="true" />
+            <element signature="e#43968#43999#0" expanded="true" />
           </folding>
         </state>
       </provider>
