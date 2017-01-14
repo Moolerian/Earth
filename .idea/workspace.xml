@@ -15,175 +15,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/view/ResultDialog$4$1.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/view/ResultDialog$4.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/resource/tle/CELESTIS.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/gluegen-rt.jar" afterPath="$PROJECT_DIR$/lib/gluegen-rt.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Earth_jar/Earth.jar" afterPath="$PROJECT_DIR$/out/artifacts/Earth_jar/Earth.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Earth_jar/gluegen-rt.jar" afterPath="$PROJECT_DIR$/out/artifacts/Earth_jar/gluegen-rt.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/AER.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/AER.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/AstroConst.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/AstroConst.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/GeoFunctions.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/GeoFunctions.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/JulianDay.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/JulianDay.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/Kepler.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/Kepler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/Sidereal.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/Sidereal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/bodies/Moon.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/bodies/Moon.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/bodies/Sun.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/bodies/Sun.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/coordinates/CoordinateConversion.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/coordinates/CoordinateConversion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion$Direction.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion$Direction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion$Opt.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion$Opt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/coordinates/J2kCoordinateConversion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit$1.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit$Gravconsttype.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit$Gravconsttype.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4unit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils$1.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils$MDHMS.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils$MDHMS.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4utils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4verification.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/sgp4_cssi/SGP4verification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/solvers/RungeKutta4.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/solvers/RungeKutta4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/propogators/solvers/RungeKutta78.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/propogators/solvers/RungeKutta78.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/astro/time/Time.class" afterPath="$PROJECT_DIR$/out/name/gano/astro/time/Time.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/file/IOFileFilter.class" afterPath="$PROJECT_DIR$/out/name/gano/file/IOFileFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/file/SaveImageFile.class" afterPath="$PROJECT_DIR$/out/name/gano/file/SaveImageFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/file/StkEphemerisReader.class" afterPath="$PROJECT_DIR$/out/name/gano/file/StkEphemerisReader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/ModifiedBroydenSolver.class" afterPath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/ModifiedBroydenSolver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/ModifiedNewtonFiniteDiffSolver.class" afterPath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/ModifiedNewtonFiniteDiffSolver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/TestDC.class" afterPath="$PROJECT_DIR$/out/name/gano/math/nonlinsolvers/TestDC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/resource/TreeExample$1.class" afterPath="$PROJECT_DIR$/out/resource/TreeExample$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/resource/TreeExample$2.class" afterPath="$PROJECT_DIR$/out/resource/TreeExample$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/resource/TreeExample.class" afterPath="$PROJECT_DIR$/out/resource/TreeExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/TestTracking.class" afterPath="$PROJECT_DIR$/out/test/TestTracking.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/util/EarthUtil.class" afterPath="$PROJECT_DIR$/out/util/EarthUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/util/GroundStation.class" afterPath="$PROJECT_DIR$/out/util/GroundStation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/util/JPolarPlotLabel.class" afterPath="$PROJECT_DIR$/out/util/JPolarPlotLabel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/util/SatelliteTleSGP4.class" afterPath="$PROJECT_DIR$/out/util/SatelliteTleSGP4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/util/WWJUtil.class" afterPath="$PROJECT_DIR$/out/util/WWJUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/AboutDialog$1$1.class" afterPath="$PROJECT_DIR$/out/view/AboutDialog$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/AboutDialog$1.class" afterPath="$PROJECT_DIR$/out/view/AboutDialog$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/AboutDialog.class" afterPath="$PROJECT_DIR$/out/view/AboutDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/CreateFacilityDialog$1.class" afterPath="$PROJECT_DIR$/out/view/CreateFacilityDialog$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/CreateFacilityDialog.class" afterPath="$PROJECT_DIR$/out/view/CreateFacilityDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/CreateSatelliteDialog$1.class" afterPath="$PROJECT_DIR$/out/view/CreateSatelliteDialog$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/CreateSatelliteDialog$2.class" afterPath="$PROJECT_DIR$/out/view/CreateSatelliteDialog$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/CreateSatelliteDialog.class" afterPath="$PROJECT_DIR$/out/view/CreateSatelliteDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/FacilityDialog$1.class" afterPath="$PROJECT_DIR$/out/view/FacilityDialog$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/FacilityDialog.class" afterPath="$PROJECT_DIR$/out/view/FacilityDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/FacilityPropertyDialog$1.class" afterPath="$PROJECT_DIR$/out/view/FacilityPropertyDialog$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/FacilityPropertyDialog.class" afterPath="$PROJECT_DIR$/out/view/FacilityPropertyDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/GoDialog$1.class" afterPath="$PROJECT_DIR$/out/view/GoDialog$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/GoDialog$2.class" afterPath="$PROJECT_DIR$/out/view/GoDialog$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/GoDialog$3$1.class" afterPath="$PROJECT_DIR$/out/view/GoDialog$3$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/GoDialog$3.class" afterPath="$PROJECT_DIR$/out/view/GoDialog$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/GoDialog.class" afterPath="$PROJECT_DIR$/out/view/GoDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$1.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$10.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$11.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$12.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$13.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$14.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$15.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$2.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$3.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$4.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$5.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$6.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$7.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$8.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel$9.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/JTrackingPanel.class" afterPath="$PROJECT_DIR$/out/view/JTrackingPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/ResultDialog$1.class" afterPath="$PROJECT_DIR$/out/view/ResultDialog$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/ResultDialog$2.class" afterPath="$PROJECT_DIR$/out/view/ResultDialog$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/ResultDialog$3.class" afterPath="$PROJECT_DIR$/out/view/ResultDialog$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/ResultDialog.class" afterPath="$PROJECT_DIR$/out/view/ResultDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$1.class" afterPath="$PROJECT_DIR$/out/view/Root$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$10.class" afterPath="$PROJECT_DIR$/out/view/Root$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$11.class" afterPath="$PROJECT_DIR$/out/view/Root$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$12.class" afterPath="$PROJECT_DIR$/out/view/Root$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$13.class" afterPath="$PROJECT_DIR$/out/view/Root$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$14.class" afterPath="$PROJECT_DIR$/out/view/Root$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$15.class" afterPath="$PROJECT_DIR$/out/view/Root$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$16.class" afterPath="$PROJECT_DIR$/out/view/Root$16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$17.class" afterPath="$PROJECT_DIR$/out/view/Root$17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$18.class" afterPath="$PROJECT_DIR$/out/view/Root$18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$19.class" afterPath="$PROJECT_DIR$/out/view/Root$19.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$2.class" afterPath="$PROJECT_DIR$/out/view/Root$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$20.class" afterPath="$PROJECT_DIR$/out/view/Root$20.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$21.class" afterPath="$PROJECT_DIR$/out/view/Root$21.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$3.class" afterPath="$PROJECT_DIR$/out/view/Root$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$4.class" afterPath="$PROJECT_DIR$/out/view/Root$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$5.class" afterPath="$PROJECT_DIR$/out/view/Root$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$6.class" afterPath="$PROJECT_DIR$/out/view/Root$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$7.class" afterPath="$PROJECT_DIR$/out/view/Root$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$8.class" afterPath="$PROJECT_DIR$/out/view/Root$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root$9.class" afterPath="$PROJECT_DIR$/out/view/Root$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/view/Root.class" afterPath="$PROJECT_DIR$/out/view/Root.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/resource/CacheLocationConfiguration.xml" afterPath="$PROJECT_DIR$/out/resource/CacheLocationConfiguration.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/resource/tle/noaa.txt" afterPath="$PROJECT_DIR$/out/resource/tle/noaa.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Facility.java" afterPath="$PROJECT_DIR$/src/model/Facility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Satellite.java" afterPath="$PROJECT_DIR$/src/model/Satellite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/TLE.java" afterPath="$PROJECT_DIR$/src/model/TLE.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/AER.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/AER.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/AstroConst.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/AstroConst.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/Atmosphere.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/Atmosphere.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/GeoFunctions.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/GeoFunctions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/GravityField.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/GravityField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/JulianDay.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/JulianDay.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/Kepler.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/Kepler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/MathUtils.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/MathUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/Sidereal.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/Sidereal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/bodies/Moon.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/bodies/Moon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/bodies/Sun.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/bodies/Sun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/coordinates/CoordinateConversion.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/coordinates/CoordinateConversion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/coordinates/J2kCoordinateConversion.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/coordinates/J2kCoordinateConversion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4SatData.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4SatData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4test.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4unit.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4unit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4utils.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4verification.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/sgp4_cssi/SGP4verification.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/ApsisStopCond.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/ApsisStopCond.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/OrbitProblem.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/OrbitProblem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/RungeKutta4.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/RungeKutta4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/RungeKutta78.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/RungeKutta78.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/StoppingCondition.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/propogators/solvers/StoppingCondition.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/astro/time/Time.java" afterPath="$PROJECT_DIR$/src/name/gano/astro/time/Time.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/file/FileTypeFilter.java" afterPath="$PROJECT_DIR$/src/name/gano/file/FileTypeFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/file/FileUtilities.java" afterPath="$PROJECT_DIR$/src/name/gano/file/FileUtilities.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/file/IOFileFilter.java" afterPath="$PROJECT_DIR$/src/name/gano/file/IOFileFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/file/SaveImageFile.java" afterPath="$PROJECT_DIR$/src/name/gano/file/SaveImageFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/file/StkEphemerisReader.java" afterPath="$PROJECT_DIR$/src/name/gano/file/StkEphemerisReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/QuadraticInterpolatorSimp.java" afterPath="$PROJECT_DIR$/src/name/gano/math/QuadraticInterpolatorSimp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/interpolation/LagrangeInterp.java" afterPath="$PROJECT_DIR$/src/name/gano/math/interpolation/LagrangeInterp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/interpolation/PolynomialInterp.java" afterPath="$PROJECT_DIR$/src/name/gano/math/interpolation/PolynomialInterp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/ModifiedBroydenSolver.java" afterPath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/ModifiedBroydenSolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/ModifiedNewtonFiniteDiffSolver.java" afterPath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/ModifiedNewtonFiniteDiffSolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/NonLinearEquationSystemProblem.java" afterPath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/NonLinearEquationSystemProblem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/NonLinearEquationSystemSolver.java" afterPath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/NonLinearEquationSystemSolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/TestDC.java" afterPath="$PROJECT_DIR$/src/name/gano/math/nonlinsolvers/TestDC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource/CacheLocationConfiguration.xml" afterPath="$PROJECT_DIR$/src/resource/CacheLocationConfiguration.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource/TreeExample.java" afterPath="$PROJECT_DIR$/src/resource/TreeExample.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource/tle/noaa.txt" afterPath="$PROJECT_DIR$/src/resource/tle/noaa.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/Main.java" afterPath="$PROJECT_DIR$/src/test/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/TestTracking.java" afterPath="$PROJECT_DIR$/src/test/TestTracking.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/AbstractSatellite.java" afterPath="$PROJECT_DIR$/src/util/AbstractSatellite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Constants.java" afterPath="$PROJECT_DIR$/src/util/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/CustomFileFilter.java" afterPath="$PROJECT_DIR$/src/util/CustomFileFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/EarthUtil.java" afterPath="$PROJECT_DIR$/src/util/EarthUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/GroundStation.java" afterPath="$PROJECT_DIR$/src/util/GroundStation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/HierarchyTreeModel.java" afterPath="$PROJECT_DIR$/src/util/HierarchyTreeModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/JPolarPlotLabel.java" afterPath="$PROJECT_DIR$/src/util/JPolarPlotLabel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/SatelliteTleSGP4.java" afterPath="$PROJECT_DIR$/src/util/SatelliteTleSGP4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/StateVector.java" afterPath="$PROJECT_DIR$/src/util/StateVector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/WWJUtil.java" afterPath="$PROJECT_DIR$/src/util/WWJUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/AboutDialog.java" afterPath="$PROJECT_DIR$/src/view/AboutDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/CreateFacilityDialog.java" afterPath="$PROJECT_DIR$/src/view/CreateFacilityDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/CreateSatelliteDialog.java" afterPath="$PROJECT_DIR$/src/view/CreateSatelliteDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/FacilityDialog.java" afterPath="$PROJECT_DIR$/src/view/FacilityDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/FacilityPropertyDialog.java" afterPath="$PROJECT_DIR$/src/view/FacilityPropertyDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/GoDialog.java" afterPath="$PROJECT_DIR$/src/view/GoDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/JTrackingPanel.java" afterPath="$PROJECT_DIR$/src/view/JTrackingPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/ResultDialog.java" afterPath="$PROJECT_DIR$/src/view/ResultDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/Root.java" afterPath="$PROJECT_DIR$/src/view/Root.java" />
     </list>
     <ignored path="Earth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -946,12 +777,12 @@
       <workItem from="1483356436561" duration="334000" />
       <workItem from="1483357222556" duration="10942000" />
       <workItem from="1483372715857" duration="664000" />
-      <workItem from="1483421994124" duration="1185000" />
+      <workItem from="1483421994124" duration="1187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54852000" />
+    <option name="totallyTimeSpent" value="54854000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
