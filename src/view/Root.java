@@ -949,7 +949,10 @@ public class Root extends JFrame implements Runnable {
                         int column = Integer.parseInt(s.substring(11, 13));
                         System.out.println("Row : " + row + "  column  : " + column);
 
+                      //  TableCellRenderer renderer = ResultDialog.resultTable.getCellRenderer(row, column);
+                      //  Component component = ResultDialog.resultTable.prepareRenderer(renderer, row, column);
                         ResultDialog.resultTable.setValueAt("X", row, column);
+                       // component.setBackground(Color.red);
 
                     }
                     eachDay = new StringBuilder();
