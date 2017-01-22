@@ -44,7 +44,7 @@ public class WWJUtil {
         scaleLayer = wwj.getModel().getLayers().getLayerByName("Scale bar");
         wwj.getModel().getLayers().remove(scaleLayer);
         placeNameLayer = wwj.getModel().getLayers().getLayerByName("Place Names");
-        wwj.getModel().getLayers().remove(placeNameLayer);
+     //   wwj.getModel().getLayers().remove(placeNameLayer);
         openStreetLayer = wwj.getModel().getLayers().getLayerByName("Open Street Map");
         wwj.getModel().getLayers().add(openStreetLayer);
     }

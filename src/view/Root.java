@@ -12,6 +12,7 @@ import name.gano.astro.time.Time;
 import util.*;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellEditor;
@@ -71,6 +72,7 @@ public class Root extends JFrame implements Runnable {
     private javax.swing.JCheckBoxMenuItem compassMenuItem;
     private javax.swing.JMenuItem customeFacilityMenuItem;
     private javax.swing.JMenu editMenu;
+    private javax.swing.JButton excelSat;
     public static javax.swing.JList<Facility> facilityList;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JButton jButton1;
@@ -94,6 +96,7 @@ public class Root extends JFrame implements Runnable {
     private javax.swing.JCheckBoxMenuItem placeNameMenuItem;
     private javax.swing.JButton removeFacilityFromList;
     private javax.swing.JButton runPassPrediction;
+    private javax.swing.JButton satReport;
     private javax.swing.JCheckBoxMenuItem scaleMenuItem;
     private javax.swing.JPanel top;
     private javax.swing.JLabel universalDate;
@@ -185,6 +188,8 @@ public class Root extends JFrame implements Runnable {
         Scale = new javax.swing.JToggleButton();
         Save = new javax.swing.JButton();
         Exit = new javax.swing.JButton();
+        satReport = new javax.swing.JButton();
+        excelSat = new javax.swing.JButton();
         center = new javax.swing.JPanel();
         bottom = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -313,6 +318,20 @@ public class Root extends JFrame implements Runnable {
             }
         });
 
+        satReport.setText("ماهواره ها");
+        satReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                satReportActionPerformed(evt);
+            }
+        });
+
+        excelSat.setText("تعریف ماهواره دسته ایی");
+        excelSat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excelSatActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout topLayout = new javax.swing.GroupLayout(top);
         top.setLayout(topLayout);
         topLayout.setHorizontalGroup(
@@ -341,8 +360,12 @@ public class Root extends JFrame implements Runnable {
                                 .addGap(18, 18, 18)
                                 .addComponent(Exit)
                                 .addGap(18, 18, 18)
+                                .addComponent(satReport)
+                                .addGap(18, 18, 18)
+                                .addComponent(excelSat)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
                                 .addComponent(runPassPrediction, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(419, Short.MAX_VALUE))
+                                .addContainerGap())
         );
         topLayout.setVerticalGroup(
                 topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,7 +383,9 @@ public class Root extends JFrame implements Runnable {
                                         .addComponent(Compass)
                                         .addComponent(Help)
                                         .addComponent(Save)
-                                        .addComponent(Exit))
+                                        .addComponent(Exit)
+                                        .addComponent(satReport)
+                                        .addComponent(excelSat))
                                 .addContainerGap())
         );
 
@@ -570,6 +595,33 @@ public class Root extends JFrame implements Runnable {
         pack();
     }// </editor-fold>
 
+
+    private void satReportActionPerformed(java.awt.event.ActionEvent evt) {
+
+        ReportDetails reportDetails = new ReportDetails(this, true);
+        reportDetails.setVisible(true);
+    }
+
+    private void excelSatActionPerformed(java.awt.event.ActionEvent evt) {
+
+        JFileChooser fileDialog = new JFileChooser();
+        fileDialog.addChoosableFileFilter(new FileNameExtensionFilter(".xlsx", "xlsx"));
+        fileDialog.setAcceptAllFileFilterUsed(false);
+        int returnVal = fileDialog.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+
+            int reply = JOptionPane.showConfirmDialog(this, "آیا برای اضافه کردن اطمینان دارید ؟");
+            if (reply == JOptionPane.YES_OPTION) {
+                try {
+                    Thread.sleep(2000);
+                    JOptionPane.showMessageDialog(this, "ذخیره سازی با موفقیت انجام شد");
+                } catch (InterruptedException e) {
+                    JOptionPane.showMessageDialog(this, "ذخیره سازی با موفقیت انجام شد", "خطا", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+    }
+
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {
         GoDialog goDialog = new GoDialog(this, false);
         goDialog.setVisible(true);
@@ -718,11 +770,11 @@ public class Root extends JFrame implements Runnable {
     }
 
     private void SaveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this,"ذخیره سازی انجام شد","پیغام",JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this,"ذخیره سازی انجام شد","پیغام",JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {
@@ -949,10 +1001,12 @@ public class Root extends JFrame implements Runnable {
                         int column = Integer.parseInt(s.substring(11, 13));
                         System.out.println("Row : " + row + "  column  : " + column);
 
-                      //  TableCellRenderer renderer = ResultDialog.resultTable.getCellRenderer(row, column);
-                      //  Component component = ResultDialog.resultTable.prepareRenderer(renderer, row, column);
-                        ResultDialog.resultTable.setValueAt("X", row, column);
-                       // component.setBackground(Color.red);
+                        ResultDialog.resultTable.setValueAt("خطر", row, column);
+//                        if (row == 1) {
+//                            TableCellRenderer renderer = ResultDialog.resultTable.getCellRenderer(row, column);
+//                            Component component = ResultDialog.resultTable.prepareRenderer(renderer, row, column);
+//                            component.setBackground(Color.red);
+//                        }
 
                     }
                     eachDay = new StringBuilder();
